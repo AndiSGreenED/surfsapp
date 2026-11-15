@@ -2,7 +2,7 @@
 <h1>SurfsApp</h1>
 <p class="sub">Bedienungsanleitung · Garmin Connect IQ · Windsurfen und Wingen</p>
 <nav><ol>
-<li><a href="#a1">Überblick</a></li><li><a href="#a2">Bedienung</a></li><li><a href="#a3">Startseite</a></li><li><a href="#a4">Aufnahme</a></li><li><a href="#a5">Seiten während der Aufnahme</a></li><li><a href="#a6">Eigene Seiten</a></li><li><a href="#a7">Einstellungen</a></li><li><a href="#a8">Connect-Felder</a></li><li><a href="#a9">Loop-Erkennung</a></li><li><a href="#a10">Auswertung nach der Session</a></li><li><a href="#a11">Datenfelder für eigene Seiten</a></li>
+<li><a href="#a1">Überblick</a></li><li><a href="#a2">Bedienung</a></li><li><a href="#a3">Startseite</a></li><li><a href="#a4">Aufnahme</a></li><li><a href="#a5">Seiten während der Aufnahme</a></li><li><a href="#a6">Eigene Seiten</a></li><li><a href="#a7">Einstellungen</a></li><li><a href="#a8">Connect-Felder</a></li><li><a href="#a9">Wellenritte, Loops und Marker</a></li><li><a href="#a10">Auswertung nach der Session</a></li><li><a href="#a11">Datenfelder für eigene Seiten</a></li>
 </ol></nav>
 
 <h2 id="a1">1 Überblick</h2>
@@ -56,7 +56,7 @@
 <h3>Pause</h3>
 <p>Die Pause kann von Hand oder automatisch ausgelöst werden (Einstellung „Pause“). Bei „Automatic“ hält die Aufnahme an, wenn die Geschwindigkeit längere Zeit unter dem Pausenwert liegt, und läuft weiter, sobald die Fahrt-ab-Geschwindigkeit überschritten wird. Auf der Hauptseite zeigt „AUTO“ eine automatische Pause an, bei manueller Pause das Pausezeichen.</p>
 <h3>Marker</h3>
-<p>BACK setzt während der Aufnahme einen Marker. Die Uhr vibriert dreimal kurz. Zwei Marker müssen mindestens zwei Sekunden auseinander liegen. Die Marker stehen in der FIT-Datei und lassen sich in der Auswertung wiederfinden. In der Pause setzt BACK keinen Marker.</p>
+<p>BACK setzt während der Aufnahme einen Marker. Die Uhr vibriert dreimal kurz. Zwei Marker müssen mindestens zwei Sekunden auseinander liegen. In der Pause setzt BACK keinen Marker. Mehr dazu in Abschnitt 9.</p>
 
 <h2 id="a5">5 Seiten während der Aufnahme</h2>
 <p>HOCH und RUNTER blättern durch die Seiten, die Punkte am rechten Rand zeigen die Position. Die Reihenfolge ist: Hauptseite, Maxima, Wellen (beim Wingen Downwinds), eigene Seiten, Loop-Seite, Kompass. Beim Windsurfen steht die Loop-Seite nur zur Verfügung, wenn Loop nicht auf „Aus“ steht. In der Vorschau folgt nach dem Kompass die Seite „Summe“ mit den Summen über alle gespeicherten Sessions.</p>
@@ -91,10 +91,10 @@
 <tr><td>Gleitschwelle</td><td>Geschwindigkeit, ab der die Fahrt als Gleiten zählt. 1 bis 80 km/h in Schritten von 0,5 (Werkseinstellung 11).</td></tr>
 <tr><td>Pause unter</td><td>Nur bei Automatic. Liegt die Geschwindigkeit länger als „Pause nach“ darunter, pausiert die Aufnahme. 0 bis 20 km/h in Schritten von 0,5 (Werkseinstellung 5).</td></tr>
 <tr><td>Pause nach</td><td>Nur bei Automatic. Dauer in Sekunden, 5 bis 300 in Schritten von 5 (Werkseinstellung 20).</td></tr>
-<tr><td rowspan="4">Modus</td><td>Loop</td><td>Untermenü mit den Einträgen Stellung und G Landung. Stellungen: Aus, Lernen, Ein Visu, Ein Connect (siehe Abschnitt 9).</td></tr>
-<tr><td>G Landung</td><td>Landeschwelle in g für die Erkennung der Landung nach einem Sprung. „Auto“ lässt die Uhr die Schwelle selbst suchen, sonst 2 bis 40 g. Nur sichtbar, wenn Loop nicht auf „Aus“ steht.</td></tr>
-<tr><td>Wellenritt</td><td>Standard, Optimiert oder Visu. „Optimiert“ und „Visu“ messen mit hoher Sensorrate, das erhöht den Akkuverbrauch.</td></tr>
-<tr><td>Wingen</td><td>Schaltet die Lernphase für das Wingen ein oder aus.</td></tr>
+<tr><td rowspan="4">Modus</td><td>Loop</td><td>Untermenü mit den Einträgen Stellung und G Landung. Siehe Abschnitt 9.</td></tr>
+<tr><td>G Landung</td><td>Empfindlichkeit der Landungserkennung nach einem Sprung. „Auto“ stellt sie selbst ein, sonst 2 bis 40 g. Nur sichtbar, wenn Loop nicht auf „Aus“ steht.</td></tr>
+<tr><td>Wellenritt</td><td>Standard, Optimiert oder Visu, siehe Abschnitt 9. „Optimiert“ und „Visu“ erhöhen den Akkuverbrauch.</td></tr>
+<tr><td>Wingen</td><td>Schaltet die Datenaufzeichnung für die Wingen-Auswertung ein oder aus.</td></tr>
 <tr><td>Anzeige</td><td>Eigene 1 bis 4</td><td>Eigene Seiten einrichten, siehe Abschnitt 6.</td></tr>
 <tr><td>Hauptmenü</td><td>Letzte Sprünge</td><td>Liste der erkannten Sprünge mit Drehung. Nur sichtbar, wenn Loop nicht auf „Aus“ steht.</td></tr>
 <tr><td rowspan="3">System</td><td>Sprache</td><td>Auto, Deutsch oder English.</td></tr>
@@ -103,27 +103,26 @@
 </table>
 
 <h2 id="a8">8 Connect-Felder</h2>
-<p>Die App berechnet alle Kennzahlen immer. Unter <b>System → Connect-Felder</b> legen Sie fest, welche Werte zusätzlich als eigene Felder in der Aktivität in Garmin Connect erscheinen. Abgewählte Felder werden nur nicht angelegt und lassen sich jederzeit wieder einschalten. Garmin begrenzt eine Aktivität auf höchstens 16 Felder, und alle Texte zusammen dürfen höchstens 32 Zeichen lang sein. Einige Felder sind immer aktiv und nicht wählbar (zum Beispiel Ausrichtung und Marker).</p>
-<h3>Kontrollwerte</h3>
+<p>Die App berechnet alle Kennzahlen immer. Unter <b>System → Connect-Felder</b> legen Sie fest, welche Werte zusätzlich als eigene Felder in der Aktivität in Garmin Connect erscheinen. Abgewählte Felder werden nur nicht angelegt und lassen sich jederzeit wieder einschalten. Garmin begrenzt eine Aktivität auf höchstens 16 Felder, und alle Texte zusammen dürfen höchstens 32 Zeichen lang sein. Einige Felder sind immer aktiv und nicht wählbar (zum Beispiel die Marker).</p>
+<h3>Grundwerte</h3>
 <table><tr><th>Feld</th><th>Einheit</th></tr><tr><td>Halsen</td><td>–</td></tr><tr><td>Vmax Zeit</td><td>–</td></tr><tr><td>Wellenritte</td><td>–</td></tr><tr><td>Bester Ritt</td><td>–</td></tr><tr><td>Durchgleitq.</td><td>%</td></tr><tr><td>GPS-Ausreißer</td><td>s</td></tr></table>
-<h3>Weitere Werte (in dieser Rangfolge belegt)</h3>
+<h3>Weitere Werte</h3>
 <table><tr><th>Feld</th><th>Einheit</th></tr><tr><td>Wellen-Diagramm</td><td>km/h</td></tr><tr><td>Wellen/Runde</td><td>–</td></tr><tr><td>Beste 2 s</td><td>km/h</td></tr><tr><td>Bester Ritt/Rd.</td><td>km/h</td></tr><tr><td>Beste 10 s</td><td>km/h</td></tr><tr><td>Alpha 250</td><td>km/h</td></tr><tr><td>Beste 500 m</td><td>km/h</td></tr><tr><td>Beste 100 m</td><td>km/h</td></tr><tr><td>Gleiten %</td><td>%</td></tr><tr><td>Gleitzeit</td><td>min</td></tr><tr><td>Ritt Strecke</td><td>m</td></tr><tr><td>Ritt Max</td><td>km/h</td></tr><tr><td>Beste 1 NM</td><td>km/h</td></tr><tr><td>Wenden</td><td>–</td></tr><tr><td>Treiben %</td><td>%</td></tr><tr><td>Dümpeln %</td><td>%</td></tr><tr><td>Gleitstrecke</td><td>km</td></tr><tr><td>Treibzeit</td><td>min</td></tr><tr><td>Dümpelzeit</td><td>min</td></tr><tr><td>Beste 250 m</td><td>km/h</td></tr><tr><td>Treibstrecke</td><td>km</td></tr><tr><td>Dümpelstrecke</td><td>km</td></tr></table>
 
-<h2 id="a9">9 Loop-Erkennung</h2>
-<p>Die Loop-Erkennung gibt es beim Windsurfen. Ein Sprung zählt als Loop, wenn beide Bedingungen erfüllt sind:</p>
-<ul>
-<li>Die Nettodrehung beträgt in einem gleitenden Fenster von 2 Sekunden mindestens 240°.</li>
-<li>Die Drehrate liegt mindestens 0,6 Sekunden am Stück über 200°/s.</li>
-</ul>
-<p>Gespeichert werden nur erkannte Loops. Die Stellung des Schalters „Loop“:</p>
+<h2 id="a9">9 Wellenritte, Loops und Marker</h2>
+<h3>Wellenritte (Windsurfen)</h3>
+<p>Beim Windsurfen erkennt die App Wellenritte automatisch aus Kurs und Geschwindigkeit. Sie müssen nichts auslösen. Die Seite „Wellen“ zeigt den letzten Ritt mit Bottom Turn und Cutback, die Auswertung nach der Session listet alle Ritte und hebt den besten hervor. Mit dem Schalter „Wellenritt“ unter Einstellungen → Modus wählen Sie, wie genau gemessen wird: „Standard“ spart Akku, „Optimiert“ erkennt Manöver genauer und braucht mehr Akku. „Visu“ speichert zusätzlich Daten für die Web-Auswertung.</p>
+<h3>Loops (Windsurfen)</h3>
+<p>Die App erkennt Loops automatisch und zählt sie. Die Anzahl steht auf der Loop-Seite, die letzten Sprünge öffnen Sie unter „Letzte Sprünge“. Der Schalter „Loop“ unter Einstellungen → Modus hat vier Stellungen:</p>
 <table>
 <tr><th>Stellung</th><th>Wirkung</th></tr>
-<tr><td>Aus</td><td>Keine Sprungerkennung.</td></tr>
-<tr><td>Lernen</td><td>Erkennung läuft, Sensordaten rund um den Sprung werden für die Auswertung gespeichert.</td></tr>
-<tr><td>Ein Visu</td><td>Erkennung läuft, die Daten um den Loop werden für die Visualisierung in der Web-Auswertung gespeichert.</td></tr>
-<tr><td>Ein Connect</td><td>Loops werden gezählt und stehen in der Sprungliste der Uhr. Es werden keine zusätzlichen Daten in die FIT-Datei geschrieben.</td></tr>
+<tr><td>Aus</td><td>Loops werden nicht erkannt.</td></tr>
+<tr><td>Ein Connect</td><td>Loops werden gezählt und stehen in der Sprungliste der Uhr. Es werden keine zusätzlichen Daten gespeichert.</td></tr>
+<tr><td>Lernen, Ein Visu</td><td>Wie „Ein Connect“, zusätzlich speichert die App Daten für die Auswertung am Computer.</td></tr>
 </table>
 <p>Die Liste der letzten Sprünge öffnen Sie im Hauptmenü unter „Letzte Sprünge“, im Aktionsmenü unter „Sprünge“ oder mit HOCH lang auf der Loop-Seite.</p>
+<h3>Marker</h3>
+<p>Mit BACK setzen Sie während der Aufnahme einen Marker, zum Beispiel nach einem besonderen Sprung, einer Welle oder einem Spot-Wechsel. Die Uhr bestätigt mit einer kurzen Vibration. Zwei Marker müssen mindestens zwei Sekunden auseinander liegen. Die Marker werden mit der Aktivität gespeichert, sodass Sie die Stelle bei der Auswertung wiederfinden. Auf der Hauptseite erscheint der Marker kurz mit seiner Nummer.</p>
 
 <h2 id="a10">10 Auswertung nach der Session</h2>
 <p>Nach dem Speichern zeigt die Uhr die Auswertung. HOCH und RUNTER blättern durch die Seiten, BACK schließt sie. Die letzte Auswertung ist jederzeit über „Letzte Session“ auf der Startseite erreichbar. Die Seiten zeigen: Zeiten und Pausen, Tempo, beste Werte, Tempo getrennt nach Gleiten, Dümpeln und Treiben, Manöver, beim Windsurfen Wellenritte, den besten Ritt mit den besten Turns sowie die besten Distanzen.</p>
