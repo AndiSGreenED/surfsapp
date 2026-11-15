@@ -91,14 +91,16 @@
 <tr><td>Gleitschwelle</td><td>Geschwindigkeit, ab der die Fahrt als Gleiten zählt. 1 bis 80 km/h in Schritten von 0,5 (Werkseinstellung 11).</td></tr>
 <tr><td>Pause unter</td><td>Nur bei Automatic. Liegt die Geschwindigkeit länger als „Pause nach“ darunter, pausiert die Aufnahme. 0 bis 20 km/h in Schritten von 0,5 (Werkseinstellung 5).</td></tr>
 <tr><td>Pause nach</td><td>Nur bei Automatic. Dauer in Sekunden, 5 bis 300 in Schritten von 5 (Werkseinstellung 20).</td></tr>
-<tr><td rowspan="4">Modus</td><td>Loop</td><td>Untermenü mit den Einträgen Stellung und G Landung. Siehe Abschnitt 9.</td></tr>
+<tr><td rowspan="5">Modus</td><td>Loop</td><td>Untermenü mit den Einträgen Stellung, G Landung und Felder. Siehe Abschnitt 9.</td></tr>
 <tr><td>G Landung</td><td>Empfindlichkeit der Landungserkennung nach einem Sprung. „Auto“ stellt sie selbst ein, sonst 2 bis 40 g. Nur sichtbar, wenn Loop nicht auf „Aus“ steht.</td></tr>
 <tr><td>Wellenritt</td><td>Standard, Optimiert oder Visu, siehe Abschnitt 9. „Optimiert“ und „Visu“ erhöhen den Akkuverbrauch.</td></tr>
 <tr><td>Wingen</td><td>Schaltet die Datenaufzeichnung für die Wingen-Auswertung ein oder aus.</td></tr>
+<tr><td>Felder</td><td>Nur Anzeige, keine Einstellung: „gewählt/Platz“, zum Beispiel 18/12. Es ändert sich, sobald Sie Loop, Wellenritt oder Marker umstellen. Erklärung mit Beispielen in Abschnitt 8.</td></tr>
 <tr><td>Anzeige</td><td>Eigene 1 bis 4</td><td>Eigene Seiten einrichten, siehe Abschnitt 6.</td></tr>
 <tr><td>Hauptmenü</td><td>Letzte Sprünge</td><td>Liste der erkannten Sprünge mit Drehung. Nur sichtbar, wenn Loop nicht auf „Aus“ steht.</td></tr>
-<tr><td rowspan="3">System</td><td>Sprache</td><td>Auto, Deutsch oder English.</td></tr>
+<tr><td rowspan="4">System</td><td>Sprache</td><td>Auto, Deutsch oder English.</td></tr>
 <tr><td>Connect-Felder</td><td>Auswahl der Werte, die als eigene Felder in die Aktivität in Garmin Connect geschrieben werden, siehe Abschnitt 8.</td></tr>
+<tr><td>Marker</td><td>An oder Aus. Mit „Aus“ gibt es keinen Marker per BACK, dafür steht ein Connect-Feld mehr zur Verfügung, siehe Abschnitte 8 und 9. Wirkt ab der nächsten Aufnahme.</td></tr>
 <tr><td>Debug-Protokoll</td><td>Schreibt zusätzliche Diagnosedaten. Nur zur Fehlersuche einschalten, siehe Abschnitt 13.</td></tr>
 </table>
 
@@ -112,6 +114,30 @@
 </ul>
 <h3>Auswahl der Felder</h3>
 <p>Die App berechnet alle Kennzahlen immer. Unter <b>System → Connect-Felder</b> legen Sie fest, welche Werte zusätzlich als eigene Felder in der Aktivität in Garmin Connect erscheinen. Abgewählte Felder werden nur nicht angelegt und lassen sich jederzeit wieder einschalten. Garmin begrenzt eine Aktivität auf höchstens 16 Felder, und alle Texte zusammen dürfen höchstens 32 Zeichen lang sein. Einige Felder sind immer aktiv und nicht wählbar (zum Beispiel die Marker).</p>
+<h3>Wie viele Felder passen? Die Anzeige „gewählt/Platz“</h3>
+<p>Garmin erlaubt höchstens 16 Felder pro Aktivität. Einige davon belegt die App immer selbst, weitere belegen die Stellungen von Loop und Wellenritt. Was übrig bleibt, steht für Ihre Auswahl zur Verfügung. Das zeigt die Uhr als zwei Zahlen, etwa <b>18/12</b>:</p>
+<ul>
+<li><b>Erste Zahl:</b> so viele Felder haben Sie unter System → Connect-Felder eingeschaltet.</li>
+<li><b>Zweite Zahl:</b> so viele Felder haben in der Aufnahme wirklich Platz.</li>
+</ul>
+<p>18/12 heißt also: 18 Felder sind eingeschaltet, aber nur 12 werden geschrieben, weil die übrigen 4 Plätze von der App und den gewählten Modi belegt sind. Welche Felder wegfallen, bestimmt die Reihenfolge in der Liste: Die Felder oben in der Liste Connect-Felder haben Vorrang, die weiter unten entfallen zuerst. Die Berechnungen und Kennzahlen selbst bleiben unberührt, es fehlt nur das Feld in der Aktivität. Die Anzeige steht im Menü Modus (und im Untermenü Loop) unter „Felder“ und in System → Connect-Felder.</p>
+<p>Immer belegt sind drei Felder (Ausrichtung, Akku-Diagramm, Aufnahme-Info) und, solange Marker an ist, ein viertes (Marker). Dazu kommen die Felder der Stellungen:</p>
+<table>
+<tr><th>Stellung</th><th>Belegt</th></tr>
+<tr><td>Loop Aus oder Ein Connect, Wellenritt Standard oder Optimiert</td><td>keine zusätzlichen Felder</td></tr>
+<tr><td>Loop Ein Visu oder Wellenritt Visu (auch beide zusammen)</td><td>6 Felder (beide teilen sich dieselben)</td></tr>
+<tr><td>Loop Lernen</td><td>11 Felder</td></tr>
+</table>
+<p>Beispiele für Windsurfen mit eingeschaltetem Marker:</p>
+<table>
+<tr><th>Einstellung</th><th>Anzeige</th><th>Bedeutung</th></tr>
+<tr><td>Loop Ein Connect, Wellenritt Standard, 18 Felder gewählt</td><td>18/12</td><td>16 minus 4 immer belegte = 12 Plätze. Von den 18 gewählten Feldern werden die ersten 12 geschrieben, 6 entfallen.</td></tr>
+<tr><td>Loop Ein Connect, Wellenritt Standard, 8 Felder gewählt</td><td>8/12</td><td>Alles passt, 4 Plätze bleiben frei.</td></tr>
+<tr><td>Loop Ein Visu, 10 Felder gewählt</td><td>10/6</td><td>16 minus 4 minus 6 = 6 Plätze. 4 gewählte Felder entfallen.</td></tr>
+<tr><td>Loop Lernen, 10 Felder gewählt</td><td>10/1</td><td>16 minus 4 minus 11 = 1 Platz. Nur das erste gewählte Feld wird geschrieben.</td></tr>
+<tr><td>Wie 10/6, aber Marker aus</td><td>10/7</td><td>Ohne Marker ist ein Platz mehr frei.</td></tr>
+</table>
+<p>Für die Auswertung am Computer genügt es meist, in den Modi nur so viel einzuschalten, wie Sie brauchen: „Ein Connect“ und „Standard“ lassen die meisten Plätze frei.</p>
 <h3>Grundwerte</h3>
 <table><tr><th>Feld</th><th>Einheit</th></tr><tr><td>Halsen</td><td>–</td></tr><tr><td>Vmax Zeit</td><td>–</td></tr><tr><td>Wellenritte</td><td>–</td></tr><tr><td>Bester Ritt</td><td>–</td></tr><tr><td>Durchgleitq.</td><td>%</td></tr><tr><td>GPS-Ausreißer</td><td>s</td></tr></table>
 <h3>Weitere Werte</h3>
@@ -135,9 +161,10 @@
 <tr><td>Ein Visu</td><td>Wie „Ein Connect“, zusätzlich speichert die App die Sprungdaten für die Auswertung am Computer: Lage im Raum und Drehung während des Loops.</td><td>Mehr Akkuverbrauch, belegt zusätzliche Connect-Felder.</td></tr>
 <tr><td>Lernen</td><td>Wie „Ein Visu“, zusätzlich werden viele Messwerte jede Sekunde aufgezeichnet, auch außerhalb von Sprüngen. Gedacht zum Testen und Auswerten, nicht für den normalen Einsatz.</td><td>Höchster Akkuverbrauch, die meisten Connect-Felder, größte Aktivitätsdatei, längere Zeit zum Speichern.</td></tr>
 </table>
+<p>Während einer Aufnahme lässt sich der Schalter nur in der Pause über die Einstellungen umstellen, und nur, wenn die Aufnahme in einer Visu-Stellung (Loop „Ein Visu“ oder Wellenritt „Visu“) gestartet wurde. Von und nach „Lernen“ ist das Umstellen nicht möglich, weil die Felder der Aktivität beim Start feststehen.</p>
 <p>Die Liste der letzten Sprünge öffnen Sie im Hauptmenü unter „Letzte Sprünge“, im Aktionsmenü unter „Sprünge“ oder mit HOCH lang auf der Loop-Seite.</p>
 <h3>Marker</h3>
-<p>Mit BACK setzen Sie während der Aufnahme einen Marker, zum Beispiel nach einem besonderen Sprung, einer Welle oder einem Spot-Wechsel. Die Uhr bestätigt mit einer kurzen Vibration. Zwei Marker müssen mindestens zwei Sekunden auseinander liegen. Die Marker werden mit der Aktivität gespeichert, sodass Sie die Stelle bei der Auswertung wiederfinden. Auf der Hauptseite erscheint der Marker kurz mit seiner Nummer.</p>
+<p>Mit BACK setzen Sie während der Aufnahme einen Marker, zum Beispiel nach einem besonderen Sprung, einer Welle oder einem Spot-Wechsel. Die Uhr bestätigt mit einer kurzen Vibration. Zwei Marker müssen mindestens zwei Sekunden auseinander liegen. Die Marker werden mit der Aktivität gespeichert, sodass Sie die Stelle bei der Auswertung wiederfinden. Auf der Hauptseite erscheint der Marker kurz mit seiner Nummer. Wer keine Marker braucht, schaltet sie unter System → Marker aus: Dann tut BACK während der Aufnahme nichts, und ein Connect-Feld mehr steht für andere Werte zur Verfügung. Die Einstellung gilt ab der nächsten Aufnahme.</p>
 
 <h2 id="a10">10 Auswertung nach der Session</h2>
 <p>Nach dem Speichern zeigt die Uhr die Auswertung. HOCH und RUNTER blättern durch die Seiten, BACK schließt sie. Die letzte Auswertung ist jederzeit über „Letzte Session“ auf der Startseite erreichbar. Die Seiten zeigen: Zeiten und Pausen, Tempo, beste Werte, Tempo getrennt nach Gleiten, Dümpeln und Treiben, Manöver, beim Windsurfen Wellenritte, den besten Ritt mit den besten Turns sowie die besten Distanzen.</p>
