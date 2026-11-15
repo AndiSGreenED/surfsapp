@@ -57,6 +57,42 @@
 <p>Die Pause kann von Hand oder automatisch ausgelöst werden (Einstellung „Pause“). Bei „Automatic“ hält die Aufnahme an, wenn die Geschwindigkeit längere Zeit unter dem Pausenwert liegt, und läuft weiter, sobald die Fahrt-ab-Geschwindigkeit überschritten wird. Auf der Hauptseite zeigt „AUTO“ eine automatische Pause an, bei manueller Pause das Pausezeichen.</p>
 <h3>Marker</h3>
 <p>BACK setzt während der Aufnahme einen Marker. Die Uhr vibriert dreimal kurz. Zwei Marker müssen mindestens zwei Sekunden auseinander liegen. In der Pause setzt BACK keinen Marker. Mehr dazu in Abschnitt 9.</p>
+<h3>Symbole in der Kopfzeile</h3>
+<p>Auf jeder Seite der Aufnahme zeigt die Kopfzeile links den GPS-Empfang, rechts den Akku und in der Mitte den Zustand der Aufnahme:</p>
+<table>
+<tr><th>Anzeige in der Mitte</th><th>Bedeutung</th></tr>
+<tr><td>Roter Punkt</td><td>Die Aufnahme läuft.</td></tr>
+<tr><td>Roter Punkt mit blauem Ring und einer Zahl daneben</td><td>Die Aufnahme läuft, und diese Zahl an Sprung- oder Turn-Datenpaketen wartet noch darauf, in die Aktivität geschrieben zu werden. Das gibt es nur mit Loop „Ein Visu“ oder „Lernen“ und Wellenritt „Visu“. Je größer die Zahl, desto beschäftigter ist die Uhr. Die Zahl sinkt von selbst.</td></tr>
+<tr><td>Gelbe Zahl mit „s“</td><td>Sie haben „Speichern“ gewählt, und die Uhr schreibt noch Sprungdaten. Die Zahl ist die Restzeit in Sekunden, siehe unten.</td></tr>
+<tr><td>Blaues Quadrat</td><td>Der Speicher der Uhr für diese Aufnahme ist voll. Die Uhr speichert gleich und beginnt einen neuen Teil, siehe unten.</td></tr>
+<tr><td>Pausezeichen oder „AUTO“</td><td>Die Aufnahme ist angehalten, von Hand oder automatisch.</td></tr>
+</table>
+<h3>Speichern und die Wartezeit für Sprungdaten</h3>
+<p>Wenn Sie „Speichern“ bestätigen, wartet die Uhr zuerst, bis alle noch ausstehenden Sprungdaten in der Aktivität stehen. In dieser Zeit läuft die Aufnahme weiter, die Uhr vibriert einmal zu Beginn, und die Restzeit steht auf jeder Seite:</p>
+<ul>
+<li>auf der Hauptseite als gelbe Zeile „SPRUNGDATEN“ mit der Zahl der Sekunden,</li>
+<li>auf allen anderen Seiten als gelbe Zahl mit „s“ in der Kopfzeile, auf der Kompass-Seite als gelbe Zeile unten in der Scheibe.</li>
+</ul>
+<p>Danach speichert die Uhr von selbst und zeigt die Auswertung. Die Wartezeit ist höchstens vier Minuten lang. Wollen Sie nicht warten, wählen Sie „Speichern“ noch einmal: Dann speichert die Uhr sofort, und Sprungdaten, die noch nicht geschrieben waren, fehlen in der Aktivität. In der Pause und bei leerem Akku wird immer sofort gespeichert.</p>
+<h3>Wenn der Speicher voll wird: neuer Teil</h3>
+<p>Die Uhr hat für jede Aufnahme nur begrenzt Platz für die Sekundenwerte. Reicht er auf Ihrer Uhr nur für eine kürzere Aufnahme als üblich, erscheint nach dem Start der Aufnahme fünf Sekunden lang ein Hinweis mit der möglichen Dauer, zum Beispiel „Speicher für 1:20 h, dann neuer Teil“. START schließt ihn sofort.</p>
+<p>Ist der Speicher während der Aufnahme voll, geht es so weiter:</p>
+<ol>
+<li>Die Kopfzeile zeigt das blaue Quadrat, und die Uhr vibriert lang. Solange sie noch Sprungdaten schreibt, wechseln Kopfzeile und Hauptseite im Takt von drei Sekunden zwischen „SPEICHER VOLL“ und der Restzeit.</li>
+<li>Die Uhr schreibt noch ausstehende Sprungdaten und speichert die Aufnahme automatisch.</li>
+<li>Sofort danach beginnt ein neuer Teil. Fünf Sekunden lang steht auf der Hauptseite „NEUER TEIL“. Sie müssen nichts tun.</li>
+</ol>
+<p>In Garmin Connect erscheinen die Teile als getrennte Aktivitäten. Die Auswertung nach dem Speichern gibt es erst nach dem letzten Teil.</p>
+<h3>Aufnahme fortsetzen, wenn die Uhr die App beendet hat</h3>
+<p>Manchmal beendet die Uhr die App mitten in der Aufnahme, zum Beispiel wenn Sie aus der Aufnahme heraus Nachrichten oder den Kompass der Uhr öffnen. Starten Sie die App innerhalb von zehn Minuten wieder, setzt sie die Aufnahme sofort fort: Es beginnt ein neuer Teil, und fünf Sekunden lang steht auf der Hauptseite „FORTGESETZT“. Auch hier bestehen die beiden Teile in Garmin Connect aus zwei Aktivitäten. Liegt das Beenden länger als zehn Minuten zurück, startet die App wie gewohnt auf der Startseite.</p>
+<h3>Akku leer</h3>
+<p>Fällt der Akku während der Aufnahme unter 4 %, speichert die Uhr die Aufnahme von selbst, damit nichts verloren geht. Die Uhr vibriert, und es erscheint ein gelbes Warnzeichen mit „Akku leer“ und darunter:</p>
+<ul>
+<li>„Aufzeichnung wird gespeichert“, solange die Uhr noch speichert,</li>
+<li>„Aufzeichnung gespeichert“, sobald alles in der Aktivität steht,</li>
+<li>„Nichts aufgenommen“, wenn noch keine Fahrt aufgezeichnet war (zum Beispiel weil Automatic noch auf die erste Fahrt gewartet hat).</li>
+</ul>
+<p>BACK beendet die App. Bei leerem Akku zeigt die Uhr keine Auswertung und beginnt keinen neuen Teil. Laden Sie die Uhr, bevor Sie weiterfahren.</p>
 
 <h2 id="a5">5 Seiten während der Aufnahme</h2>
 <p>HOCH und RUNTER blättern durch die Seiten, die Punkte am rechten Rand zeigen die Position. Die Reihenfolge ist: Hauptseite, Maxima, Wellen (beim Wingen Downwinds), eigene Seiten, Loop-Seite, Kompass. Beim Windsurfen steht die Loop-Seite nur zur Verfügung, wenn Loop nicht auf „Aus“ steht. In der Vorschau folgt nach dem Kompass die Seite „Summe“ mit den Summen über alle gespeicherten Sessions.</p>
