@@ -162,12 +162,13 @@
 <li>Verbinden Sie die Uhr per USB-Kabel mit dem Computer. Die Uhr erscheint als Laufwerk bzw. Gerät.</li>
 <li>Öffnen Sie dort den Ordner <b>GARMIN</b> und darin den Ordner <b>Apps</b>.</li>
 <li>Prüfen Sie, ob dort ein Ordner <b>LOGS</b> existiert. Wenn nicht, legen Sie ihn an (Großschreibung egal).</li>
-<li>Suchen Sie in <b>Apps</b> die Datei von SurfsApp. Sie hat die Endung <b>.PRG</b>.</li>
-<li>Legen Sie im Ordner <b>LOGS</b> eine leere Textdatei an, die genauso heißt wie die PRG-Datei, aber mit der Endung <b>.TXT</b>. Beispiel: heißt die Datei <b>SURFSAPP.PRG</b>, legen Sie <b>SURFSAPP.TXT</b> an.</li>
+<li>Suchen Sie in <b>Apps</b> die Datei von SurfsApp. Sie hat die Endung <b>.PRG</b>. Der Name besteht aus Buchstaben und Ziffern, zum Beispiel <b>GASA5920.PRG</b>, und steht nicht im Klartext „SurfsApp“. Erkennen Sie die Datei nicht, sortieren Sie den Ordner nach „Änderungsdatum“: Die zuletzt installierte App steht ganz oben.</li>
+<li>Legen Sie im Ordner <b>LOGS</b> eine leere Textdatei an, die genauso heißt wie die PRG-Datei, aber mit der Endung <b>.TXT</b>. Beispiel: zu <b>GASA5920.PRG</b> gehört <b>GASA5920.TXT</b>.</li>
 <li>Trennen Sie die Uhr vom Computer.</li>
 <li>Schalten Sie auf der Uhr unter <b>System → Debug-Protokoll</b> auf <b>Ein</b>.</li>
 </ol>
 <h3>Benutzen</h3>
 <p>Zeichnen Sie wie gewohnt auf. Danach schließen Sie die Uhr wieder an den Computer an und öffnen die Textdatei im Ordner <b>LOGS</b>. Dort stehen die Zeilen der letzten Aufnahme. Die Datei wächst mit jeder Aufnahme. Löschen Sie den Inhalt, wenn Sie ein frisches Protokoll wollen.</p>
+<p>Stürzt die App ab, schreibt die Uhr außerdem automatisch die Datei <b>CIQ_LOG.YML</b> in denselben Ordner <b>LOGS</b>. Sie enthält die Fehlermeldung.</p>
 <p>Schalten Sie das Debug-Protokoll nach der Fehlersuche wieder aus. Es belegt Speicher und verbraucht etwas Akku.</p>
 </body></html>
