@@ -2,7 +2,7 @@
 <h1>SurfsApp</h1>
 <p class="sub">Bedienungsanleitung · Garmin Connect IQ · Windsurfen und Wingen</p>
 <nav><ol>
-<li><a href="#a1">Überblick</a></li><li><a href="#a2">Bedienung</a></li><li><a href="#a3">Startseite</a></li><li><a href="#a4">Aufnahme</a></li><li><a href="#a5">Seiten während der Aufnahme</a></li><li><a href="#a6">Eigene Seiten</a></li><li><a href="#a7">Einstellungen</a></li><li><a href="#a8">Connect-Felder</a></li><li><a href="#a9">Wellenritte, Loops und Marker</a></li><li><a href="#a10">Auswertung nach der Session</a></li><li><a href="#a11">Datenfelder für eigene Seiten</a></li><li><a href="#a12">Unterstützte Uhren</a></li>
+<li><a href="#a1">Überblick</a></li><li><a href="#a2">Bedienung</a></li><li><a href="#a3">Startseite</a></li><li><a href="#a4">Aufnahme</a></li><li><a href="#a5">Seiten während der Aufnahme</a></li><li><a href="#a6">Eigene Seiten</a></li><li><a href="#a7">Einstellungen</a></li><li><a href="#a8">Connect-Felder</a></li><li><a href="#a9">Wellenritte, Loops und Marker</a></li><li><a href="#a10">Auswertung nach der Session</a></li><li><a href="#a11">Datenfelder für eigene Seiten</a></li><li><a href="#a12">Unterstützte Uhren</a></li><li><a href="#a13">Debug-Protokoll</a></li>
 </ol></nav>
 
 <h2 id="a1">1 Überblick</h2>
@@ -99,10 +99,18 @@
 <tr><td>Hauptmenü</td><td>Letzte Sprünge</td><td>Liste der erkannten Sprünge mit Drehung. Nur sichtbar, wenn Loop nicht auf „Aus“ steht.</td></tr>
 <tr><td rowspan="3">System</td><td>Sprache</td><td>Auto, Deutsch oder English.</td></tr>
 <tr><td>Connect-Felder</td><td>Auswahl der Werte, die als eigene Felder in die Aktivität in Garmin Connect geschrieben werden, siehe Abschnitt 8.</td></tr>
-<tr><td>Debug-Protokoll</td><td>Schreibt zusätzliche Diagnosedaten. Nur zur Fehlersuche einschalten.</td></tr>
+<tr><td>Debug-Protokoll</td><td>Schreibt zusätzliche Diagnosedaten. Nur zur Fehlersuche einschalten, siehe Abschnitt 13.</td></tr>
 </table>
 
 <h2 id="a8">8 Connect-Felder</h2>
+<h3>Was sind Connect-Felder?</h3>
+<p>Garmin nennt sie Connect-IQ-Felder. Es sind zusätzliche Werte, die SurfsApp beim Speichern in die Aktivität schreibt, zum Beispiel Wellenritte, Halsen oder die Durchgleitquote. Garmin selbst kennt diese Werte nicht, deshalb legt die App sie als eigene Felder in der Aktivitätsdatei ab. Dort stehen sie neben Geschwindigkeit, Strecke und Puls.</p>
+<ul>
+<li><b>In Garmin Connect:</b> Die Felder erscheinen bei Aktivitäten, die von der aus dem Connect IQ Store installierten App aufgezeichnet wurden, in den Details der Aktivität. Wo genau Garmin sie anzeigt, bestimmt Garmin, und es kann sich mit Updates der Connect-App ändern.</li>
+<li><b>In der Session-Ansicht:</b> Die Seite „Session ansehen“ auf der Startseite liest die Felder aus der FIT-Datei und zeigt sie in der Tabelle „Werte aus der Uhr“.</li>
+<li><b>Auswahl:</b> Garmin erlaubt höchstens 16 Felder pro Aktivität. Welche davon angelegt werden, bestimmen Sie in den Einstellungen unter <b>System → Connect-Felder</b>.</li>
+</ul>
+<h3>Auswahl der Felder</h3>
 <p>Die App berechnet alle Kennzahlen immer. Unter <b>System → Connect-Felder</b> legen Sie fest, welche Werte zusätzlich als eigene Felder in der Aktivität in Garmin Connect erscheinen. Abgewählte Felder werden nur nicht angelegt und lassen sich jederzeit wieder einschalten. Garmin begrenzt eine Aktivität auf höchstens 16 Felder, und alle Texte zusammen dürfen höchstens 32 Zeichen lang sein. Einige Felder sind immer aktiv und nicht wählbar (zum Beispiel die Marker).</p>
 <h3>Grundwerte</h3>
 <table><tr><th>Feld</th><th>Einheit</th></tr><tr><td>Halsen</td><td>–</td></tr><tr><td>Vmax Zeit</td><td>–</td></tr><tr><td>Wellenritte</td><td>–</td></tr><tr><td>Bester Ritt</td><td>–</td></tr><tr><td>Durchgleitq.</td><td>%</td></tr><tr><td>GPS-Ausreißer</td><td>s</td></tr></table>
@@ -146,4 +154,20 @@
 <li>Venu 3, Venu 3S</li><li>Venu 4 (41 mm, 45 mm)</li><li>vívoactive 4, 4S</li><li>vívoactive 5</li><li>vívoactive 6</li>
 </ul>
 <p>Die Darstellung passt sich der Bildschirmgröße der Uhr an. Die Abbildungen in dieser Anleitung sind schematisch und zeigen eine runde Uhr.</p>
+
+<h2 id="a13">13 Debug-Protokoll</h2>
+<p>Das Debug-Protokoll ist nur für die Fehlersuche gedacht. Ist es eingeschaltet, schreibt die Uhr während der Aufnahme Zeilen mit Zeitstempel in eine Textdatei, zum Beispiel Akkustand, Speicher und besondere Ereignisse. Garmin legt diese Datei nur an, wenn Sie die Datei vorher selbst erstellt haben.</p>
+<h3>Einrichten</h3>
+<ol>
+<li>Verbinden Sie die Uhr per USB-Kabel mit dem Computer. Die Uhr erscheint als Laufwerk bzw. Gerät.</li>
+<li>Öffnen Sie dort den Ordner <b>GARMIN</b> und darin den Ordner <b>Apps</b>.</li>
+<li>Prüfen Sie, ob dort ein Ordner <b>LOGS</b> existiert. Wenn nicht, legen Sie ihn an (Großschreibung egal).</li>
+<li>Suchen Sie in <b>Apps</b> die Datei von SurfsApp. Sie hat die Endung <b>.PRG</b>.</li>
+<li>Legen Sie im Ordner <b>LOGS</b> eine leere Textdatei an, die genauso heißt wie die PRG-Datei, aber mit der Endung <b>.TXT</b>. Beispiel: heißt die Datei <b>SURFSAPP.PRG</b>, legen Sie <b>SURFSAPP.TXT</b> an.</li>
+<li>Trennen Sie die Uhr vom Computer.</li>
+<li>Schalten Sie auf der Uhr unter <b>System → Debug-Protokoll</b> auf <b>Ein</b>.</li>
+</ol>
+<h3>Benutzen</h3>
+<p>Zeichnen Sie wie gewohnt auf. Danach schließen Sie die Uhr wieder an den Computer an und öffnen die Textdatei im Ordner <b>LOGS</b>. Dort stehen die Zeilen der letzten Aufnahme. Die Datei wächst mit jeder Aufnahme. Löschen Sie den Inhalt, wenn Sie ein frisches Protokoll wollen.</p>
+<p>Schalten Sie das Debug-Protokoll nach der Fehlersuche wieder aus. Es belegt Speicher und verbraucht etwas Akku.</p>
 </body></html>
