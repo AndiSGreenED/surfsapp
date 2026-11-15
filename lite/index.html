@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SurfsApp Lite – Session ansehen</title><link rel="icon" href="../icon.png">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#04122b;color:#e8f0ff;line-height:1.5}
+header{background:linear-gradient(160deg,#04122b,#06306b);padding:1rem 1.2rem;display:flex;align-items:center;gap:.8rem}
+header img{width:44px;height:44px}header a{color:#fff;text-decoration:none;font-weight:700;font-size:1.25rem}header span{color:#8fb2e6;font-size:.9rem}
+main{max-width:1000px;margin:0 auto;padding:1.2rem}
+.drop{border:2px dashed #3d6fb8;border-radius:16px;padding:2.2rem 1rem;text-align:center;background:rgba(255,255,255,.04);cursor:pointer}
+.drop.over{background:rgba(0,85,255,.2)}.drop b{font-size:1.2rem}.drop p{margin:.4rem 0 0;color:#a8cbff}
+.note{font-size:.88rem;color:#8fb2e6;margin:.8rem 0}
+.hide{display:none}
+h2{margin:1.8rem 0 .6rem;font-size:1.15rem;border-bottom:1px solid #1d4a8f;padding-bottom:.3rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.7rem}
+.k{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:.6rem .8rem}
+.k small{display:block;color:#9ec0f5;font-size:.78rem}.k b{font-size:1.45rem}.k i{font-style:normal;font-size:.8rem;color:#9ec0f5;margin-left:.2rem}
+canvas{width:100%;background:#071a38;border-radius:12px;display:block}
+.row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin:.5rem 0}
+input[type=number]{width:5rem;padding:.3rem;border-radius:6px;border:1px solid #3d6fb8;background:#071a38;color:#fff}
+table{border-collapse:collapse;width:100%;font-size:.92rem}td,th{border-bottom:1px solid #1d4a8f;padding:.35rem .5rem;text-align:left}th{color:#9ec0f5;font-weight:600}
+.btn{background:#0055FF;color:#fff;border:0;border-radius:10px;padding:.6rem 1.1rem;font-size:1rem;cursor:pointer}
+.legend{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:#9ec0f5;margin-top:.3rem}.legend div{height:8px;width:160px;border-radius:4px;background:linear-gradient(90deg,#2b6cff,#19d37a,#ffd23f,#ff3b30)}
+.soon{background:rgba(255,255,255,.05);border-radius:12px;padding:1rem;color:#a8cbff}
+footer{text-align:center;color:#6d8fc4;font-size:.82rem;padding:2rem 1rem}
+</style></head><body>
+<header><img src="../icon.png" alt=""><a href="../">SurfsApp</a><span>Lite · Session ansehen</span></header>
+<main>
+<div class="drop" id="drop"><b>FIT-Datei hierher ziehen oder tippen</b><p>Die Datei deiner SurfsApp-Aufnahme (.fit). Sie wird nur in deinem Browser gelesen und nicht hochgeladen.</p><input id="file" type="file" accept=".fit" class="hide"></div>
+<p class="note" id="err"></p>
+<div id="res" class="hide">
+<h2 id="title">Session</h2>
+<div class="cards" id="kpi"></div>
+<h2>Spur</h2><canvas id="map" width="1000" height="520"></canvas>
+<div class="legend"><span>langsam</span><div></div><span>schnell</span></div>
+<h2>Verlauf</h2><canvas id="chart" width="1000" height="300"></canvas>
+<div class="legend"><span style="color:#19d37a">━ Tempo</span><span style="color:#ff6b81">━ Herzfrequenz</span></div>
+<h2>Bestwerte</h2><div class="cards" id="best"></div>
+<h2>Gleiten</h2>
+<div class="row"><label>Gleitschwelle <input id="thr" type="number" value="11" min="1" max="80" step="0.5"> km/h</label></div>
+<div class="cards" id="glide"></div>
+<h2>Werte aus der Uhr</h2><p class="note">Diese Werte hat die Uhr selbst berechnet und in die Datei geschrieben. Welche vorhanden sind, hängt von den Einstellungen bei der Aufnahme ab.</p>
+<table id="dev"></table>
+<h2>Export für Garmin Connect</h2>
+<div class="soon">Der Export mit Feldauswahl folgt.</div>
+</div>
+</main>
+<footer>SurfsApp ist kostenlos. Die Auswertung läuft lokal in deinem Browser.</footer>
+<script src="fit.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+const EPOCH=631065600, SEMI=180/Math.pow(2,31);
+let R=null;
+function fmtT(s){s=Math.round(s);const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return (h?h+':'+String(m).padStart(2,'0'):m)+':'+String(x).padStart(2,'0')}
+function card(l,v,u){return `<div class="k"><small>${l}</small><b>${v}</b>${u?`<i>${u}</i>`:''}</div>`}
+const drop=$('drop'),file=$('file');
+drop.onclick=()=>file.click();
+drop.ondragover=e=>{e.preventDefault();drop.classList.add('over')};drop.ondragleave=()=>drop.classList.remove('over');
+drop.ondrop=e=>{e.preventDefault();drop.classList.remove('over');if(e.dataTransfer.files[0])load(e.dataTransfer.files[0])};
+file.onchange=()=>{if(file.files[0])load(file.files[0])};
+function load(f){
+  $('err').textContent='';
+  const fr=new FileReader();
+  fr.onload=()=>{try{start(f.name,FIT.parse(fr.result))}catch(e){$('err').textContent='Die Datei konnte nicht gelesen werden: '+e.message}};
+  fr.readAsArrayBuffer(f);
+}
+function start(name,fit){
+  const rec=fit.records.filter(r=>r.t!=null);
+  if(rec.length<10)throw new Error('zu wenige Datenpunkte');
+  const pts=rec.map(r=>({t:r.t+EPOCH,lat:r.lat!=null?r.lat*SEMI:null,lon:r.lon!=null?r.lon*SEMI:null,spd:r.spd,hr:r.hr,dist:r.dist,dev:r.dev}));
+  // fehlende Strecke aus Tempo aufbauen
+  let d=0;for(let i=0;i<pts.length;i++){ if(pts[i].dist!=null)d=pts[i].dist;else if(i>0){const dt=pts[i].t-pts[i-1].t;d+=(pts[i].spd||0)*Math.min(dt,5);pts[i].dist=d} }
+  R={name,fit,pts};
+  $('res').classList.remove('hide');
+  render();
+}
+function best2(p,N){ // beste mittlere Geschwindigkeit ueber N Sekunden
+  let b=0,bi=0,j=0;
+  for(let i=0;i<p.length;i++){
+    if(j<i)j=i;
+    while(j<p.length&&p[j].t-p[i].t<N)j++;
+    if(j>=p.length)break;
+    const dt=p[j].t-p[i].t;if(dt>N+2)continue;
+    const v=(p[j].dist-p[i].dist)/dt;if(v>b){b=v;bi=i}
+  }return b?{v:b*3.6,at:p[bi].t}:null;
+}
+function bestD(p,D){
+  let b=0,bi=0,j=0;
+  for(let i=0;i<p.length;i++){
+    if(j<i)j=i;
+    while(j<p.length&&p[j].dist-p[i].dist<D)j++;
+    if(j>=p.length)break;
+    const dt=p[j].t-p[i].t;if(dt<=0||dt>D/1.5)continue;
+    const v=D/dt;if(v>b){b=v;bi=i}
+  }return b?{v:b*3.6,at:p[bi].t}:null;
+}
+function render(){
+  const p=R.pts,t0=p[0].t,t1=p[p.length-1].t;
+  const dist=p[p.length-1].dist-p[0].dist;
+  const spd=p.map(x=>x.spd||0);let vmax=0,vi=0;spd.forEach((v,i)=>{if(v>vmax){vmax=v;vi=i}});
+  const hrs=p.map(x=>x.hr).filter(x=>x!=null);
+  const dstr=new Date(t0*1000).toLocaleString('de-DE',{dateStyle:'medium',timeStyle:'short'});
+  $('title').textContent='Session vom '+dstr;
+  $('kpi').innerHTML=card('Dauer',fmtT(t1-t0))+card('Strecke',(dist/1000).toFixed(2),'km')+card('Vmax',(vmax*3.6).toFixed(1),'km/h')+card('Ø Tempo',((dist/(t1-t0))*3.6).toFixed(1),'km/h')+(hrs.length?card('HF Ø',Math.round(hrs.reduce((a,b)=>a+b,0)/hrs.length),'/min')+card('HF max',Math.max(...hrs),'/min'):'');
+  const B=[['Beste 2 s',best2(p,2)],['Beste 10 s',best2(p,10)],['Beste 100 m',bestD(p,100)],['Beste 250 m',bestD(p,250)],['Beste 500 m',bestD(p,500)],['Beste 1 NM',bestD(p,1852)]];
+  $('best').innerHTML=card('Vmax',(vmax*3.6).toFixed(1),'km/h')+card('Vmax um',new Date(p[vi].t*1000).toLocaleTimeString('de-DE'),'')+B.filter(x=>x[1]).map(x=>card(x[0],x[1].v.toFixed(1),'km/h')).join('');
+  glide();drawMap();drawChart();
+  const sess=R.fit.sessions[0];const rows=[];
+  if(sess&&sess.dev)for(const k in sess.dev)if(sess.dev[k]!=null&&!/^(Aufnahme-Info)$/.test(k))rows.push([k,sess.dev[k]]);
+  const df=R.fit.devFields.filter(f=>!/^(Sprung Daten|Beschleunigung|Kreisel|Armneigung|Armunruhe|Ausrichtung|Marker|Akku|Aufnahme-Info)/.test(f.name));
+  $('dev').innerHTML='<tr><th>Wert</th><th>Inhalt</th></tr>'+(rows.length?rows.map(r=>`<tr><td>${r[0]}</td><td>${typeof r[1]==='number'?+r[1].toFixed(2):r[1]}</td></tr>`).join(''):'<tr><td colspan="2">Keine Zusammenfassungswerte der Uhr in dieser Datei.</td></tr>');
+  const mk=p.filter(x=>x.dev&&x.dev.Marker>0).length;
+  if(mk)$('dev').innerHTML+=`<tr><td>Marker</td><td>${Math.max(...p.map(x=>(x.dev&&x.dev.Marker)||0))}</td></tr>`;
+}
+function glide(){
+  const thr=parseFloat($('thr').value)/3.6,p=R.pts;let tg=0,dg=0,tt=0;
+  for(let i=1;i<p.length;i++){const dt=Math.min(p[i].t-p[i-1].t,5);tt+=dt;if((p[i].spd||0)>=thr){tg+=dt;dg+=p[i].dist-p[i-1].dist}}
+  $('glide').innerHTML=card('Gleiten',(tt?tg/tt*100:0).toFixed(0),'%')+card('Gleitzeit',fmtT(tg))+card('Gleitstrecke',(dg/1000).toFixed(2),'km')+card('Ø Tempo Gleiten',tg?(dg/tg*3.6).toFixed(1):'–','km/h');
+}
+$('thr').oninput=()=>{if(R)glide()};
+function col(v,max){const x=Math.max(0,Math.min(1,v/max));const st=[[43,108,255],[25,211,122],[255,210,63],[255,59,48]];const f=x*3,i=Math.min(2,Math.floor(f)),u=f-i;const c=st[i].map((a,k)=>Math.round(a+(st[i+1][k]-a)*u));return `rgb(${c})`}
+function drawMap(){
+  const cv=$('map'),c=cv.getContext('2d'),W=cv.width,H=cv.height;c.clearRect(0,0,W,H);
+  const g=R.pts.filter(x=>x.lat!=null&&x.lon!=null);if(g.length<2){c.fillStyle='#9ec0f5';c.font='20px sans-serif';c.fillText('Keine GPS-Spur in der Datei',20,40);return}
+  let a=1e9,b=-1e9,l=1e9,r=-1e9;g.forEach(x=>{a=Math.min(a,x.lat);b=Math.max(b,x.lat);l=Math.min(l,x.lon);r=Math.max(r,x.lon)});
+  const k=Math.cos((a+b)/2*Math.PI/180),w=(r-l)*k||1e-6,h=(b-a)||1e-6,pad=30,s=Math.min((W-2*pad)/w,(H-2*pad)/h),ox=(W-w*s)/2,oy=(H-h*s)/2;
+  const X=x=>ox+(x.lon-l)*k*s,Y=x=>H-oy-(x.lat-a)*s;
+  const vm=Math.max(...g.map(x=>x.spd||0),1);
+  c.lineWidth=3;c.lineCap='round';
+  for(let i=1;i<g.length;i++){c.strokeStyle=col(g[i].spd||0,vm);c.beginPath();c.moveTo(X(g[i-1]),Y(g[i-1]));c.lineTo(X(g[i]),Y(g[i]));c.stroke()}
+  c.fillStyle='#fff';c.beginPath();c.arc(X(g[0]),Y(g[0]),6,0,7);c.fill();c.fillStyle='#ff3b30';c.beginPath();c.arc(X(g[g.length-1]),Y(g[g.length-1]),6,0,7);c.fill();
+}
+function drawChart(){
+  const cv=$('chart'),c=cv.getContext('2d'),W=cv.width,H=cv.height,p=R.pts;c.clearRect(0,0,W,H);
+  const t0=p[0].t,T=p[p.length-1].t-t0||1,vm=Math.max(...p.map(x=>(x.spd||0)*3.6),5),hm=Math.max(...p.map(x=>x.hr||0),100),L=44,Bt=24;
+  c.strokeStyle='#1d4a8f';c.fillStyle='#8fb2e6';c.font='12px sans-serif';c.lineWidth=1;
+  for(let i=0;i<=4;i++){const y=10+(H-10-Bt)*i/4;c.beginPath();c.moveTo(L,y);c.lineTo(W-10,y);c.stroke();c.fillText((vm*(1-i/4)).toFixed(0),6,y+4)}
+  for(let i=0;i<=5;i++){const x=L+(W-L-10)*i/5;c.fillText(fmtT(T*i/5),x-14,H-6)}
+  const line=(fn,color,m)=>{c.strokeStyle=color;c.lineWidth=1.6;c.beginPath();let on=false;p.forEach(x=>{const v=fn(x);if(v==null){on=false;return}const px=L+(x.t-t0)/T*(W-L-10),py=10+(H-10-Bt)*(1-v/m);if(!on){c.moveTo(px,py);on=true}else c.lineTo(px,py)});c.stroke()};
+  line(x=>x.hr!=null?x.hr:null,'#ff6b81',hm);line(x=>(x.spd||0)*3.6,'#19d37a',vm);
+}
+</script></body></html>
