@@ -1,139 +1,142 @@
-<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SurfsApp Lite – Session ansehen</title><link rel="icon" href="../favicon.png?v=3">
-<style>
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#04122b;color:#e8f0ff;line-height:1.5}
-header{background:linear-gradient(160deg,#04122b,#06306b);padding:1rem 1.2rem;display:flex;align-items:center;gap:.8rem}
-header img{width:44px;height:44px}header a{color:#fff;text-decoration:none;font-weight:700;font-size:1.25rem}header span{color:#8fb2e6;font-size:.9rem}
-main{max-width:1000px;margin:0 auto;padding:1.2rem}
-.drop{border:2px dashed #3d6fb8;border-radius:16px;padding:2.2rem 1rem;text-align:center;background:rgba(255,255,255,.04);cursor:pointer}
-.drop.over{background:rgba(0,85,255,.2)}.drop b{font-size:1.2rem}.drop p{margin:.4rem 0 0;color:#a8cbff}
-.note{font-size:.88rem;color:#8fb2e6;margin:.8rem 0}
-.hide{display:none}
-h2{margin:1.8rem 0 .6rem;font-size:1.15rem;border-bottom:1px solid #1d4a8f;padding-bottom:.3rem}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.7rem}
-.k{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:.6rem .8rem}
-.k small{display:block;color:#9ec0f5;font-size:.78rem}.k b{font-size:1.45rem}.k i{font-style:normal;font-size:.8rem;color:#9ec0f5;margin-left:.2rem}
-canvas{width:100%;background:#071a38;border-radius:12px;display:block}
-.row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin:.5rem 0}
-input[type=number]{width:5rem;padding:.3rem;border-radius:6px;border:1px solid #3d6fb8;background:#071a38;color:#fff}
-table{border-collapse:collapse;width:100%;font-size:.92rem}td,th{border-bottom:1px solid #1d4a8f;padding:.35rem .5rem;text-align:left}th{color:#9ec0f5;font-weight:600}
-.btn{background:#0055FF;color:#fff;border:0;border-radius:10px;padding:.6rem 1.1rem;font-size:1rem;cursor:pointer}
-.legend{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:#9ec0f5;margin-top:.3rem}.legend div{height:8px;width:160px;border-radius:4px;background:linear-gradient(90deg,#2b6cff,#19d37a,#ffd23f,#ff3b30)}
-.soon{background:rgba(255,255,255,.05);border-radius:12px;padding:1rem;color:#a8cbff}
-footer{text-align:center;color:#6d8fc4;font-size:.82rem;padding:2rem 1rem}
-</style></head><body>
-<header><img src="../favicon.png?v=3" alt=""><a href="../">SurfsApp</a><span>Lite · Session ansehen</span></header>
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="surfsapp-lite-version" content="V1">
+  <title>SurfsApp Lite – Produktdemo</title>
+  <link rel="icon" href="../favicon.png?v=3">
+  <style>
+    :root{--navy:#04122b;--blue:#06306b;--sea:#0055ff;--white:#eef5ff;--muted:#9ec0f5;--line:#1d4a8f;--good:#19d37a;--warn:#ffd23f}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--navy);color:var(--white)}
+    header{background:linear-gradient(160deg,var(--navy),var(--blue));padding:.9rem 1.2rem;display:flex;align-items:center;gap:.8rem;border-bottom:1px solid rgba(255,255,255,.12)}
+    header img{width:44px;height:44px}header a{color:#fff;text-decoration:none;font-weight:700;font-size:1.25rem}
+    header span{color:var(--muted);font-size:.9rem}.privacy{margin-left:auto;border:1px solid rgba(25,211,122,.5);border-radius:999px;padding:.25rem .7rem;color:#baffdc;font-size:.8rem}
+    main{max-width:1100px;margin:0 auto;padding:1.2rem}
+    .notice{border:1px solid var(--line);background:rgba(0,85,255,.12);border-radius:12px;padding:.8rem 1rem;color:#d9e8ff}
+    .tabs{display:flex;gap:.45rem;flex-wrap:wrap;margin:1rem 0}.tabs button{border:1px solid var(--line);background:#092552;color:#dcecff;border-radius:999px;padding:.55rem .85rem;cursor:pointer}
+    .tabs button[aria-selected=true]{background:var(--sea);border-color:#70a1ff;color:#fff}
+    section[hidden]{display:none}h1{font-size:1.8rem;margin:.8rem 0}h2{font-size:1.12rem;border-bottom:1px solid var(--line);padding-bottom:.35rem;margin:1.4rem 0 .7rem}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem}.kpi{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:.75rem}
+    .kpi small{display:block;color:var(--muted)}.kpi b{display:block;font-size:1.5rem;margin-top:.15rem}.kpi i{font-style:normal;color:var(--muted);font-size:.78rem}
+    .panel{background:#071a38;border:1px solid var(--line);border-radius:14px;padding:.8rem;margin:.7rem 0}.panel canvas{width:100%;height:auto;display:block}
+    table{width:100%;border-collapse:collapse;font-size:.92rem}th,td{border-bottom:1px solid var(--line);padding:.5rem;text-align:left}th{color:var(--muted)}
+    .legend{display:flex;gap:1rem;flex-wrap:wrap;color:var(--muted);font-size:.82rem;margin-top:.45rem}.dot{display:inline-block;width:.7rem;height:.7rem;border-radius:50%;margin-right:.35rem}
+    .tag{display:inline-block;border-radius:999px;padding:.15rem .55rem;background:rgba(25,211,122,.13);color:#adf3d1;font-size:.78rem}
+    .demo{color:var(--warn)}footer{text-align:center;color:#7894bd;font-size:.82rem;padding:2rem}
+  </style>
+</head>
+<body>
+<header>
+  <img src="../favicon.png?v=3" alt="">
+  <a href="../">SurfsApp</a>
+  <span>Lite · Produktdemo</span>
+  <span class="privacy">Keine Daten werden gespeichert</span>
+</header>
 <main>
-<div class="drop" id="drop"><b>FIT-Datei hierher ziehen oder tippen</b><p>Die Datei deiner SurfsApp-Aufnahme (.fit). Sie wird nur in deinem Browser gelesen und nicht hochgeladen.</p><input id="file" type="file" accept=".fit" class="hide"></div>
-<p class="note" id="err"></p>
-<div id="res" class="hide">
-<h2 id="title">Session</h2>
-<div class="cards" id="kpi"></div>
-<h2>Spur</h2><canvas id="map" width="1000" height="520"></canvas>
-<div class="legend"><span>langsam</span><div></div><span>schnell</span></div>
-<h2>Verlauf</h2><canvas id="chart" width="1000" height="300"></canvas>
-<div class="legend"><span style="color:#19d37a">━ Tempo</span><span style="color:#ff6b81">━ Herzfrequenz</span></div>
-<h2>Bestwerte</h2><div class="cards" id="best"></div>
-<h2>Gleiten</h2>
-<div class="row"><label>Gleitschwelle <input id="thr" type="number" value="11" min="1" max="80" step="0.5"> km/h</label></div>
-<div class="cards" id="glide"></div>
-<h2>Werte aus der Uhr</h2><p class="note">Diese Werte hat die Uhr selbst berechnet und in die Datei geschrieben. Welche vorhanden sind, hängt von den Einstellungen bei der Aufnahme ab.</p>
-<table id="dev"></table>
-<h2>Export für Garmin Connect</h2>
-<div class="soon">Der Export mit Feldauswahl folgt.</div>
-</div>
+  <div class="notice"><b>Kuratierte Demo ohne eigene Daten.</b> Diese Seite zeigt die Produktansichten mit Beispielwerten. FIT-Dateien können nicht hochgeladen werden. Ergebnisse, Ortsdaten und Kennzahlen werden nicht an SurfsApp gesendet oder dauerhaft gespeichert.</div>
+  <h1>SurfsApp – Beispiel-Session</h1>
+  <nav class="tabs" aria-label="Demoansichten">
+    <button type="button" aria-selected="true" data-tab="overview">Übersicht</button>
+    <button type="button" aria-selected="false" data-tab="track">Spur</button>
+    <button type="button" aria-selected="false" data-tab="charts">Verlauf</button>
+    <button type="button" aria-selected="false" data-tab="waves">Wellenritte</button>
+    <button type="button" aria-selected="false" data-tab="loops">Loops und Sprünge</button>
+  </nav>
+
+  <section id="overview">
+    <div class="cards">
+      <div class="kpi"><small>Dauer</small><b>42:18</b><i>Fahrzeit 38:05</i></div>
+      <div class="kpi"><small>Strecke</small><b>18,74</b><i>km</i></div>
+      <div class="kpi"><small>Vmax</small><b>31,8</b><i>km/h</i></div>
+      <div class="kpi"><small>Ø Tempo</small><b>26,4</b><i>km/h</i></div>
+      <div class="kpi"><small>Wellenritte</small><b>6</b><i>davon 3 lange</i></div>
+      <div class="kpi"><small>Loops</small><b>2</b><i>erkannte Sprünge</i></div>
+    </div>
+    <h2>Bestwerte</h2>
+    <div class="cards">
+      <div class="kpi"><small>Beste 2 s</small><b>29,9</b><i>km/h</i></div>
+      <div class="kpi"><small>Beste 10 s</small><b>27,4</b><i>km/h</i></div>
+      <div class="kpi"><small>Beste 100 m</small><b>28,1</b><i>km/h</i></div>
+      <div class="kpi"><small>Beste 250 m</small><b>26,7</b><i>km/h</i></div>
+    </div>
+    <h2>Zeiten und Strecken</h2>
+    <table>
+      <tr><th>Abschnitt</th><th>Dauer</th><th>Strecke</th><th>Anteil</th></tr>
+      <tr><td>Gleiten</td><td>22:10</td><td>11,84 km</td><td>58 %</td></tr>
+      <tr><td>Dümpeln</td><td>08:42</td><td>2,16 km</td><td>21 %</td></tr>
+      <tr><td>Treiben</td><td>07:13</td><td>4,74 km</td><td>19 %</td></tr>
+    </table>
+  </section>
+
+  <section id="track" hidden>
+    <h2>GPS-Spur mit Tempo-Färbung</h2>
+    <div class="panel"><canvas id="map" width="1000" height="520" aria-label="Kuratierte Demo-Spur"></canvas></div>
+    <div class="legend"><span><i class="dot" style="background:#2b6cff"></i>langsamer</span><span><i class="dot" style="background:#19d37a"></i>gleiten</span><span><i class="dot" style="background:#ffd23f"></i>schnell</span><span><i class="dot" style="background:#ff3b30"></i>Vmax</span></div>
+  </section>
+
+  <section id="charts" hidden>
+    <h2>Tempo und Herzfrequenz im Verlauf</h2>
+    <div class="panel"><canvas id="chart" width="1000" height="320" aria-label="Kuratiertes Tempo- und Herzfrequenz-Diagramm"></canvas></div>
+    <div class="legend"><span><i class="dot" style="background:#19d37a"></i>Tempo</span><span><i class="dot" style="background:#ff6b81"></i>Herzfrequenz</span></div>
+  </section>
+
+  <section id="waves" hidden>
+    <h2>Bester Wellenritt <span class="tag">Beispiel</span></h2>
+    <div class="cards">
+      <div class="kpi"><small>Ø Tempo</small><b>24,4</b><i>km/h</i></div>
+      <div class="kpi"><small>Dauer</small><b>08</b><i>sec</i></div>
+      <div class="kpi"><small>Turns</small><b>1</b><i>Bottom Turn + Cutback</i></div>
+      <div class="kpi"><small>Slide</small><b>5</b><i>m</i></div>
+    </div>
+    <div class="panel"><canvas id="ride" width="1000" height="360" aria-label="Kuratiertes Wellenritt-Beispiel"></canvas></div>
+    <table>
+      <tr><th>Punkt</th><th>Zeit</th><th>Strecke ab Start</th><th>Tempo</th></tr>
+      <tr><td>Start</td><td>13:58:57</td><td>0 m</td><td>31,7 km/h</td></tr>
+      <tr><td>Bottom Turn</td><td>13:59:00</td><td>24 m</td><td>26,5 km/h</td></tr>
+      <tr><td>Cutback</td><td>13:59:04</td><td>47 m</td><td>17,4 km/h</td></tr>
+      <tr><td>Slide</td><td>13:59:05</td><td>52 m</td><td>17,2 km/h</td></tr>
+      <tr><td>Ausfahrt</td><td>13:59:08</td><td>67 m</td><td>20,7 km/h</td></tr>
+    </table>
+  </section>
+
+  <section id="loops" hidden>
+    <h2>Loop- und Sprunganalyse <span class="tag">Beispielansicht</span></h2>
+    <div class="cards">
+      <div class="kpi"><small>Loop 1</small><b>6,3 g</b><i>Spitze · 14:12:10</i></div>
+      <div class="kpi"><small>Loop 2</small><b>4,7 g</b><i>Spitze · 14:14:32</i></div>
+      <div class="kpi"><small>Gesamtdrehung</small><b>833°</b><i>Beispielspur</i></div>
+      <div class="kpi"><small>Höchste Drehrate</small><b>566</b><i>°/s</i></div>
+    </div>
+    <div class="panel"><canvas id="loop" width="1000" height="380" aria-label="Kuratiertes Loop-Beispiel"></canvas></div>
+    <p class="notice demo">Demo-Hinweis: Die tatsächlichen Erkennungs-, Bewertungs- und Schwellenwerte werden in der öffentlichen Lite-Seite nicht veröffentlicht.</p>
+  </section>
 </main>
-<footer>SurfsApp ist kostenlos. Die Auswertung läuft lokal in deinem Browser.</footer>
-<script src="fit.js"></script>
+<footer>SurfsApp Lite · Keine Anmeldung · keine FIT-Datei · keine Datenspeicherung</footer>
 <script>
-const $=id=>document.getElementById(id);
-const EPOCH=631065600, SEMI=180/Math.pow(2,31);
-let R=null;
-function fmtT(s){s=Math.round(s);const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return (h?h+':'+String(m).padStart(2,'0'):m)+':'+String(x).padStart(2,'0')}
-function card(l,v,u){return `<div class="k"><small>${l}</small><b>${v}</b>${u?`<i>${u}</i>`:''}</div>`}
-const drop=$('drop'),file=$('file');
-drop.onclick=()=>file.click();
-drop.ondragover=e=>{e.preventDefault();drop.classList.add('over')};drop.ondragleave=()=>drop.classList.remove('over');
-drop.ondrop=e=>{e.preventDefault();drop.classList.remove('over');if(e.dataTransfer.files[0])load(e.dataTransfer.files[0])};
-file.onchange=()=>{if(file.files[0])load(file.files[0])};
-function load(f){
-  $('err').textContent='';
-  const fr=new FileReader();
-  fr.onload=()=>{try{start(f.name,FIT.parse(fr.result))}catch(e){$('err').textContent='Die Datei konnte nicht gelesen werden: '+e.message}};
-  fr.readAsArrayBuffer(f);
-}
-function start(name,fit){
-  const rec=fit.records.filter(r=>r.t!=null);
-  if(rec.length<10)throw new Error('zu wenige Datenpunkte');
-  const pts=rec.map(r=>({t:r.t+EPOCH,lat:r.lat!=null?r.lat*SEMI:null,lon:r.lon!=null?r.lon*SEMI:null,spd:r.spd,hr:r.hr,dist:r.dist,dev:r.dev}));
-  // fehlende Strecke aus Tempo aufbauen
-  let d=0;for(let i=0;i<pts.length;i++){ if(pts[i].dist!=null)d=pts[i].dist;else if(i>0){const dt=pts[i].t-pts[i-1].t;d+=(pts[i].spd||0)*Math.min(dt,5);pts[i].dist=d} }
-  R={name,fit,pts};
-  $('res').classList.remove('hide');
-  render();
-}
-function best2(p,N){ // beste mittlere Geschwindigkeit ueber N Sekunden
-  let b=0,bi=0,j=0;
-  for(let i=0;i<p.length;i++){
-    if(j<i)j=i;
-    while(j<p.length&&p[j].t-p[i].t<N)j++;
-    if(j>=p.length)break;
-    const dt=p[j].t-p[i].t;if(dt>N+2)continue;
-    const v=(p[j].dist-p[i].dist)/dt;if(v>b){b=v;bi=i}
-  }return b?{v:b*3.6,at:p[bi].t}:null;
-}
-function bestD(p,D){
-  let b=0,bi=0,j=0;
-  for(let i=0;i<p.length;i++){
-    if(j<i)j=i;
-    while(j<p.length&&p[j].dist-p[i].dist<D)j++;
-    if(j>=p.length)break;
-    const dt=p[j].t-p[i].t;if(dt<=0||dt>D/1.5)continue;
-    const v=D/dt;if(v>b){b=v;bi=i}
-  }return b?{v:b*3.6,at:p[bi].t}:null;
-}
-function render(){
-  const p=R.pts,t0=p[0].t,t1=p[p.length-1].t;
-  const dist=p[p.length-1].dist-p[0].dist;
-  const spd=p.map(x=>x.spd||0);let vmax=0,vi=0;spd.forEach((v,i)=>{if(v>vmax){vmax=v;vi=i}});
-  const hrs=p.map(x=>x.hr).filter(x=>x!=null);
-  const dstr=new Date(t0*1000).toLocaleString('de-DE',{dateStyle:'medium',timeStyle:'short'});
-  $('title').textContent='Session vom '+dstr;
-  $('kpi').innerHTML=card('Dauer',fmtT(t1-t0))+card('Strecke',(dist/1000).toFixed(2),'km')+card('Vmax',(vmax*3.6).toFixed(1),'km/h')+card('Ø Tempo',((dist/(t1-t0))*3.6).toFixed(1),'km/h')+(hrs.length?card('HF Ø',Math.round(hrs.reduce((a,b)=>a+b,0)/hrs.length),'/min')+card('HF max',Math.max(...hrs),'/min'):'');
-  const B=[['Beste 2 s',best2(p,2)],['Beste 10 s',best2(p,10)],['Beste 100 m',bestD(p,100)],['Beste 250 m',bestD(p,250)],['Beste 500 m',bestD(p,500)],['Beste 1 NM',bestD(p,1852)]];
-  $('best').innerHTML=card('Vmax',(vmax*3.6).toFixed(1),'km/h')+card('Vmax um',new Date(p[vi].t*1000).toLocaleTimeString('de-DE'),'')+B.filter(x=>x[1]).map(x=>card(x[0],x[1].v.toFixed(1),'km/h')).join('');
-  glide();drawMap();drawChart();
-  const sess=R.fit.sessions[0];const rows=[];
-  if(sess&&sess.dev)for(const k in sess.dev)if(sess.dev[k]!=null&&!/^(Aufnahme-Info)$/.test(k))rows.push([k,sess.dev[k]]);
-  const df=R.fit.devFields.filter(f=>!/^(Sprung Daten|Beschleunigung|Kreisel|Armneigung|Armunruhe|Ausrichtung|Marker|Akku|Aufnahme-Info)/.test(f.name));
-  $('dev').innerHTML='<tr><th>Wert</th><th>Inhalt</th></tr>'+(rows.length?rows.map(r=>`<tr><td>${r[0]}</td><td>${typeof r[1]==='number'?+r[1].toFixed(2):r[1]}</td></tr>`).join(''):'<tr><td colspan="2">Keine Zusammenfassungswerte der Uhr in dieser Datei.</td></tr>');
-  const mk=p.filter(x=>x.dev&&x.dev.Marker>0).length;
-  if(mk)$('dev').innerHTML+=`<tr><td>Marker</td><td>${Math.max(...p.map(x=>(x.dev&&x.dev.Marker)||0))}</td></tr>`;
-}
-function glide(){
-  const thr=parseFloat($('thr').value)/3.6,p=R.pts;let tg=0,dg=0,tt=0;
-  for(let i=1;i<p.length;i++){const dt=Math.min(p[i].t-p[i-1].t,5);tt+=dt;if((p[i].spd||0)>=thr){tg+=dt;dg+=p[i].dist-p[i-1].dist}}
-  $('glide').innerHTML=card('Gleiten',(tt?tg/tt*100:0).toFixed(0),'%')+card('Gleitzeit',fmtT(tg))+card('Gleitstrecke',(dg/1000).toFixed(2),'km')+card('Ø Tempo Gleiten',tg?(dg/tg*3.6).toFixed(1):'–','km/h');
-}
-$('thr').oninput=()=>{if(R)glide()};
-function col(v,max){const x=Math.max(0,Math.min(1,v/max));const st=[[43,108,255],[25,211,122],[255,210,63],[255,59,48]];const f=x*3,i=Math.min(2,Math.floor(f)),u=f-i;const c=st[i].map((a,k)=>Math.round(a+(st[i+1][k]-a)*u));return `rgb(${c})`}
-function drawMap(){
-  const cv=$('map'),c=cv.getContext('2d'),W=cv.width,H=cv.height;c.clearRect(0,0,W,H);
-  const g=R.pts.filter(x=>x.lat!=null&&x.lon!=null);if(g.length<2){c.fillStyle='#9ec0f5';c.font='20px sans-serif';c.fillText('Keine GPS-Spur in der Datei',20,40);return}
-  let a=1e9,b=-1e9,l=1e9,r=-1e9;g.forEach(x=>{a=Math.min(a,x.lat);b=Math.max(b,x.lat);l=Math.min(l,x.lon);r=Math.max(r,x.lon)});
-  const k=Math.cos((a+b)/2*Math.PI/180),w=(r-l)*k||1e-6,h=(b-a)||1e-6,pad=30,s=Math.min((W-2*pad)/w,(H-2*pad)/h),ox=(W-w*s)/2,oy=(H-h*s)/2;
-  const X=x=>ox+(x.lon-l)*k*s,Y=x=>H-oy-(x.lat-a)*s;
-  const vm=Math.max(...g.map(x=>x.spd||0),1);
-  c.lineWidth=3;c.lineCap='round';
-  for(let i=1;i<g.length;i++){c.strokeStyle=col(g[i].spd||0,vm);c.beginPath();c.moveTo(X(g[i-1]),Y(g[i-1]));c.lineTo(X(g[i]),Y(g[i]));c.stroke()}
-  c.fillStyle='#fff';c.beginPath();c.arc(X(g[0]),Y(g[0]),6,0,7);c.fill();c.fillStyle='#ff3b30';c.beginPath();c.arc(X(g[g.length-1]),Y(g[g.length-1]),6,0,7);c.fill();
-}
-function drawChart(){
-  const cv=$('chart'),c=cv.getContext('2d'),W=cv.width,H=cv.height,p=R.pts;c.clearRect(0,0,W,H);
-  const t0=p[0].t,T=p[p.length-1].t-t0||1,vm=Math.max(...p.map(x=>(x.spd||0)*3.6),5),hm=Math.max(...p.map(x=>x.hr||0),100),L=44,Bt=24;
-  c.strokeStyle='#1d4a8f';c.fillStyle='#8fb2e6';c.font='12px sans-serif';c.lineWidth=1;
-  for(let i=0;i<=4;i++){const y=10+(H-10-Bt)*i/4;c.beginPath();c.moveTo(L,y);c.lineTo(W-10,y);c.stroke();c.fillText((vm*(1-i/4)).toFixed(0),6,y+4)}
-  for(let i=0;i<=5;i++){const x=L+(W-L-10)*i/5;c.fillText(fmtT(T*i/5),x-14,H-6)}
-  const line=(fn,color,m)=>{c.strokeStyle=color;c.lineWidth=1.6;c.beginPath();let on=false;p.forEach(x=>{const v=fn(x);if(v==null){on=false;return}const px=L+(x.t-t0)/T*(W-L-10),py=10+(H-10-Bt)*(1-v/m);if(!on){c.moveTo(px,py);on=true}else c.lineTo(px,py)});c.stroke()};
-  line(x=>x.hr!=null?x.hr:null,'#ff6b81',hm);line(x=>(x.spd||0)*3.6,'#19d37a',vm);
-}
-</script></body></html>
+  // Diese öffentliche Demo enthält ausschließlich kuratierte Darstellungsdaten.
+  // Keine FIT-Verarbeitung, keine Storage-, IndexedDB- oder Netzwerkzugriffe.
+  const $=id=>document.getElementById(id);
+  document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('[data-tab]').forEach(x=>x.setAttribute('aria-selected',String(x===b)));
+    document.querySelectorAll('main section').forEach(s=>s.hidden=s.id!==b.dataset.tab);
+  }));
+  function poly(canvas,pts,color,width=4){
+    const c=canvas.getContext('2d'),w=canvas.width,h=canvas.height;c.clearRect(0,0,w,h);
+    c.strokeStyle=color;c.lineWidth=width;c.lineJoin='round';c.lineCap='round';c.beginPath();
+    pts.forEach((p,i)=>i?c.lineTo(p[0]*w,p[1]*h):c.moveTo(p[0]*w,p[1]*h));c.stroke();
+  }
+  poly($('map'),[[.12,.78],[.18,.72],[.27,.69],[.34,.58],[.42,.61],[.49,.48],[.57,.52],[.64,.39],[.72,.43],[.78,.31],[.86,.23]],'#19d37a',5);
+  poly($('ride'),[[.06,.82],[.18,.68],[.31,.51],[.47,.54],[.58,.43],[.69,.64],[.83,.76]],'#19d37a',7);
+  poly($('loop'),[[.08,.60],[.16,.57],[.23,.40],[.31,.30],[.40,.24],[.48,.31],[.57,.52],[.66,.73],[.76,.68],[.86,.61]],'#8e5bd1',5);
+  const cc=$('chart').getContext('2d'),cw=$('chart').width,ch=$('chart').height;
+  cc.clearRect(0,0,cw,ch);cc.strokeStyle='#1d4a8f';cc.lineWidth=1;
+  for(let i=0;i<5;i++){const y=20+i*(ch-50)/4;cc.beginPath();cc.moveTo(50,y);cc.lineTo(cw-20,y);cc.stroke()}
+  cc.strokeStyle='#19d37a';cc.lineWidth=3;cc.beginPath();
+  [21,24,23,27,25,29,26,30,28,27,31,24,22,25,23].forEach((v,i)=>{const x=50+i*(cw-70)/14,y=ch-30-v*7;i?cc.lineTo(x,y):cc.moveTo(x,y)});cc.stroke();
+  cc.strokeStyle='#ff6b81';cc.lineWidth=3;cc.beginPath();
+  [52,58,61,65,72,78,84,80,76,74,70,68,64,60,57].forEach((v,i)=>{const x=50+i*(cw-70)/14,y=ch-30-(v-40)*3;i?cc.lineTo(x,y):cc.moveTo(x,y)});cc.stroke();
+</script>
+</body>
+</html>
