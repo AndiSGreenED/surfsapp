@@ -3,13 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="surfsapp-manual-revision" content="V4">
+    <meta name="surfsapp-build" content="0.24.13">
     <title>SurfsApp – Bedienungsanleitung</title>
     <style>body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;max-width:900px;margin:2rem auto;padding:0 1.2rem;color:#1a1a1a;line-height:1.55}h1{font-size:2.4rem;margin:0}.sub{color:#555;margin-top:.2rem}h2{margin-top:2.4rem;border-bottom:2px solid #0055FF;padding-bottom:.25rem}h3{margin-top:1.5rem}nav{background:#f3f6fb;padding:.6rem 1rem;border-radius:6px;margin:1.2rem 0}nav ol{columns:2;margin:.2rem 0}a{color:#0055FF}table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.95rem}th,td{border:1px solid #d5d9e0;padding:.4rem .6rem;text-align:left;vertical-align:top}th{background:#eef2f8}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;margin:1rem 0}figure{margin:0;text-align:center}figure img{width:190px;height:190px;background:#222;border-radius:50%}figcaption{font-size:.82rem;color:#444;margin-top:.4rem}.cols{columns:3}.foot{margin-top:3rem;color:#555;font-size:.9rem;border-top:1px solid #ddd;padding-top:1rem}@media(max-width:600px){nav ol,.cols{columns:1}table{display:block;max-width:100%;overflow-x:auto}}</style>
   </head>
   <body>
     <h1>SurfsApp</h1>
     <p class="sub">Bedienungsanleitung · Garmin Connect IQ · Windsurfen und Wingen</p>
-    <p class="sub">Anleitungsrevision V2 · SurfsApp 0.24.12 · Stand: 19.11.2026</p>
+    <p class="sub">Anleitungsrevision V4 · SurfsApp 0.24.13 · Stand: 20.11.2026</p>
     <nav>
       <ol>
         <li>
@@ -158,7 +160,7 @@
     <h3>Pause</h3>
     <p>Die Pause kann von Hand oder automatisch ausgelöst werden (Einstellung „Pause“). Bei „Automatic“ hält die Aufnahme an, wenn die Geschwindigkeit längere Zeit unter dem Pausenwert liegt, und läuft weiter, sobald die Fahrt-ab-Geschwindigkeit überschritten wird. Auf der Hauptseite zeigt „AUTO“ eine automatische Pause an, bei manueller Pause das Pausezeichen.</p>
     <h3>Marker</h3>
-    <p>BACK setzt während der Aufnahme einen Marker. Die Uhr vibriert dreimal kurz. Zwei Marker müssen mindestens zwei Sekunden auseinander liegen. In der Pause setzt BACK keinen Marker. Mehr dazu in Abschnitt 9.</p>
+    <p>Ist Marker eingeschaltet, setzt BACK während der Aufnahme einen Marker. Die Uhr bestätigt mit zwei kurzen Vibrationen. Zwei Marker müssen mindestens zwei Sekunden auseinander liegen. In der Pause setzt BACK keinen Marker. Mehr dazu in Abschnitt 9.</p>
     <h3>Symbole in der Kopfzeile</h3>
     <p>Auf jeder Seite der Aufnahme zeigt die Kopfzeile links den GPS-Empfang, rechts den Akku und in der Mitte den Zustand der Aufnahme:</p>
     <table>
@@ -172,7 +174,7 @@
       </tr>
       <tr>
         <td>Roter Punkt mit blauem Ring und einer Zahl daneben</td>
-        <td>Die Aufnahme läuft, und diese Zahl an Sprung- oder Turn-Datenpaketen wartet noch darauf, in die Aktivität geschrieben zu werden. Das gibt es nur mit Loop „Ein Visu“ oder „Lernen“ und Wellenritt „Visu“. Je größer die Zahl, desto beschäftigter ist die Uhr. Die Zahl sinkt von selbst.</td>
+        <td>Die Aufnahme läuft, und diese Zahl an Sprung- oder Turn-Datenpaketen wartet noch darauf, in die Aktivität geschrieben zu werden. Dafür muss Loop „Ein Visu“ oder „Lernen“ oder Wellenritt „Visu“ gewählt sein. Die Zahl sinkt, wenn die Daten geschrieben werden.</td>
       </tr>
       <tr>
         <td>Gelbe Zahl mit „s“</td>
@@ -439,11 +441,11 @@
       </tr>
       <tr>
         <td>G Landung</td>
-        <td>Empfindlichkeit der Landungserkennung nach einem Sprung. „Auto“ stellt sie selbst ein, sonst 2 bis 40 g. Nur sichtbar, wenn Loop nicht auf „Aus“ steht.</td>
+        <td>Empfindlichkeit der Landungserkennung nach einem Sprung. „Auto“ stellt sie selbst ein, sonst 2 bis 10 g. Nur sichtbar, wenn Loop nicht auf „Aus“ steht.</td>
       </tr>
       <tr>
         <td>Wellenritt</td>
-        <td>Standard, Optimiert oder Visu, siehe Abschnitt 9. „Optimiert“ und „Visu“ erhöhen den Akkuverbrauch.</td>
+        <td>Standard, Optimiert oder Visu, siehe Abschnitt 9.</td>
       </tr>
       <tr>
         <td>Wingen</td>
@@ -492,7 +494,7 @@
       <li>
         <b>In Garmin Connect:</b> Die Felder erscheinen bei Aktivitäten, die von der aus dem Connect IQ Store installierten App aufgezeichnet wurden, in den Details der Aktivität. Wo genau Garmin sie anzeigt, bestimmt Garmin, und es kann sich mit Updates der Connect-App ändern.</li>
       <li>
-        <b>In der Session-Ansicht:</b> Die Seite „Session ansehen“ auf der Startseite liest die Felder aus der FIT-Datei und zeigt sie in der Tabelle „Werte aus der Uhr“.</li>
+        <b>In der Web-App:</b> Die FIT-Datei ist Grundlage für die eigene Auswertung. Einige Uhrwerte erscheinen zusätzlich unter „Kontrolle Uhr ↔ Web“; nicht jedes Connect-Feld wird dort einzeln angezeigt.</li>
       <li>
         <b>Auswahl:</b> Garmin erlaubt höchstens 16 Felder pro Aktivität. Welche davon angelegt werden, bestimmen Sie in den Einstellungen unter <b>System → Connect-Felder</b>.</li>
     </ul>
@@ -574,9 +576,9 @@
         <td>Beide optionalen FIT-Felder sind deaktiviert.</td>
       </tr>
     </table>
-    <p>Für die Auswertung am Computer genügt es meist, in den Modi nur so viel einzuschalten, wie Sie brauchen: „Ein Connect“ und „Standard“ lassen die meisten Plätze frei.</p>
+    <p>„Ein Connect“ und „Standard“ lassen die meisten Plätze für Garmin Connect frei. Für die ausführliche Web-Auswertung empfiehlt sich dagegen die Visu-Stellung; siehe Abschnitt 9.</p>
     <h3>Optionen: feste Reihenfolge und Platzpriorität</h3>
-    <p>Diese sechs Optionen stehen immer am Anfang der Auswahl. Die Uhr zeigt sie als „Option 1/6“ bis „Option 6/6“ an. Die FIT-Namen sind die Bezeichnungen, die in der FIT-Datei und in der Session-Ansicht erscheinen.</p>
+    <p>Diese sechs Optionen stehen immer am Anfang der Auswahl. Die FIT-Namen sind die Bezeichnungen in der FIT-Datei. Die Reihenfolge bestimmt, welche eingeschalteten Felder bei Platzmangel zuerst angelegt werden.</p>
     <table>
       <tr>
         <th>Option</th>
@@ -622,10 +624,10 @@
       </tr>
     </table>
     <h3>Weitere Werte</h3>
-    <p>Diese 25 Felder folgen in der hier gezeigten Reihenfolge. Die Uhr zeigt sie als „Nice 1/25“ bis „Nice 25/25“ an. Auch hier gilt: weiter oben bedeutet höhere Priorität, falls nicht alle eingeschalteten Felder Platz haben.</p>
+    <p>Diese 25 Connect-IQ-Felder folgen in der hier gezeigten Reihenfolge. Die Position bezeichnet ihre Reihenfolge in dieser Tabelle: weiter oben bedeutet höhere Priorität, falls nicht alle eingeschalteten Felder Platz haben.</p>
     <table>
       <tr>
-        <th>Nice</th>
+        <th>Pos.</th>
         <th>Bezeichnung auf der Uhr</th>
         <th>FIT-Feld</th>
         <th>Einheit</th>
@@ -662,13 +664,13 @@
       </tr>
       <tr>
         <td>6</td>
-        <td>Slide [m]*</td>
+        <td>Slide [m]</td>
         <td>Slide [m]</td>
         <td>m</td>
       </tr>
       <tr>
         <td>7</td>
-        <td>Slide [s]*</td>
+        <td>Slide [s]</td>
         <td>Slide [s]</td>
         <td>s</td>
       </tr>
@@ -781,69 +783,83 @@
         <td>km</td>
       </tr>
     </table>
-    <p><b>Sternchen (*) in den Einstellungen:</b> Marker*, Akku-Diagramm*, Slide [m]* und Slide [s]* sind FIT-Werte, die die Web-Auswertung nicht aus den übrigen Trackdaten herleiten kann. Die Felder Slide [m]*, Slide [s]* und Loops sind standardmäßig eingeschaltet. Wenn die mit Stern markierten Werte in der Web-Auswertung erscheinen sollen, müssen die entsprechenden Felder von der Uhr in die FIT-Datei geschrieben werden. Loops ist nicht mit einem Stern markiert; bei Loop „Aus“ schreibt die Uhr keinen Loop-Wert. Spezielle Felder für Wellenritte, Slides und Loops gibt es nur beim Windsurfen.</p>
+    <p><b>Sternchen (*) in den Einstellungen:</b> Marker* und Akku-Diagramm* sind Informationen, die die Web-App nicht aus der übrigen Fahrspur erzeugen kann. Dafür müssen die jeweiligen Schalter bei Beginn der Aufnahme eingeschaltet sein. Ein nachträglich in der Web-App gesetzter Marker ist davon unabhängig. Die Web-App kann Slides aus GPS-Kurs und aufgezeichneter Ausrichtung selbst berechnen; Slide [m] und Slide [s] brauchen deshalb keinen Stern. Fehlt eine geeignete Ausrichtung oder wird kein auswertbarer Turn erkannt, ist eine Berechnung nicht immer möglich. Die selbst berechneten Werte müssen nicht mit den Summen der Uhr übereinstimmen.</p>
+    <p>Die Felder Slide [m], Slide [s] und Loops sind standardmäßig ausgewählt. Sollen diese <b>originalen Uhrwerte</b> in Garmin Connect stehen, müssen die Felder ausgewählt sein und Platz haben. Die Web-App berechnet Slides selbst und zeigt nicht alle originalen Connect-Felder einzeln an. Die automatische Loop-Auswertung im Web benötigt Sprungdaten aus Loop „Visu+“ oder „Lernen“; ohne diese sind aus der GPS-Spur allein keine gleichwertigen Loop-Details verfügbar. Bei Loop „Aus“ schreibt die Uhr keinen Loop-Zähler. Spezielle Wellen-, Slide- und Loop-Felder gelten nur beim Windsurfen.</p>
+    <h3>Wo erscheinen welche Daten?</h3>
+    <table>
+      <tr><th>Anzeige</th><th>Uhr</th><th>Garmin Connect</th><th>Web-App</th></tr>
+      <tr><td>Live-Seiten und letzte Session</td><td>Während bzw. nach der Aufnahme direkt auf der Uhr.</td><td>Die Uhransichten selbst werden nicht übertragen.</td><td>Die Uhransichten selbst werden nicht übertragen.</td></tr>
+      <tr><td>Connect-IQ-Felder, z. B. Halsen oder Slide-Summe</td><td>Auswahl unter System → Connect-Felder.</td><td>Nur ausgewählte, tatsächlich angelegte Felder; die Darstellung bestimmt Garmin.</td><td>Einige Uhrwerte im Vergleich „Kontrolle Uhr ↔ Web“; viele Kennzahlen werden selbst berechnet. Nicht alle originalen Connect-Felder werden einzeln angezeigt.</td></tr>
+      <tr><td>Wellenritt und Slide</td><td>Ritte und ihre Auswertung auf der Uhr.</td><td>Ausgewählte Zusammenfassungen und Diagramme, soweit Platz vorhanden ist.</td><td>Rittkarte mit Bottom Turn, Cutback und Slide aus der Spur; für detaillierte Turn-Sensordaten Wellenritt „Visu+“ einschalten.</td></tr>
+      <tr><td>Loop und Sprung</td><td>Loop-Zahl und letzte Sprünge bei eingeschalteter Erkennung.</td><td>Loop-Zahl nur, wenn das Feld ausgewählt ist und Platz hat.</td><td>Sprunganalyse, Lage im Raum und Flugbahn nur mit aufgezeichneten Sprungdaten, z. B. Loop „Visu+“ oder „Lernen“; nur soweit die Messdaten eine Darstellung erlauben.</td></tr>
+      <tr><td>Marker und Akkuverlauf</td><td>Marker setzen bzw. aktuellen Akkustand sehen.</td><td>Nur soweit das jeweilige Feld eingeschaltet und von Garmin dargestellt wird.</td><td>Aufgezeichnete Uhr-Marker bzw. Akkuverlauf nur bei eingeschaltetem Schalter; Marker können zusätzlich im Web gesetzt werden.</td></tr>
+    </table>
     <h2 id="a9">9 Wellenritte, Loops und Marker</h2>
     <h3>Wellenritte (Windsurfen)</h3>
-    <p>Beim Windsurfen erkennt die App Wellenritte automatisch aus Kurs und Geschwindigkeit. Sie müssen nichts auslösen. Die Seite „Wellen“ zeigt den letzten Ritt mit Bottom Turn und Cutback, die Auswertung nach der Session listet alle Ritte und hebt den besten hervor. Der Schalter „Wellenritt“ unter Einstellungen → Modus hat drei Stellungen:</p>
+    <p>Beim Windsurfen erkennt die App Wellenritte automatisch aus Kurs und Geschwindigkeit. Sie müssen nichts auslösen. Die Seite „Wellen“ zeigt den letzten Ritt mit Bottom Turn und Cutback, die Auswertung nach der Session listet Ritte und hebt den besten hervor. Der Schalter „Wellenritt“ unter Einstellungen → Modus hat drei Stellungen; in der Connect-IQ-App heißen sie „Standard“, „Optimiert“ und „Visu+“:</p>
     <table>
       <tr>
         <th>Stellung</th>
         <th>Wirkung</th>
-        <th>Akku und Speicher</th>
+        <th>Zusätzliche Connect-Felder</th>
       </tr>
       <tr>
         <td>Standard</td>
         <td>Wellenritte werden gezählt, die Ausrichtung der Uhr wird einmal je Sekunde aufgenommen.</td>
-        <td>Am sparsamsten.</td>
+        <td>0</td>
       </tr>
       <tr>
         <td>Optimiert</td>
         <td>Die Lage der Uhr wird laufend aus Kreisel, Beschleunigung und Kompass berechnet. Die Ausrichtung ist genauer, die Turns werden sauberer erfasst.</td>
-        <td>Mehr Akkuverbrauch als Standard.</td>
+        <td>0</td>
       </tr>
       <tr>
         <td>Visu</td>
         <td>Wie „Optimiert“, zusätzlich speichert die App ausführliche Daten der Turns für die Auswertung am Computer. Gezählt werden alle Turns, ausführliche Daten gibt es für einen Teil davon.</td>
-        <td>Höchster Akkuverbrauch, belegt zusätzliche Connect-Felder.</td>
+        <td>6, gemeinsam mit Loop „Visu+“</td>
       </tr>
     </table>
-    <p><b>Slide-Werte:</b> Slide [s]* summiert die Slide-Zeit aller erkannten Turns; Slide [m]* summiert die messbaren Slide-Strecken. Gibt es für einen Turn keine gültigen Messwerte, entspricht seine Slide-Zeit der Turn-Dauer und seine Strecke bleibt unbekannt statt 0 m. Sind insgesamt keine Strecken messbar, wird kein Streckenwert geschrieben.</p>
+    <p><b>Slide-Werte der Uhr:</b> Slide [s] summiert die Slide-Zeit aller erkannten Turns; Slide [m] summiert die messbaren Slide-Strecken. Gibt es für einen Turn keine gültigen Messwerte, entspricht seine Slide-Zeit der Turn-Dauer und seine Strecke bleibt unbekannt statt 0 m. Sind insgesamt keine Strecken messbar, wird kein Streckenwert geschrieben. Die Web-App kann Slides unabhängig davon auswerten, sofern die nötigen Spur- und Ausrichtungsdaten vorhanden sind.</p>
     <h3>Loops (Windsurfen)</h3>
-    <p>Die App erkennt Loops automatisch und zählt sie. Die Anzahl steht auf der Loop-Seite, die letzten Sprünge öffnen Sie unter „Letzte Sprünge“. Das Connect-Feld „Loops“ ist optional und wird nur geschrieben, wenn es ausgewählt und die Loop-Erkennung eingeschaltet ist. Bei Loop „Aus“ wird kein Loop-Wert in die FIT-Datei geschrieben. Der Schalter „Loop“ unter Einstellungen → Modus hat vier Stellungen:</p>
+    <p>Die App erkennt Loops automatisch und zählt sie. Die Anzahl steht auf der Loop-Seite, die letzten Sprünge öffnen Sie unter „Letzte Sprünge“. Das Connect-Feld „Loops“ ist optional und wird nur geschrieben, wenn es ausgewählt, genügend Platz vorhanden und die Loop-Erkennung eingeschaltet ist. Bei Loop „Aus“ wird kein Loop-Wert in die FIT-Datei geschrieben. Der Schalter „Loop“ unter Einstellungen → Modus hat vier Stellungen; in der Connect-IQ-App heißen sie „Aus“, „Connect“, „Visu+“ und „Lernen“:</p>
     <table>
       <tr>
         <th>Stellung</th>
         <th>Wirkung</th>
-        <th>Akku und Speicher</th>
+        <th>Zusätzliche Connect-Felder</th>
       </tr>
       <tr>
         <td>Aus</td>
         <td>Loops werden nicht erkannt.</td>
-        <td>–</td>
+        <td>0</td>
       </tr>
       <tr>
         <td>Ein Connect</td>
-        <td>Loops werden gezählt und stehen in der Sprungliste der Uhr. Es werden keine zusätzlichen Daten gespeichert.</td>
-        <td>Am sparsamsten.</td>
+        <td>Loops werden gezählt und stehen in der Sprungliste der Uhr. Diese Stellung allein speichert keine zusätzlichen Loop-Sprungdaten für die Web-Ansicht.</td>
+        <td>0</td>
       </tr>
       <tr>
         <td>Ein Visu</td>
         <td>Wie „Ein Connect“, zusätzlich speichert die App die Sprungdaten für die Auswertung am Computer: Lage im Raum und Drehung während des Loops.</td>
-        <td>Mehr Akkuverbrauch, belegt zusätzliche Connect-Felder.</td>
+        <td>6, gemeinsam mit Wellenritt „Visu+“</td>
       </tr>
       <tr>
         <td>Lernen</td>
         <td>Wie „Ein Visu“, zusätzlich werden viele Messwerte jede Sekunde aufgezeichnet, auch außerhalb von Sprüngen. Gedacht zum Testen und Auswerten, nicht für den normalen Einsatz.</td>
-        <td>Höchster Akkuverbrauch, die meisten Connect-Felder, größte Aktivitätsdatei, längere Zeit zum Speichern.</td>
+        <td>11; größere Aktivitätsdatei und längere Zeit zum Speichern möglich.</td>
       </tr>
     </table>
+    <h3>Empfehlung für möglichst umfassende Auswertungen</h3>
+    <p>Beim Windsurfen vor Beginn der Aufnahme <b>Loop „Ein Visu“</b> und <b>Wellenritt „Visu“</b> einstellen. In der Connect-IQ-App heißen diese Stellungen jeweils <b>„Visu+“</b>. So können Sprünge und ein Teil der Turns mit zusätzlichen Sensordaten in der Web-App untersucht werden. Marker und Akku-Diagramm bei Bedarf einschalten. „Lernen“ ist für zusätzliche Messdaten und Tests gedacht, nicht Voraussetzung für die Visu-Ansichten.</p>
+    <p>Auch bei viel freiem Speicher bleibt Garmins Grenze von 16 Connect-IQ-Feldern bestehen. Mit beiden Visu-Stellungen sowie Marker und Akku-Diagramm bleiben sechs Plätze für auswählbare Felder. Für die gewünschten Garmin-Connect-Werte weiter oben stehende, nicht benötigte Felder ausschalten und „gewählt/Platz“ beachten. Nicht jeder Turn oder Sprung liefert automatisch vollständige Details; das hängt von Erkennung, Messdaten und verfügbarem Speicher ab.</p>
+    <p>Für Wingen schaltet „Wingen-Lernphase“ in der Connect-IQ-App bzw. „Wingen“ auf der Uhr zusätzliche Armneigungs- und Armunruhe-Daten ein. Dafür werden zwei Connect-Felder belegt. Bei „Aus“ fehlen diese zusätzlichen Sensordaten; die Web-App kann Downwinds aus der Fahrspur schätzen.</p>
     <p>Während einer Aufnahme lässt sich der Schalter nur in der Pause über die Einstellungen umstellen, und nur, wenn die Aufnahme in einer Visu-Stellung (Loop „Ein Visu“ oder Wellenritt „Visu“) gestartet wurde. Von und nach „Lernen“ ist das Umstellen nicht möglich, weil die Felder der Aktivität beim Start feststehen.</p>
     <p>Die Liste der letzten Sprünge öffnen Sie im Hauptmenü unter „Letzte Sprünge“, im Aktionsmenü unter „Sprünge“ oder mit HOCH lang auf der Loop-Seite.</p>
     <h3>Marker</h3>
-    <p>Mit BACK setzen Sie während der Aufnahme einen Marker, zum Beispiel nach einem besonderen Sprung, einer Welle oder einem Spot-Wechsel. Die Uhr bestätigt mit einer kurzen Vibration. Zwei Marker müssen mindestens zwei Sekunden auseinander liegen. Die Marker werden mit der Aktivität gespeichert, sodass Sie die Stelle bei der Auswertung wiederfinden. Auf der Hauptseite erscheint der Marker kurz mit seiner Nummer. Wer keine Marker braucht, schaltet Marker* unter System aus: Dann tut BACK während der Aufnahme nichts, und ein Connect-Feld mehr steht für andere Werte zur Verfügung. Die Einstellung gilt ab der nächsten Aufnahme.</p>
+    <p>Mit BACK setzen Sie während der Aufnahme einen Marker, zum Beispiel nach einem besonderen Sprung, einer Welle oder einem Spot-Wechsel. Die Uhr bestätigt mit zwei kurzen Vibrationen. Zwei Marker müssen mindestens zwei Sekunden auseinander liegen. Die Marker werden mit der Aktivität gespeichert, sodass Sie die Stelle bei der Auswertung wiederfinden. Auf der Hauptseite erscheint der Marker kurz mit seiner Nummer. Wer keine Marker braucht, schaltet Marker* unter System aus: Dann tut BACK während der Aufnahme nichts, und ein Connect-Feld mehr steht für andere Werte zur Verfügung. Die Einstellung gilt ab der nächsten Aufnahme.</p>
     <h2 id="a10">10 Auswertung nach der Session</h2>
     <p>Nach dem Speichern zeigt die Uhr die Auswertung. HOCH und RUNTER blättern durch die Seiten, BACK schließt sie. Die letzte Auswertung ist jederzeit über „Letzte Session“ auf der Startseite erreichbar. Die Seiten zeigen: Zeiten und Pausen, Tempo, beste Werte, Tempo getrennt nach Gleiten, Dümpeln und Treiben, Manöver, beim Windsurfen die Slide-Summe und Wellenritte, den besten Ritt mit den besten Turns sowie die besten Distanzen. Die Loop- und Turn-Details bleiben in „Letzte Session“ verfügbar.</p>
-    <p>Die Aufnahme liegt als FIT-Datei in Garmin Connect und lässt sich dort wie jede andere Aktivität ansehen.</p>
+    <p>Die Aufnahme liegt als FIT-Datei in Garmin Connect und lässt sich dort wie jede andere Aktivität ansehen. Für die Web-Auswertung laden Sie die FIT-Datei in die SurfsApp-Web-App; dort finden Sie unter anderem die Rittkarten und, wenn vorhanden, die ausführlichen Sprung- und Turn-Daten.</p>
     <h2 id="a11">11 Datenfelder für eigene Seiten</h2>
     <p>Jede Zelle einer eigenen Seite kann eines dieser Datenfelder anzeigen:</p>
     <ul class="cols">
@@ -918,5 +934,13 @@
     <p>Zeichnen Sie wie gewohnt auf. Danach schließen Sie die Uhr wieder an den Computer an und öffnen die Textdatei im Ordner <b>LOGS</b>. Dort stehen die Zeilen der letzten Aufnahme. Die Datei wächst mit jeder Aufnahme. Löschen Sie den Inhalt, wenn Sie ein frisches Protokoll wollen.</p>
     <p>Stürzt die App ab, schreibt die Uhr außerdem automatisch die Datei <b>CIQ_LOG.YML</b> in denselben Ordner <b>LOGS</b>. Sie enthält die Fehlermeldung.</p>
     <p>Schalten Sie das Debug-Protokoll nach der Fehlersuche wieder aus. Es belegt Speicher und verbraucht etwas Akku.</p>
+    <script>
+      fetch("https://garmin-abruf.andigreen.workers.dev/api/manual/view", {
+        method:"POST",
+        headers:{"content-type":"application/json"},
+        body:JSON.stringify({page:"anleitung",build:"0.24.13"}),
+        keepalive:true
+      }).catch(()=>{});
+    </script>
   </body>
 </html>
