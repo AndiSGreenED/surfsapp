@@ -11,7 +11,7 @@
   <body>
     <h1>SurfsApp</h1>
     <p class="sub">Bedienungsanleitung · Garmin Connect IQ · Windsurfen und Wingen</p>
-    <p class="sub">Anleitungsrevision V4 · SurfsApp 0.24.13 · Stand: 20.11.2026</p>
+    <p class="sub">Anleitungsrevision V5 · SurfsApp 0.25.1 · Stand: 21.11.2026</p>
     <nav>
       <ol>
         <li>
@@ -174,7 +174,7 @@
       </tr>
       <tr>
         <td>Roter Punkt mit blauem Ring und einer Zahl daneben</td>
-        <td>Die Aufnahme läuft, und diese Zahl an Sprung- oder Turn-Datenpaketen wartet noch darauf, in die Aktivität geschrieben zu werden. Dafür muss Loop „Ein Visu“ oder „Lernen“ oder Wellenritt „Visu“ gewählt sein. Die Zahl sinkt, wenn die Daten geschrieben werden.</td>
+        <td>Die Aufnahme läuft, und diese Zahl an Sprung-Datenpaketen wartet noch darauf, in die Aktivität geschrieben zu werden. Dafür muss die Aufnahme mit Loop „Ein Visu“ gestartet sein. Die Zahl sinkt, wenn die Daten geschrieben werden.</td>
       </tr>
       <tr>
         <td>Gelbe Zahl mit „s“</td>
@@ -445,7 +445,7 @@
       </tr>
       <tr>
         <td>Wellenritt</td>
-        <td>Standard, Optimiert oder Visu, siehe Abschnitt 9.</td>
+        <td>Standard oder SlideVisu, siehe Abschnitt 9.</td>
       </tr>
       <tr>
         <td>Wingen</td>
@@ -500,7 +500,7 @@
     </ul>
     <h3>Auswahl der Felder</h3>
     <p>Die App berechnet ihre Kennzahlen unabhängig von der Connect-Feldauswahl. Unter <b>System → Connect-Felder</b> legen Sie fest, welche Werte zusätzlich als eigene Felder in der Aktivität erscheinen; abgewählte Werte werden nicht in die FIT-Datei geschrieben. Die sechs Optionen stehen in der folgenden festen Reihenfolge vor den weiteren Werten. Diese Reihenfolge ist zugleich die Platzpriorität: Bei Platzmangel entfallen die zuletzt aufgeführten Felder zuerst. Garmin begrenzt eine Aktivität auf höchstens 16 Felder und die Inhalte der Textfelder zusammen auf höchstens 32 Zeichen.</p>
-    <p>Ausrichtung und Aufnahme-Info werden immer angelegt. Marker* und Akku-Diagramm* sind standardmäßig eingeschaltet, lassen sich aber unter <b>System</b> einzeln ausschalten; jedes ausgeschaltete Feld gibt einen Platz frei. Die Auswahl der übrigen Felder lässt sich in den Uhreinstellungen und in der Garmin-Connect-IQ-App ändern.</p>
+    <p>Ausrichtung (bei Wellenritt „SlideVisu“ stattdessen „Drehung“) und Aufnahme-Info werden immer angelegt. Marker* und Akku-Diagramm* sind standardmäßig eingeschaltet, lassen sich aber unter <b>System</b> einzeln ausschalten; jedes ausgeschaltete Feld gibt einen Platz frei. Die Auswahl der übrigen Felder lässt sich in den Uhreinstellungen und in der Garmin-Connect-IQ-App ändern.</p>
     <h3>Wie viele Felder passen? Die Anzeige „gewählt/Platz“</h3>
     <p>Garmin erlaubt höchstens 16 Felder pro Aktivität. Einige davon belegt die App immer selbst, weitere belegen die Stellungen von Loop und Wellenritt. Was übrig bleibt, steht für Ihre Auswahl zur Verfügung. Das zeigt die Uhr als zwei Zahlen, etwa <b>18/12</b>:</p>
     <ul>
@@ -510,23 +510,23 @@
         <b>Zweite Zahl:</b> so viele Plätze bleiben nach den immer angelegten und den modusabhängigen Feldern frei.</li>
     </ul>
     <p>18/12 heißt also: 18 auswählbare Felder sind eingeschaltet, aber es stehen nur 12 Plätze dafür zur Verfügung. Die übrigen vier Plätze belegen die stets angelegten Felder und die gewählten Modi. Die App legt die eingeschalteten Felder in der oben gezeigten Reihenfolge an. Die Berechnungen selbst bleiben unberührt; bei Platzmangel fehlt lediglich das entsprechende Feld in der Aktivität. Die Anzeige steht im Menü <b>Modus</b> (und im Untermenü <b>Loop</b>) unter „Felder“ sowie in <b>System → Connect-Felder</b>. Die Platzanzeige berücksichtigt die zusätzliche Grenze von 32 Zeichen für Textfelder nicht.</p>
-    <p>Immer belegt sind Ausrichtung und Aufnahme-Info. Dazu kommen Marker und Akku-Diagramm, sofern sie eingeschaltet sind, sowie je nach Modus weitere Felder:</p>
+    <p>Immer belegt sind Ausrichtung (bei Wellenritt „SlideVisu“ stattdessen „Drehung“) und Aufnahme-Info. Dazu kommen Marker und Akku-Diagramm, sofern sie eingeschaltet sind, sowie je nach Modus weitere Felder:</p>
     <table>
       <tr>
         <th>Stellung</th>
         <th>Belegt</th>
       </tr>
       <tr>
-        <td>Loop Aus oder Ein Connect, Wellenritt Standard oder Optimiert</td>
+        <td>Loop Aus oder Ein Connect, Wellenritt Standard</td>
         <td>keine zusätzlichen Felder</td>
       </tr>
       <tr>
-        <td>Loop Ein Visu oder Wellenritt Visu (auch beide zusammen)</td>
-        <td>6 Felder (beide teilen sich dieselben)</td>
+        <td>Wellenritt SlideVisu</td>
+        <td>keine zusätzlichen Felder: „Drehung“ ersetzt „Ausrichtung“</td>
       </tr>
       <tr>
-        <td>Loop Lernen</td>
-        <td>11 Felder</td>
+        <td>Loop Ein Visu</td>
+        <td>4 Felder (Kreisel Netto und drei Sprungfelder)</td>
       </tr>
       <tr>
         <td>Wingen-Auswertung an</td>
@@ -551,32 +551,27 @@
         <td>Alles passt, 4 Plätze bleiben frei.</td>
       </tr>
       <tr>
-        <td>Loop Ein Visu, 10 Felder gewählt</td>
-        <td>10/6</td>
-        <td>16 minus 4 minus 6 = 6 Plätze. 4 gewählte Felder entfallen.</td>
+        <td>Loop Ein Visu, Wellenritt SlideVisu, 10 Felder gewählt</td>
+        <td>10/8</td>
+        <td>16 minus 4 minus 4 = 8 Plätze. 2 gewählte Felder entfallen.</td>
       </tr>
       <tr>
-        <td>Loop Lernen, 10 Felder gewählt</td>
-        <td>10/1</td>
-        <td>16 minus 4 minus 11 = 1 Platz. Nur das erste gewählte Feld wird geschrieben.</td>
-      </tr>
-      <tr>
-        <td>Wie 10/6, aber Marker aus</td>
-        <td>10/7</td>
+        <td>Wie 10/8, aber Marker aus</td>
+        <td>10/9</td>
         <td>Ohne Marker ist ein Platz mehr frei.</td>
       </tr>
       <tr>
-        <td>Wie 10/6, aber Akku-Diagramm aus</td>
-        <td>10/7</td>
+        <td>Wie 10/8, aber Akku-Diagramm aus</td>
+        <td>10/9</td>
         <td>Ohne Akku-Diagramm ist ein Platz mehr frei.</td>
       </tr>
       <tr>
-        <td>Wie 10/6, Marker und Akku-Diagramm aus</td>
-        <td>10/8</td>
+        <td>Wie 10/8, Marker und Akku-Diagramm aus</td>
+        <td>10/10</td>
         <td>Beide optionalen FIT-Felder sind deaktiviert.</td>
       </tr>
     </table>
-    <p>„Ein Connect“ und „Standard“ lassen die meisten Plätze für Garmin Connect frei. Für die ausführliche Web-Auswertung empfiehlt sich dagegen die Visu-Stellung; siehe Abschnitt 9.</p>
+    <p>„Ein Connect“ und „Standard“ lassen die meisten Plätze für Garmin Connect frei. Für die ausführliche Web-Auswertung empfehlen sich dagegen Loop „Ein Visu“ und Wellenritt „SlideVisu“; siehe Abschnitt 9.</p>
     <h3>Optionen: feste Reihenfolge und Platzpriorität</h3>
     <p>Diese sechs Optionen stehen immer am Anfang der Auswahl. Die FIT-Namen sind die Bezeichnungen in der FIT-Datei. Die Reihenfolge bestimmt, welche eingeschalteten Felder bei Platzmangel zuerst angelegt werden.</p>
     <table>
@@ -783,20 +778,20 @@
         <td>km</td>
       </tr>
     </table>
-    <p><b>Sternchen (*) in den Einstellungen:</b> Marker* und Akku-Diagramm* sind Informationen, die die Web-App nicht aus der übrigen Fahrspur erzeugen kann. Dafür müssen die jeweiligen Schalter bei Beginn der Aufnahme eingeschaltet sein. Ein nachträglich in der Web-App gesetzter Marker ist davon unabhängig. Die Web-App kann Slides aus GPS-Kurs und aufgezeichneter Ausrichtung selbst berechnen; Slide [m] und Slide [s] brauchen deshalb keinen Stern. Fehlt eine geeignete Ausrichtung oder wird kein auswertbarer Turn erkannt, ist eine Berechnung nicht immer möglich. Die selbst berechneten Werte müssen nicht mit den Summen der Uhr übereinstimmen.</p>
-    <p>Die Felder Slide [m], Slide [s] und Loops sind standardmäßig ausgewählt. Sollen diese <b>originalen Uhrwerte</b> in Garmin Connect stehen, müssen die Felder ausgewählt sein und Platz haben. Die Web-App berechnet Slides selbst und zeigt nicht alle originalen Connect-Felder einzeln an. Die automatische Loop-Auswertung im Web benötigt Sprungdaten aus Loop „Visu+“ oder „Lernen“; ohne diese sind aus der GPS-Spur allein keine gleichwertigen Loop-Details verfügbar. Bei Loop „Aus“ schreibt die Uhr keinen Loop-Zähler. Spezielle Wellen-, Slide- und Loop-Felder gelten nur beim Windsurfen.</p>
+    <p><b>Sternchen (*) in den Einstellungen:</b> Marker* und Akku-Diagramm* sind Informationen, die die Web-App nicht aus der übrigen Fahrspur erzeugen kann. Dafür müssen die jeweiligen Schalter bei Beginn der Aufnahme eingeschaltet sein. Ein nachträglich in der Web-App gesetzter Marker ist davon unabhängig. Slide [m] und Slide [s] brauchen keinen Stern: Mit Wellenritt „SlideVisu“ rechnet die Web-App die Slides aus dem Feld „Drehung“ mit derselben Regel wie die Uhr selbst nach.</p>
+    <p>Die Felder Slide [m], Slide [s] und Loops sind standardmäßig ausgewählt. Slide [m] und Slide [s] werden nur mit Wellenritt „SlideVisu“ angelegt; in „Standard“ gibt es keine Slides. Sollen die <b>originalen Uhrwerte</b> in Garmin Connect stehen, müssen die Felder ausgewählt sein und Platz haben. Die Web-App zeigt nicht alle originalen Connect-Felder einzeln an. Die automatische Loop-Auswertung im Web benötigt Sprungdaten aus Loop „Visu+“; ohne diese sind aus der GPS-Spur allein keine gleichwertigen Loop-Details verfügbar. Bei Loop „Aus“ schreibt die Uhr keinen Loop-Zähler. Spezielle Wellen-, Slide- und Loop-Felder gelten nur beim Windsurfen.</p>
     <h3>Wo erscheinen welche Daten?</h3>
     <table>
       <tr><th>Anzeige</th><th>Uhr</th><th>Garmin Connect</th><th>Web-App</th></tr>
       <tr><td>Live-Seiten und letzte Session</td><td>Während bzw. nach der Aufnahme direkt auf der Uhr.</td><td>Die Uhransichten selbst werden nicht übertragen.</td><td>Die Uhransichten selbst werden nicht übertragen.</td></tr>
       <tr><td>Connect-IQ-Felder, z. B. Halsen oder Slide-Summe</td><td>Auswahl unter System → Connect-Felder.</td><td>Nur ausgewählte, tatsächlich angelegte Felder; die Darstellung bestimmt Garmin.</td><td>Einige Uhrwerte im Vergleich „Kontrolle Uhr ↔ Web“; viele Kennzahlen werden selbst berechnet. Nicht alle originalen Connect-Felder werden einzeln angezeigt.</td></tr>
-      <tr><td>Wellenritt und Slide</td><td>Ritte und ihre Auswertung auf der Uhr.</td><td>Ausgewählte Zusammenfassungen und Diagramme, soweit Platz vorhanden ist.</td><td>Rittkarte mit Bottom Turn, Cutback und Slide aus der Spur; für detaillierte Turn-Sensordaten Wellenritt „Visu+“ einschalten.</td></tr>
-      <tr><td>Loop und Sprung</td><td>Loop-Zahl und letzte Sprünge bei eingeschalteter Erkennung.</td><td>Loop-Zahl nur, wenn das Feld ausgewählt ist und Platz hat.</td><td>Sprunganalyse, Lage im Raum und Flugbahn nur mit aufgezeichneten Sprungdaten, z. B. Loop „Visu+“ oder „Lernen“; nur soweit die Messdaten eine Darstellung erlauben.</td></tr>
+      <tr><td>Wellenritt und Slide</td><td>Ritte und ihre Auswertung auf der Uhr.</td><td>Ausgewählte Zusammenfassungen und Diagramme, soweit Platz vorhanden ist.</td><td>Rittkarte mit Bottom Turn und Cutback aus der Spur; mit Wellenritt „SlideVisu“ zusätzlich Brett-Kurs, Bretter in der Karte und Slides.</td></tr>
+      <tr><td>Loop und Sprung</td><td>Loop-Zahl und letzte Sprünge bei eingeschalteter Erkennung.</td><td>Loop-Zahl nur, wenn das Feld ausgewählt ist und Platz hat.</td><td>Sprunganalyse, Lage im Raum und Flugbahn nur mit aufgezeichneten Sprungdaten aus Loop „Visu+“; nur soweit die Messdaten eine Darstellung erlauben.</td></tr>
       <tr><td>Marker und Akkuverlauf</td><td>Marker setzen bzw. aktuellen Akkustand sehen.</td><td>Nur soweit das jeweilige Feld eingeschaltet und von Garmin dargestellt wird.</td><td>Aufgezeichnete Uhr-Marker bzw. Akkuverlauf nur bei eingeschaltetem Schalter; Marker können zusätzlich im Web gesetzt werden.</td></tr>
     </table>
     <h2 id="a9">9 Wellenritte, Loops und Marker</h2>
     <h3>Wellenritte (Windsurfen)</h3>
-    <p>Beim Windsurfen erkennt die App Wellenritte automatisch aus Kurs und Geschwindigkeit. Sie müssen nichts auslösen. Die Seite „Wellen“ zeigt den letzten Ritt mit Bottom Turn und Cutback, die Auswertung nach der Session listet Ritte und hebt den besten hervor. Der Schalter „Wellenritt“ unter Einstellungen → Modus hat drei Stellungen; in der Connect-IQ-App heißen sie „Standard“, „Optimiert“ und „Visu+“:</p>
+    <p>Beim Windsurfen erkennt die App Wellenritte automatisch aus Kurs und Geschwindigkeit. Sie müssen nichts auslösen. Die Seite „Wellen“ zeigt den letzten Ritt mit Bottom Turn und Cutback, die Auswertung nach der Session listet Ritte und hebt den besten hervor. Der Schalter „Wellenritt“ unter Einstellungen → Modus hat zwei Stellungen; in der Connect-IQ-App heißen sie ebenso:</p>
     <table>
       <tr>
         <th>Stellung</th>
@@ -805,23 +800,19 @@
       </tr>
       <tr>
         <td>Standard</td>
-        <td>Wellenritte werden gezählt, die Ausrichtung der Uhr wird einmal je Sekunde aufgenommen.</td>
+        <td>Einfacher, sparsamer Zähler (Sensoren mit geringer Rate, ohne Kreisel). Die Uhr zeigt und schreibt Wellenritte, Turns, Bottom Turn und Cutback mit Drehung sowie Tempo vorher und nachher, den besten Ritt und die Wellen je Runde. Alles kommt aus GPS-Kurs und Tempo. Slides gibt es in dieser Stellung nicht.</td>
         <td>0</td>
       </tr>
       <tr>
-        <td>Optimiert</td>
-        <td>Die Lage der Uhr wird laufend aus Kreisel, Beschleunigung und Kompass berechnet. Die Ausrichtung ist genauer, die Turns werden sauberer erfasst.</td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>Visu</td>
-        <td>Wie „Optimiert“, zusätzlich speichert die App ausführliche Daten der Turns für die Auswertung am Computer. Gezählt werden alle Turns, ausführliche Daten gibt es für einen Teil davon.</td>
-        <td>6, gemeinsam mit Loop „Visu+“</td>
+        <td>SlideVisu</td>
+        <td>Wie „Standard“, zusätzlich misst die Uhr mit dem Kreisel laufend die Drehung um die Senkrechte und schreibt sie fünfmal je Sekunde in das Feld „Drehung“ (bei langsamer Fahrt steht dort die Kompassrichtung). Daraus berechnen Uhr und Web-App den Brett-Kurs und die Slides, für jeden Turn.</td>
+        <td>0 („Drehung“ ersetzt „Ausrichtung“)</td>
       </tr>
     </table>
-    <p><b>Slide-Werte der Uhr:</b> Slide [s] summiert die Slide-Zeit aller erkannten Turns; Slide [m] summiert die messbaren Slide-Strecken. Gibt es für einen Turn keine gültigen Messwerte, entspricht seine Slide-Zeit der Turn-Dauer und seine Strecke bleibt unbekannt statt 0 m. Sind insgesamt keine Strecken messbar, wird kein Streckenwert geschrieben. Die Web-App kann Slides unabhängig davon auswerten, sofern die nötigen Spur- und Ausrichtungsdaten vorhanden sind.</p>
+    <p><b>Turn:</b> ein Bottom Turn mit dem folgenden Cutback. Ein angefangenes Paar zählt nicht. Passt ein Turn nach der Auswertung nicht zu einem Wellenritt (zum Beispiel zu kleine Drehung im Cutback), fällt nur dieser Turn weg; der Ritt zählt mit den übrigen Turns.</p>
+    <p><b>Slide (nur SlideVisu):</b> Ein Slide beginnt im Cutback, sobald das Brett der Fahrtrichtung aus dem GPS um 65° oder mehr vorauseilt – ein kurzes, impulsives Umkanten – und endet, sobald es zurückdreht. Slide [s] und Slide [m] sind Dauer und Strecke aller Slides. Den Bezug zwischen Arm und Brett lernt die Uhr aus der geraden Fahrt vor dem Bottom Turn. Fehlt dieser Bezug, zählt die Uhr für diesen Turn keinen Slide; die Zahl der Ritte und Turns bleibt davon unberührt. Die Uhr misst den Arm, nicht das Brett: Greifen Sie im Ritt um, kann der Brett-Kurs in diesem Ritt abweichen.</p>
     <h3>Loops (Windsurfen)</h3>
-    <p>Die App erkennt Loops automatisch und zählt sie. Die Anzahl steht auf der Loop-Seite, die letzten Sprünge öffnen Sie unter „Letzte Sprünge“. Das Connect-Feld „Loops“ ist optional und wird nur geschrieben, wenn es ausgewählt, genügend Platz vorhanden und die Loop-Erkennung eingeschaltet ist. Bei Loop „Aus“ wird kein Loop-Wert in die FIT-Datei geschrieben. Der Schalter „Loop“ unter Einstellungen → Modus hat vier Stellungen; in der Connect-IQ-App heißen sie „Aus“, „Connect“, „Visu+“ und „Lernen“:</p>
+    <p>Die App erkennt Loops automatisch und zählt sie. Die Anzahl steht auf der Loop-Seite, die letzten Sprünge öffnen Sie unter „Letzte Sprünge“. Das Connect-Feld „Loops“ ist optional und wird nur geschrieben, wenn es ausgewählt, genügend Platz vorhanden und die Loop-Erkennung eingeschaltet ist. Bei Loop „Aus“ wird kein Loop-Wert in die FIT-Datei geschrieben. Der Schalter „Loop“ unter Einstellungen → Modus hat drei Stellungen; in der Connect-IQ-App heißen sie „Aus“, „Connect“ und „Visu+“:</p>
     <table>
       <tr>
         <th>Stellung</th>
@@ -841,25 +832,20 @@
       <tr>
         <td>Ein Visu</td>
         <td>Wie „Ein Connect“, zusätzlich speichert die App die Sprungdaten für die Auswertung am Computer: Lage im Raum und Drehung während des Loops.</td>
-        <td>6, gemeinsam mit Wellenritt „Visu+“</td>
-      </tr>
-      <tr>
-        <td>Lernen</td>
-        <td>Wie „Ein Visu“, zusätzlich werden viele Messwerte jede Sekunde aufgezeichnet, auch außerhalb von Sprüngen. Gedacht zum Testen und Auswerten, nicht für den normalen Einsatz.</td>
-        <td>11; größere Aktivitätsdatei und längere Zeit zum Speichern möglich.</td>
+        <td>4 (Kreisel Netto und drei Sprungfelder)</td>
       </tr>
     </table>
     <h3>Empfehlung für möglichst umfassende Auswertungen</h3>
-    <p>Beim Windsurfen vor Beginn der Aufnahme <b>Loop „Ein Visu“</b> und <b>Wellenritt „Visu“</b> einstellen. In der Connect-IQ-App heißen diese Stellungen jeweils <b>„Visu+“</b>. So können Sprünge und ein Teil der Turns mit zusätzlichen Sensordaten in der Web-App untersucht werden. Marker und Akku-Diagramm bei Bedarf einschalten. „Lernen“ ist für zusätzliche Messdaten und Tests gedacht, nicht Voraussetzung für die Visu-Ansichten.</p>
-    <p>Auch bei viel freiem Speicher bleibt Garmins Grenze von 16 Connect-IQ-Feldern bestehen. Mit beiden Visu-Stellungen sowie Marker und Akku-Diagramm bleiben sechs Plätze für auswählbare Felder. Für die gewünschten Garmin-Connect-Werte weiter oben stehende, nicht benötigte Felder ausschalten und „gewählt/Platz“ beachten. Nicht jeder Turn oder Sprung liefert automatisch vollständige Details; das hängt von Erkennung, Messdaten und verfügbarem Speicher ab.</p>
+    <p>Beim Windsurfen vor Beginn der Aufnahme <b>Loop „Ein Visu“</b> (in der Connect-IQ-App „Visu+“) und <b>Wellenritt „SlideVisu“</b> einstellen. So lassen sich Sprünge mit Lage im Raum und alle Turns mit Brett-Kurs und Slides in der Web-App untersuchen. Marker und Akku-Diagramm bei Bedarf einschalten. Ein Sprung braucht nach der Landung etwa eine Minute, bis seine Daten in der Aktivität stehen; speichern Sie deshalb nicht direkt nach dem letzten Loop.</p>
+    <p>Auch bei viel freiem Speicher bleibt Garmins Grenze von 16 Connect-IQ-Feldern bestehen. Mit Loop „Ein Visu“, Wellenritt „SlideVisu“, Marker und Akku-Diagramm bleiben acht Plätze für auswählbare Felder. Für die gewünschten Garmin-Connect-Werte weiter oben stehende, nicht benötigte Felder ausschalten und „gewählt/Platz“ beachten. Nicht jeder Turn oder Sprung liefert automatisch vollständige Details; das hängt von Erkennung, Messdaten und verfügbarem Speicher ab.</p>
     <p>Für Wingen schaltet „Wingen-Lernphase“ in der Connect-IQ-App bzw. „Wingen“ auf der Uhr zusätzliche Armneigungs- und Armunruhe-Daten ein. Dafür werden zwei Connect-Felder belegt. Bei „Aus“ fehlen diese zusätzlichen Sensordaten; die Web-App kann Downwinds aus der Fahrspur schätzen.</p>
-    <p>Während einer Aufnahme lässt sich der Schalter nur in der Pause über die Einstellungen umstellen, und nur, wenn die Aufnahme in einer Visu-Stellung (Loop „Ein Visu“ oder Wellenritt „Visu“) gestartet wurde. Von und nach „Lernen“ ist das Umstellen nicht möglich, weil die Felder der Aktivität beim Start feststehen.</p>
+    <p>Während einer Aufnahme lassen sich die Schalter nur in der Pause über die Einstellungen umstellen, und nur, wenn die Aufnahme mit Loop „Ein Visu“ oder Wellenritt „SlideVisu“ gestartet wurde. Weil die Felder der Aktivität beim Start feststehen, geht Loop „Ein Visu“ nur, wenn die Aufnahme damit begonnen hat, und „SlideVisu“ nur, wenn die Aufnahme damit begonnen hat. Sonst zeigt die Uhr „Ab nächster Aufnahme“.</p>
     <p>Die Liste der letzten Sprünge öffnen Sie im Hauptmenü unter „Letzte Sprünge“, im Aktionsmenü unter „Sprünge“ oder mit HOCH lang auf der Loop-Seite.</p>
     <h3>Marker</h3>
     <p>Mit BACK setzen Sie während der Aufnahme einen Marker, zum Beispiel nach einem besonderen Sprung, einer Welle oder einem Spot-Wechsel. Die Uhr bestätigt mit zwei kurzen Vibrationen. Zwei Marker müssen mindestens zwei Sekunden auseinander liegen. Die Marker werden mit der Aktivität gespeichert, sodass Sie die Stelle bei der Auswertung wiederfinden. Auf der Hauptseite erscheint der Marker kurz mit seiner Nummer. Wer keine Marker braucht, schaltet Marker* unter System aus: Dann tut BACK während der Aufnahme nichts, und ein Connect-Feld mehr steht für andere Werte zur Verfügung. Die Einstellung gilt ab der nächsten Aufnahme.</p>
     <h2 id="a10">10 Auswertung nach der Session</h2>
-    <p>Nach dem Speichern zeigt die Uhr die Auswertung. HOCH und RUNTER blättern durch die Seiten, BACK schließt sie. Die letzte Auswertung ist jederzeit über „Letzte Session“ auf der Startseite erreichbar. Die Seiten zeigen: Zeiten und Pausen, Tempo, beste Werte, Tempo getrennt nach Gleiten, Dümpeln und Treiben, Manöver, beim Windsurfen die Slide-Summe und Wellenritte, den besten Ritt mit den besten Turns sowie die besten Distanzen. Die Loop- und Turn-Details bleiben in „Letzte Session“ verfügbar.</p>
-    <p>Die Aufnahme liegt als FIT-Datei in Garmin Connect und lässt sich dort wie jede andere Aktivität ansehen. Für die Web-Auswertung laden Sie die FIT-Datei in die SurfsApp-Web-App; dort finden Sie unter anderem die Rittkarten und, wenn vorhanden, die ausführlichen Sprung- und Turn-Daten.</p>
+    <p>Nach dem Speichern zeigt die Uhr die Auswertung. HOCH und RUNTER blättern durch die Seiten, BACK schließt sie. Die letzte Auswertung ist jederzeit über „Letzte Session“ auf der Startseite erreichbar. Die Seiten zeigen: Zeiten und Pausen, Tempo, beste Werte, Tempo getrennt nach Gleiten, Dümpeln und Treiben, Manöver, beim Windsurfen die Wellenritte (mit „SlideVisu“ auch die Slide-Summe), den besten Ritt mit den besten Turns sowie die besten Distanzen. Die Loop- und Turn-Details bleiben in „Letzte Session“ verfügbar.</p>
+    <p>Die Aufnahme liegt als FIT-Datei in Garmin Connect und lässt sich dort wie jede andere Aktivität ansehen. Für die Web-Auswertung laden Sie die FIT-Datei in die SurfsApp-Web-App; dort finden Sie unter anderem die Rittkarten (mit „SlideVisu“ mit Brettern, Voreilen und Slides) und, wenn vorhanden, die ausführlichen Sprungdaten.</p>
     <h2 id="a11">11 Datenfelder für eigene Seiten</h2>
     <p>Jede Zelle einer eigenen Seite kann eines dieser Datenfelder anzeigen:</p>
     <ul class="cols">
@@ -886,7 +872,7 @@
       <li>Slide [m]</li>
       <li>Slide [s]</li>
     </ul>
-    <p>Bei Windsurfen stehen außerdem Loops, Slides, Slide [m] und Slide [s] live zur Auswahl. Für Anzahl und Summen werden nur Turns mit gültiger Messung berücksichtigt. Unbekannte Werte erscheinen als „--“, nicht als 0.</p>
+    <p>Bei Windsurfen stehen außerdem Loops, Slides, Slide [m] und Slide [s] live zur Auswahl. Slides gibt es nur mit Wellenritt „SlideVisu“; für Anzahl und Summen zählen nur Turns mit gültiger Messung. Unbekannte Werte erscheinen als „--“, nicht als 0.</p>
     <p class="foot">SurfsApp ist kostenlos.</p>
     <h2 id="a12">12 Unterstützte Uhren</h2>
     <p>SurfsApp läuft auf Garmin-Uhren mit Connect IQ. Die Bedienung hängt nur davon ab, ob die Uhr fünf Tasten hat oder eine Touch-Uhr mit zwei Tasten ist. Beides ist in Abschnitt 2 beschrieben.</p>
