@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="surfsapp-surf-manual-revision" content="V4">
-    <meta name="surfsapp-build" content="0.25.7">
+    <meta name="surfsapp-surf-manual-revision" content="V5">
+    <meta name="surfsapp-build" content="Branch 0.25.7">
     <title>SurfsApp – Surf-Anleitung</title>
     <style>
       body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;max-width:980px;margin:2rem auto;padding:0 1.2rem;color:#172033;line-height:1.55}
@@ -23,7 +23,7 @@
   <body>
     <h1>Surfen mit SurfsApp</h1>
     <p class="sub">Separate Surf-Anleitung für Garmin Connect IQ</p>
-    <p class="sub">Anleitungsrevision V4 · SurfsApp 0.25.7 · Stand: 22.11.2026</p>
+    <p class="sub">Anleitungsrevision V5 · SurfsApp Branch 0.25.7 · Stand: 22.11.2026</p>
 
     <nav>
       <ol>
@@ -66,8 +66,6 @@
       <tr><td><b>Surf-Ritt ab</b></td><td>6,0 km/h</td><td>2,0–20,0 km/h; 0,5</td><td>Ab dieser GPS-Geschwindigkeit zählt eine Sekunde als Rittphase.</td></tr>
       <tr><td><b>Surf-Paddeln ab</b></td><td>1,5 km/h</td><td>0,5–10,0 km/h; 0,5</td><td>Ab dieser Geschwindigkeit zählt die Zeit als Paddeln, sofern sie noch unter der Rittschwelle liegt.</td></tr>
       <tr><td><b>Surf-Sitzen unter</b></td><td>0,8 km/h</td><td>0,0–5,0 km/h; 0,2</td><td>Sehr langsame Bewegung darunter zählt als Sitzen/Warten.</td></tr>
-      <tr><td><b>Surf-Pause unter</b></td><td>0,8 km/h</td><td>0,0–5,0 km/h; 0,2</td><td>Unter dieser Geschwindigkeit kann die SurfsApp-Autopause zählen. Dieser Wert ist unabhängig von „Surf-Sitzen unter“.</td></tr>
-      <tr><td><b>Surf-Pause nach</b></td><td>20 s</td><td>5–300 s; 5</td><td>Wie lange Surfen unter der Paddel-/Rittlogik in der Surf-Autopause bleibt.</td></tr>
       <tr><td><b>Surf-Wellen erkennen</b></td><td>An</td><td>An/Aus</td><td>Schaltet Live-Wellen, Turns und die dazugehörige Auswertung ein oder aus.</td></tr>
       <tr><td><b>Surf-Visu</b></td><td>Aus</td><td>An/Aus</td><td>Zeichnet detaillierte Drehungs- und Board-Kursdaten auf. Damit können aufbereitete Turns und Slides ausgewertet werden.</td></tr>
       <tr><td><b>Surf-Ritt Mindestdauer</b></td><td>5 s</td><td>2–30 s; 1</td><td>Ein erkannter Ritt muss mindestens diese Dauer haben.</td></tr>
@@ -107,6 +105,7 @@
       <tr><td>Ab Surf-Ritt ab</td><td>Ritt</td><td>Geschwindigkeit wird der Ritt-/Gleitphase zugerechnet.</td></tr>
     </table>
     <p>Das System prüft in dieser Reihenfolge: erst Ritt, dann Paddeln, dann Sitzen. Die Werte werden aus der Sekunden-GPS-Geschwindigkeit berechnet. Eine Position mit niedriger GPS-Qualität wird nicht als neue Surf-Geschwindigkeit übernommen; eine gültige Sekunde ersetzt keinen kurzen GPS-Ausfall mit dem alten Tempo.</p>
+    <div class="note"><b>Pause beim Surfen:</b> Es gibt ausschließlich die manuelle Pause über das Aktionsmenü. Die globalen Pauseneinstellungen, alle bisherigen Surf-Pause-Grenzen und automatische Pausen werden beim Surfen nicht verwendet.</div>
     <div class="warn"><b>Surf-Wellen Aus:</b> Bei ausgeschalteter Wellen-Erkennung werden die Seiten <b>WELLEN</b> und <b>TURNS</b> nicht angezeigt. Die Uhr legt keinen Wellen-/Turn-Auswerter an und zeichnet keine Wellen- oder Slide-Detaildaten auf.</div>
 
     <h2 id="wellen">5 Wellen und Turns</h2>
@@ -137,7 +136,6 @@
     <p>Vor dem Start werden die aktivierten Surf-Grenzen in der Aufnahme festgelegt:</p>
     <ul>
       <li>Ritt ab / Paddeln ab / Sitzen unter</li>
-      <li>Surf-Pause nach</li>
       <li>Wellen An/Aus</li>
       <li>Surf-Visu An/Aus</li>
       <li>Mindestdauer und Mindeststrecke</li>
@@ -175,7 +173,6 @@
       <tr><td>Sportwahl</td><td>SPORT_WINDSURFING / WS</td><td>SPORT_SURFING / SU</td></tr>
       <tr><td>Gleitschwelle</td><td><code>glide</code>, Standard 11 km/h</td><td><code>surfRide</code>, Standard 6 km/h</td></tr>
       <tr><td>Fahrt ab</td><td><code>resume</code>, Standard 5,5 km/h</td><td><code>surfPaddle</code>, Standard 1,5 km/h</td></tr>
-      <tr><td>Surf-Pause unter/nach</td><td><code>surfPauseKmh</code>, <code>surfPauseSec</code></td><td><code>Surf-Pause unter</code>, <code>Surf-Pause nach</code></td></tr>
       <tr><td>Wellen</td><td>Windsurf-Bestimmung mit Boardkurs, Bottom Turn und Cutback</td><td>Surf-Modus mit eigenen Mindestdauer-, Strecken-, Turn- und GPS-Grenzen</td></tr>
       <tr><td>Loops/Jumps</td><td>Vorhandene Modi</td><td>Nicht verwendet</td></tr>
       <tr><td>Wingen-Lernphase</td><td>Nur beim Wingen</td><td>Nicht verwendet</td></tr>
