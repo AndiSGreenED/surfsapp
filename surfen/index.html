@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="surfsapp-surf-manual-revision" content="V1">
-    <meta name="surfsapp-build" content="0.25.6">
+    <meta name="surfsapp-surf-manual-revision" content="V2">
+    <meta name="surfsapp-build" content="0.25.7">
     <title>SurfsApp – Surf-Anleitung</title>
     <style>
       body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;max-width:980px;margin:2rem auto;padding:0 1.2rem;color:#172033;line-height:1.55}
@@ -23,7 +23,7 @@
   <body>
     <h1>Surfen mit SurfsApp</h1>
     <p class="sub">Separate Surf-Anleitung für Garmin Connect IQ</p>
-    <p class="sub">Anleitungsrevision V1 · SurfsApp 0.25.6 · Stand: 22.11.2026</p>
+    <p class="sub">Anleitungsrevision V2 · SurfsApp 0.25.7 · Stand: 22.11.2026</p>
 
     <nav>
       <ol>
@@ -103,6 +103,7 @@
       <tr><td>Ab Surf-Ritt ab</td><td>Ritt</td><td>Geschwindigkeit wird der Ritt-/Gleitphase zugerechnet.</td></tr>
     </table>
     <p>Das System prüft in dieser Reihenfolge: erst Ritt, dann Paddeln, dann Sitzen. Die Werte werden aus der Sekunden-GPS-Geschwindigkeit berechnet. Eine Position mit niedriger GPS-Qualität wird nicht als neue Surf-Geschwindigkeit übernommen; eine gültige Sekunde ersetzt keinen kurzen GPS-Ausfall mit dem alten Tempo.</p>
+    <div class="warn"><b>Surf-Wellen Aus:</b> Bei ausgeschalteter Wellen-Erkennung werden die Seiten <b>WELLEN</b> und <b>TURNS</b> nicht angezeigt. Die Uhr legt keinen Wellen-/Turn-Auswerter an und zeichnet keine Wellen- oder Slide-Detaildaten auf.</div>
 
     <h2 id="wellen">5 Wellen und Turns</h2>
     <h3>Erkennung eines Schwungs</h3>
@@ -125,6 +126,7 @@
       <tr><td>Daten plausibel</td><td>GPS-Geschwindigkeit und Strecken-/Zeitmessung dürfen nicht unplausibel auseinanderliegen.</td></tr>
     </table>
     <p>Die Engregeln sind eine Schutzlogik gegen Fahrgeräusche und GPS-Sprünge. Ein Turn kann verworfen werden, ohne den ganzen Ritt automatisch zu löschen. Der Ritt bleibt erhalten, wenn mindestens ein gültiges Turn-Paar übrig bleibt.</p>
+    <p>Live gezählte Wellen und Turns sind vorläufige Anzeigewerte. Die endgültige Auswertung nach dem Speichern kann geringere bestätigte Werte liefern.</p>
     <div class="warn"><b>Hinweis:</b> Die Surf-Erkennung ersetzt keine Wellenbeobachtung. Bei Start, Bruch der Welle oder schlechter GPS-Abdeckung kann ein Ritt zu spät oder gar nicht gezählt werden.</div>
 
     <h2 id="aufnahme">6 Aufnahme und Garmin-Connect-Aktivität</h2>
