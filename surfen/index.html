@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="surfsapp-surf-manual-revision" content="V1">
+    <meta name="surfsapp-build" content="0.25.6">
+    <title>SurfsApp – Surf-Anleitung</title>
+    <style>
+      body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;max-width:980px;margin:2rem auto;padding:0 1.2rem;color:#172033;line-height:1.55}
+      h1{font-size:2.4rem;margin:0}h2{margin-top:2.6rem;border-bottom:2px solid #0055ff;padding-bottom:.25rem}h3{margin-top:1.5rem}
+      .sub{color:#596274;margin:.2rem 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin:1rem 0}
+      figure{margin:0;text-align:center}figure img{width:210px;height:210px;border-radius:50%;background:#111;object-fit:contain}
+      figcaption{font-size:.86rem;color:#505866;margin-top:.55rem}nav{background:#f2f5fa;padding:.8rem 1rem;border-radius:.6rem}
+      nav ol{columns:2;margin:.3rem 0}a{color:#0055ff}table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.94rem}
+      th,td{border:1px solid #d9dee8;padding:.48rem .62rem;text-align:left;vertical-align:top}th{background:#edf2f8}
+      .note{background:#eef6ff;border-left:.35rem solid #0055ff;padding:.8rem 1rem;border-radius:.25rem}
+      .warn{background:#fff6e6;border-left:.35rem solid #e58a00;padding:.8rem 1rem;border-radius:.25rem}
+      code{background:#eef1f5;padding:.08rem .28rem;border-radius:.2rem}.foot{margin-top:3rem;border-top:1px solid #d9dee8;padding-top:1rem;color:#666}
+      @media(max-width:600px){nav ol{columns:1}table{display:block;overflow-x:auto}figure img{width:190px;height:190px}}
+    </style>
+  </head>
+  <body>
+    <h1>Surfen mit SurfsApp</h1>
+    <p class="sub">Separate Surf-Anleitung für Garmin Connect IQ</p>
+    <p class="sub">Anleitungsrevision V1 · SurfsApp 0.25.6 · Stand: 22.11.2026</p>
+
+    <nav>
+      <ol>
+        <li><a href="#auswahl">Surf-Modus auswählen</a></li>
+        <li><a href="#einstellungen">Surf-Einstellungen</a></li>
+        <li><a href="#seiten">Vier Surf-Seiten</a></li>
+        <li><a href="#phasen">Sitzen, Paddeln und Ritt</a></li>
+        <li><a href="#wellen">Wellen und Turns</a></li>
+        <li><a href="#aufnahme">Aufnahme und Garmin-aktivität</a></li>
+        <li><a href="#auswertung">Surf-Auswertung</a></li>
+        <li><a href="#grenzen">Grenzen und Empfehlungen</a></li>
+        <li><a href="#trennung">Klare Trennung vom Windsurfen</a></li>
+        <li><a href="#pruefen">Prüfpunkte auf dem Wasser</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="auswahl">1 Surf-Modus auswählen</h2>
+    <p>Surfen ist eine eigene Sportart. Sie wird nicht mit Windsurfen, Wingen oder Kitesurfing vermischt.</p>
+    <div class="grid">
+      <figure><img src="img/surf-sportwahl.svg" alt="Sportwahl"><figcaption><b>Sportwahl</b><br>Mit HOCH/RUNTER Surfen auswählen. Die sichtbaren Einträge werden unter „Sportarten“ bestimmt.</figcaption></figure>
+      <figure><img src="img/surf-menue.svg" alt="Hauptmenü"><figcaption><b>Hauptmenü</b><br>„Surfen“ steht als eigener Menüzweig neben den gemeinsamen App-Einstellungen.</figcaption></figure>
+    </div>
+    <ol>
+      <li>Auf der Startseite Windsurfen, Wingen oder Surfen auswählen.</li>
+      <li>Mit START die Vorschau öffnen.</li>
+      <li>Mit START erneut die Surf-Aufnahme starten.</li>
+    </ol>
+    <p>Als Garmin-Sportart wird <code>SPORT_SURFING</code> geschrieben. Das Aktivitätskürzel lautet <code>SU</code>. Windsurfen bleibt <code>WS</code>, Wingen bleibt <code>WF</code>.</p>
+    <div class="note"><b>Wichtig:</b> Eine gespeicherte Auswahl wird nicht verwendet, wenn die Sportart in „Sportarten“ ausgeblendet ist. Die Uhr setzt dann auf die erste sichtbare Sportart zurück.</div>
+
+    <h2 id="einstellungen">2 Einstellungen nur für Surfen</h2>
+    <div class="grid">
+      <figure><img src="img/surf-settings.svg" alt="Surf-Einstellungen"><figcaption><b>Surf-Einstellungen</b><br>Alle Grenzwerte stehen unter dem Hauptmenüpunkt „Surfen“.</figcaption></figure>
+      <figure><img src="img/surf-settings-limits.svg" alt="Surf-Grenzen"><figcaption><b>Grenzwert-Picker</b><br>Zahlenwerte und Einheiten werden direkt am Wert angezeigt.</figcaption></figure>
+    </div>
+    <p>Die Einstellungen in diesem Menü haben eigene Speicherwerte. Sie wirken ausschließlich bei <code>sportChoice == 2</code>, also beim ausgewählten Surfen. Die Windsurf-Werte <code>glide</code>, <code>resume</code> und <code>idleKmh</code> werden dabei nicht geändert.</p>
+    <table>
+      <tr><th>Einstellung</th><th>Werkseinstellung</th><th>Bereich</th><th>Bedeutung</th></tr>
+      <tr><td><b>Surf-Ritt ab</b></td><td>6,0 km/h</td><td>2,0–20,0 km/h; 0,5</td><td>Ab dieser GPS-Geschwindigkeit zählt eine Sekunde als Rittphase.</td></tr>
+      <tr><td><b>Surf-Paddeln ab</b></td><td>1,5 km/h</td><td>0,5–10,0 km/h; 0,5</td><td>Ab dieser Geschwindigkeit zählt die Zeit als Paddeln, sofern sie noch unter der Rittschwelle liegt.</td></tr>
+      <tr><td><b>Surf-Sitzen unter</b></td><td>0,8 km/h</td><td>0,0–5,0 km/h; 0,2</td><td>Sehr langsame Bewegung darunter zählt als Sitzen/Warten.</td></tr>
+      <tr><td><b>Surf-Pause nach</b></td><td>20 s</td><td>5–300 s; 5</td><td>Wie lange Surfen unter der Paddel-/Rittlogik in der Surf-Autopause bleibt.</td></tr>
+      <tr><td><b>Surf-Wellen</b></td><td>An</td><td>An/Aus</td><td>Schaltet die Surf-Wellenzählung ein oder aus.</td></tr>
+      <tr><td><b>Surf-SlideVisu</b></td><td>Aus</td><td>An/Aus</td><td>Aktiviert Drehungs-/Board-Kursdaten für Slides. Die Uhr nimmt kein anderes Windsurf-Modefeld dafür.</td></tr>
+      <tr><td><b>Surf-Ritt Mindestdauer</b></td><td>5 s</td><td>2–30 s; 1</td><td>Ein erkannter Ritt muss mindestens diese Dauer haben.</td></tr>
+      <tr><td><b>Surf-Ritt Mindeststrecke</b></td><td>15 m</td><td>5–100 m; 5</td><td>Ein erkannter Ritt muss mindestens diese GPS-Strecke haben.</td></tr>
+      <tr><td><b>Surf-Turn Mindest-Drehrate</b></td><td>8°/s</td><td>3–30°/s; 1</td><td>Der Kurs muss sich mindestens so schnell ändern, damit ein Turn-Schwung beginnt.</td></tr>
+      <tr><td><b>Surf-Turn Mindestwinkel</b></td><td>30°</td><td>15–120°; 5</td><td>Mindestwinkel eines einzelnen Bottom-Turn-/Cutback-Schwungs.</td></tr>
+      <tr><td><b>Surf-GPS-Grenze</b></td><td>45 km/h</td><td>20–80 km/h; 5</td><td>Höheres Tempo verwirft einen Abschnitt als GPS-/Messfehler.</td></tr>
+    </table>
+    <p>Die Werte werden beim Öffnen oder Verlassen der Einstellungen geladen. Während einer laufenden Aufnahme gelten Änderungen mit Hinweis erst ab einer neuen Session, damit die Messfelder und die Auswertung einer Aufnahme zusammenpassen.</p>
+
+    <h2 id="seiten">3 Die vier Surf-Seiten während der Aufnahme</h2>
+    <div class="grid">
+      <figure><img src="img/surf-live.svg" alt="Surf Live"><figcaption><b>SURF LIVE</b><br>Dauer, HF, Wellen, Paddeln, Ritt und Sitzen.</figcaption></figure>
+      <figure><img src="img/surf-waves.svg" alt="Surf Wellen"><figcaption><b>WELLEN</b><br>Anzahl, längste Welle, schnellster/bester Ritt und Strecke.</figcaption></figure>
+      <figure><img src="img/surf-turns.svg" alt="Surf Turns"><figcaption><b>TURNS</b><br>Turns, Maximum je Welle und Slide-Werte.</figcaption></figure>
+      <figure><img src="img/surf-session.svg" alt="Surf Session"><figcaption><b>SURF-SESSION</b><br>Gesamtstrecke, Vmax und Herzfrequenzwerte.</figcaption></figure>
+    </div>
+    <p>Beim Surf-Modus ersetzt diese Reihenfolge die bisherigen Seitenfolgepunkte. Es gibt keine Windsurf-Maxima-Seite, keine Downwind-Seite, keine Loop-Seite, keine Jump-Seite und keine Wellen/Windsurf-Listen im Surf-Modus.</p>
+    <table>
+      <tr><th>Seite</th><th>Oberer Wert</th><th>Weitere Werte</th></tr>
+      <tr><td>SURF LIVE</td><td>Aktive bzw. aufgezeichnete Dauer</td><td>HF-Durchschnitt, erkannte Wellen, Paddelzeit, Rittzeit, Sitzzeit</td></tr>
+      <tr><td>WELLEN</td><td>Anzahl erkannter Wellen</td><td>Längste Rittdauer, bester Durchschnitt, längste Strecke</td></tr>
+      <tr><td>TURNS</td><td>Anzahl erkannter Turnpaare</td><td>Maximum je Welle, Slide-Anzahl, Slide-Zeit und Slide-Strecke</td></tr>
+      <tr><td>SURF-SESSION</td><td>Gesamtstrecke</td><td>Vmax, HF-Durchschnitt, HF-Maximum</td></tr>
+    </table>
+
+    <h2 id="phasen">4 Sitzen, Paddeln und Ritt</h2>
+    <div class="grid">
+      <figure><img src="img/surf-phases.svg" alt="Surf-Phasen"><figcaption><b>Geschwindigkeitsklassen</b><br>Die Uhr ordnet jede Messsekunde genau einer Phase zu.</figcaption></figure>
+    </div>
+    <table>
+      <tr><th>Geschwindigkeit</th><th>Phase</th><th>Logik</th></tr>
+      <tr><td>Unter Surf-Sitzen unter</td><td>Sitzen/Warten</td><td>Keine Fahrt, kein Paddeln und kein Ritt.</td></tr>
+      <tr><td>Zwischen Paddeln ab und Ritt ab</td><td>Paddeln</td><td>Bewegung langsam genug für Paddeln, schnell genug für eine erkennbare Fahrt.</td></tr>
+      <tr><td>Ab Surf-Ritt ab</td><td>Ritt</td><td>Geschwindigkeit wird der Ritt-/Gleitphase zugerechnet.</td></tr>
+    </table>
+    <p>Das System prüft in dieser Reihenfolge: erst Ritt, dann Paddeln, dann Sitzen. Die Werte werden aus der Sekunden-GPS-Geschwindigkeit berechnet. Eine Position mit niedriger GPS-Qualität wird nicht als neue Surf-Geschwindigkeit übernommen; eine gültige Sekunde ersetzt keinen kurzen GPS-Ausfall mit dem alten Tempo.</p>
+
+    <h2 id="wellen">5 Wellen und Turns</h2>
+    <h3>Erkennung eines Schwungs</h3>
+    <p>Die bestehende Kursauswertung dient als Basis, ist aber mit den Surf-Grenzen konfiguriert:</p>
+    <ol>
+      <li>Ein Kurswechsel beginnt, wenn die Kursänderung mindestens der eingestellten Turn-Drehrate entspricht.</li>
+      <li>Der Schwung endet, wenn die Drehrichtung aufhört oder die Kursänderung unter die Hälfte der Drehrate fällt.</li>
+      <li>Ein Schwung wird nur berücksichtigt, wenn der Winkel mindestens „Surf-Turn Mindestwinkel“ erreicht und maximal 210° beträgt.</li>
+      <li>Zwei aufeinanderfolgende Schwünge mit wechselnder Richtung bilden ein Turn-Paar.</li>
+    </ol>
+    <h3>Als Wellenritt</h3>
+    <p>Ein Ritt muss zusätzlich alle Surf-Grenzen erfüllen:</p>
+    <table>
+      <tr><th>Prüfung</th><th>Regel</th></tr>
+      <tr><td>Dauer</td><td>Mindestens „Surf-Ritt Mindestdauer“, Werkseinstellung 5 s.</td></tr>
+      <tr><td>Strecke</td><td>Mindestens „Surf-Ritt Mindeststrecke“, Werkseinstellung 15 m.</td></tr>
+      <tr><td>Turn-Winkel</td><td>Bottom Turn und Cutback jeweils mindestens 30°.</td></tr>
+      <tr><td>Drehrate</td><td>Mindestens 8°/s, Werkseinstellung.</td></tr>
+      <tr><td>GPS-Geschwindigkeit</td><td>Nirgends über der eingestellten Surf-GPS-Grenze von 45 km/h.</td></tr>
+      <tr><td>Daten plausibel</td><td>GPS-Geschwindigkeit und Strecken-/Zeitmessung dürfen nicht unplausibel auseinanderliegen.</td></tr>
+    </table>
+    <p>Die Engregeln sind eine Schutzlogik gegen Fahrgeräusche und GPS-Sprünge. Ein Turn kann verworfen werden, ohne den ganzen Ritt automatisch zu löschen. Der Ritt bleibt erhalten, wenn mindestens ein gültiges Turn-Paar übrig bleibt.</p>
+    <div class="warn"><b>Hinweis:</b> Die Surf-Erkennung ersetzt keine Wellenbeobachtung. Bei Start, Bruch der Welle oder schlechter GPS-Abdeckung kann ein Ritt zu spät oder gar nicht gezählt werden.</div>
+
+    <h2 id="aufnahme">6 Aufnahme und Garmin-Connect-Aktivität</h2>
+    <p>Vor dem Start werden die aktivierten Surf-Grenzen in der Aufnahme festgelegt:</p>
+    <ul>
+      <li>Ritt ab / Paddeln ab / Sitzen unter</li>
+      <li>Surf-Pause nach</li>
+      <li>Wellen An/Aus</li>
+      <li>SlideVisu An/Aus</li>
+      <li>Mindestdauer und Mindeststrecke</li>
+      <li>Mindest-Drehrate und Mindestwinkel</li>
+      <li>GPS-Grenze</li>
+    </ul>
+    <p>Die Aufnahme wird in Garmin Connect als Surf-Aktivität gespeichert. Das Kürzel <code>SU</code> steht im Aktivitätsnamen. Die Sekundendaten enthalten Geschwindigkeit, Strecke, Herzfrequenz, Position, Kurs und, bei aktiver SlideVisu, Drehungsdaten.</p>
+
+    <h2 id="auswertung">7 Surf-Auswertung nach der Session</h2>
+    <p>Nach dem Speichern zeigt die Uhr keine Windsurf-/Loop-Auswertung als Standard. Die Surf-Auswertung ist auf vier Bildschirme beschränkt:</p>
+    <ol>
+      <li><b>SURF LIVE</b>: Gesamtzeit, Paddeln, Rittzeit, Sitzen</li>
+      <li><b>WELLEN</b>: Anzahl, längste, schnellste/beste Welle</li>
+      <li><b>TURNS</b>: Gesamt-Turns, Maximum je Welle und Slides</li>
+      <li><b>SURF-SESSION</b>: Strecke, Vmax, HF-Durchschnitt und HF-Maximum</li>
+      <li><b>SUMME</b>: Anzahl Surf-Sessions, Surf-Fahrzeit und Gesamtstrecke</li>
+    </ol>
+    <p>Im Speicher der Uhr bekommt die Surf-Summe einen eigenen Schlüssel <code>su</code>. Windsurfen bleibt <code>ws</code>, Wingen bleibt <code>wf</code>. Damit werden Surf-Sessions nicht in die Windsurf-Summen eingerechnet.</p>
+
+    <h2 id="grenzen">8 Sinnvolle Grenzwerte</h2>
+    <table>
+      <tr><th>Situation</th><th>Empfehlung</th></tr>
+      <tr><td>Weicheboard / viele Paddelpausen</td><td>Paddeln 1,0–2,0 km/h, Ritt 5–7 km/h, Sitzen 0,8 km/h.</td></tr>
+      <tr><td>Kurze Wellen / kurze Abschnitte</td><td>Mindestdauer 3–5 s und Mindeststrecke 10–15 m.</td></tr>
+      <tr><td>Viele feine Kurswechsel</td><td>Drehrate 8–12°/s und Mindestwinkel 25–35°.</td></tr>
+      <tr><td>Raue Wasseroberfläche</td><td>GPS-Grenze 45–55 km/h und höhere Mindeststrecke prüfen.</td></tr>
+      <tr><td>Erste Tests</td><td>Wellen An, SlideVisu zunächst Aus, Ritt 5 s/15 m unverändert lassen.</td></tr>
+      <tr><td>Slides auswerten</td><td>SlideVisu erst nach einem echten Surf-Test einschalten. Dazu sind neue FIT-Felder und genügend Speicher nötig.</td></tr>
+    </table>
+    <p>Die Werkseinstellungen sind absichtlich konservativ: kein zu niedriger Turnwinkel, kein zu langer Zwang zum Turn und keine Windsurf-Gleitschwelle als Surf-Grenze.</p>
+
+    <h2 id="trennung">9 Trennung vom Windsurfen</h2>
+    <table>
+      <tr><th>Merkmal</th><th>Windsurfen</th><th>Surfen</th></tr>
+      <tr><td>Sportwahl</td><td>SPORT_WINDSURFING / WS</td><td>SPORT_SURFING / SU</td></tr>
+      <tr><td>Gleitschwelle</td><td><code>glide</code>, Standard 11 km/h</td><td><code>surfRide</code>, Standard 6 km/h</td></tr>
+      <tr><td>Fahrt ab</td><td><code>resume</code>, Standard 5,5 km/h</td><td><code>surfPaddle</code>, Standard 1,5 km/h</td></tr>
+      <tr><td>Pause unter/nach</td><td><code>idleKmh</code>, <code>idleSec</code></td><td><code>surfSit</code>, <code>surfIdleSec</code></td></tr>
+      <tr><td>Wellen</td><td>Windsurf-Bestimmung mit Boardkurs, Bottom Turn und Cutback</td><td>Surf-Modus mit eigenen Mindestdauer-, Strecken-, Turn- und GPS-Grenzen</td></tr>
+      <tr><td>Loops/Jumps</td><td>Vorhandene Modi</td><td>Nicht verwendet</td></tr>
+      <tr><td>Wingen-Lernphase</td><td>Nur beim Wingen</td><td>Nicht verwendet</td></tr>
+    </table>
+
+    <h2 id="pruefen">10 Prüfpunkte auf dem Wasser</h2>
+    <ol>
+      <li>Kurze Testaufnahme starten und auf der Startseite Surfen auswählen.</li>
+      <li>Vier Surf-Seiten beim Starten und während der Aufnahme prüfen.</li>
+      <li>Eine eindeutige Welle paddeln, Take-off fahren und nach dem Ritt klar auskurven.</li>
+      <li>Danach mindestens einen zweiten Ritt mit anderem Kursvergleich fahren.</li>
+      <li>Prüfen: Wird Sitzzeit als Sitzen erkannt, Paddeln als Paddeln und die echte Fahrt als Ritt?</li>
+      <li>Die Dauer und Strecke des Ritts in Garmin- und SurfsApp-Auswertung vergleichen.</li>
+      <li>Bei zu vielen Fehlritten Mindeststrecke oder Mindestwinkel erhöhen.</li>
+      <li>Bei zu wenigen echten Ritten zuerst Mindeststrecke 15 m und Minimumwinkel 30° nicht pauschal erhöhen.</li>
+      <li>GPS-Ausreißer prüfen, bevor die Surf-GPS-Grenze verändert wird.</li>
+    </ol>
+    <p class="foot">Surfen und Windsurfen sind getrennte Modi. Diese Anleitung beschreibt den aktuellen Stand der Uhr-Implementierung 0.25.6. Die fachliche Surf-Erkennung bleibt ein Fahrzeug für echte Wasserdaten und muss an Surf-Sessions weiter kalibriert werden.</p>
+  </body>
+</html>

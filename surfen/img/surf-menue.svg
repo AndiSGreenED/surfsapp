@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260">
+  <rect width="260" height="260" fill="#111"/>
+  <circle cx="130" cy="130" r="126" fill="none" stroke="#30343b" stroke-width="2"/>
+  <text x="130" y="48" fill="#c3c8d0" font-family="Arial" font-size="16" text-anchor="middle">Einstellungen</text>
+  <text x="130" y="96" fill="#c3c8d0" font-family="Arial" font-size="22" text-anchor="middle">Sportarten</text>
+  <rect x="34" y="112" width="192" height="56" rx="10" fill="#111" stroke="#4f9cff" stroke-width="4"/>
+  <text x="130" y="147" fill="#fff" font-family="Arial" font-weight="700" font-size="28" text-anchor="middle">Surfen</text>
+  <text x="130" y="200" fill="#c3c8d0" font-family="Arial" font-size="20" text-anchor="middle">Modus</text>
+  <text x="130" y="232" fill="#777" font-family="Arial" font-size="14" text-anchor="middle">Felder</text>
+</svg>
