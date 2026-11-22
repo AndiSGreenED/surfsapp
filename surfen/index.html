@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="surfsapp-surf-manual-revision" content="V5">
+    <meta name="surfsapp-surf-manual-revision" content="V7">
     <meta name="surfsapp-build" content="Branch 0.25.7">
     <title>SurfsApp – Surf-Anleitung</title>
     <style>
@@ -23,7 +23,7 @@
   <body>
     <h1>Surfen mit SurfsApp</h1>
     <p class="sub">Separate Surf-Anleitung für Garmin Connect IQ</p>
-    <p class="sub">Anleitungsrevision V5 · SurfsApp Branch 0.25.7 · Stand: 22.11.2026</p>
+    <p class="sub">Anleitungsrevision V7 · SurfsApp Branch 0.25.7 · Stand: 22.11.2026</p>
 
     <nav>
       <ol>
@@ -63,16 +63,16 @@
     <p>Die Einstellungen in diesem Menü haben eigene Speicherwerte. Sie wirken ausschließlich bei <code>sportChoice == 2</code>, also beim ausgewählten Surfen. Die Windsurf-Werte <code>glide</code>, <code>resume</code> und <code>idleKmh</code> werden dabei nicht geändert.</p>
     <table>
       <tr><th>Einstellung</th><th>Werkseinstellung</th><th>Bereich</th><th>Bedeutung</th></tr>
-      <tr><td><b>Surf-Ritt ab</b></td><td>6,0 km/h</td><td>2,0–20,0 km/h; 0,5</td><td>Ab dieser GPS-Geschwindigkeit zählt eine Sekunde als Rittphase.</td></tr>
-      <tr><td><b>Surf-Paddeln ab</b></td><td>1,5 km/h</td><td>0,5–10,0 km/h; 0,5</td><td>Ab dieser Geschwindigkeit zählt die Zeit als Paddeln, sofern sie noch unter der Rittschwelle liegt.</td></tr>
-      <tr><td><b>Surf-Sitzen unter</b></td><td>0,8 km/h</td><td>0,0–5,0 km/h; 0,2</td><td>Sehr langsame Bewegung darunter zählt als Sitzen/Warten.</td></tr>
-      <tr><td><b>Surf-Wellen erkennen</b></td><td>An</td><td>An/Aus</td><td>Schaltet Live-Wellen, Turns und die dazugehörige Auswertung ein oder aus.</td></tr>
-      <tr><td><b>Surf-Visu</b></td><td>Aus</td><td>An/Aus</td><td>Zeichnet detaillierte Drehungs- und Board-Kursdaten auf. Damit können aufbereitete Turns und Slides ausgewertet werden.</td></tr>
-      <tr><td><b>Surf-Ritt Mindestdauer</b></td><td>5 s</td><td>2–30 s; 1</td><td>Ein erkannter Ritt muss mindestens diese Dauer haben.</td></tr>
-      <tr><td><b>Surf-Ritt Mindeststrecke</b></td><td>15 m</td><td>5–100 m; 5</td><td>Ein erkannter Ritt muss mindestens diese GPS-Strecke haben.</td></tr>
-      <tr><td><b>Surf-Turn Mindest-Drehrate</b></td><td>8°/s</td><td>3–30°/s; 1</td><td>Der Kurs muss sich mindestens so schnell ändern, damit ein Turn-Schwung beginnt.</td></tr>
-      <tr><td><b>Surf-Turn Mindestwinkel</b></td><td>30°</td><td>15–120°; 5</td><td>Mindestwinkel eines einzelnen Bottom-Turn-/Cutback-Schwungs.</td></tr>
-      <tr><td><b>Surf-GPS-Ausreißer</b></td><td>45 km/h</td><td>20–80 km/h; 5</td><td>Höhere Einzelsekunden werden als GPS-/Messausreißer verworfen statt in Ritt und Höchsttempo zu fließen.</td></tr>
+      <tr><td><b>Ritt ab</b></td><td>6,0 km/h</td><td>2,0–20,0 km/h; 0,5</td><td>Ab dieser GPS-Geschwindigkeit zählt eine Sekunde als Rittphase.</td></tr>
+      <tr><td><b>Paddeln ab</b></td><td>1,5 km/h</td><td>0,5–10,0 km/h; 0,5</td><td>Ab dieser Geschwindigkeit zählt die Zeit als Paddeln, sofern sie noch unter der Rittschwelle liegt.</td></tr>
+      <tr><td><b>Sitzen unter</b></td><td>0,8 km/h</td><td>0,0–5,0 km/h; 0,2</td><td>Sehr langsame Bewegung darunter zählt als Sitzen/Warten.</td></tr>
+      <tr><td><b>Wellen erkennen</b></td><td>An</td><td>An/Aus</td><td>Schaltet Live-Wellen, Turns und die dazugehörige Auswertung ein oder aus.</td></tr>
+      <tr><td><b>Visu</b></td><td>Aus</td><td>An/Aus</td><td>Zeichnet detaillierte Drehungs- und Board-Kursdaten auf. Damit können aufbereitete Turns und Slides ausgewertet werden.</td></tr>
+      <tr><td><b>Ritt Mindestdauer</b></td><td>5 s</td><td>2–30 s; 1</td><td>Ein erkannter Ritt muss mindestens diese Dauer haben.</td></tr>
+      <tr><td><b>Ritt Mindeststrecke</b></td><td>15 m</td><td>5–100 m; 5</td><td>Ein erkannter Ritt muss mindestens diese GPS-Strecke haben.</td></tr>
+      <tr><td><b>Turn Mindest-Drehrate</b></td><td>8°/s</td><td>3–30°/s; 1</td><td>Der Kurs muss sich mindestens so schnell ändern, damit ein Turn-Schwung beginnt.</td></tr>
+      <tr><td><b>Turn Mindestwinkel</b></td><td>30°</td><td>15–120°; 5</td><td>Mindestwinkel eines einzelnen Bottom-Turn-/Cutback-Schwungs.</td></tr>
+      <tr><td><b>GPS-Ausreißer</b></td><td>45 km/h</td><td>20–80 km/h; 5</td><td>Höhere Einzelsekunden werden als GPS-/Messausreißer verworfen statt in Ritt und Höchsttempo zu fließen.</td></tr>
     </table>
     <p>Die Werte werden beim Öffnen oder Verlassen der Einstellungen geladen. Während einer laufenden Aufnahme gelten Änderungen mit Hinweis erst ab einer neuen Session, damit die Messfelder und die Auswertung einer Aufnahme zusammenpassen.</p>
 
