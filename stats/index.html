@@ -29,15 +29,15 @@
   <p id="error"></p>
   <p id="status"></p>
   <div class="cards">
-    <div class="card">Aufrufe gesamt<b id="total">–</b></div>
-    <div class="card">Erster erfasster Tag<b id="first">–</b></div>
+    <div class="card">Aufrufe im Zeitraum<b id="total">–</b></div>
+    <div class="card">Erster erfasster Tag im Zeitraum<b id="first">–</b></div>
   </div>
   <svg id="chart" role="img" aria-label="Aufrufe je Tag"></svg>
   <table>
     <thead><tr><th>Tag</th><th>Aufrufe</th></tr></thead>
     <tbody id="daily"></tbody>
   </table>
-  <h2>Nach Uhr-Build</h2>
+  <h2>Nach App-Version</h2>
   <table>
     <thead><tr><th>Build</th><th>Aufrufe</th></tr></thead>
     <tbody id="builds"></tbody>
@@ -74,18 +74,34 @@
     async function load(){
       const token=$("token").value.trim(), period=$("period").value;
       $("error").textContent="";$("status").textContent="Lade…";
-      if(!token){$("error").textContent="Bitte Statistik-Zugangscode eingeben.";return;}
+      if(!token){$("status").textContent="";$("error").textContent="Bitte Statistik-Zugangscode eingeben.";return;}
       try{
         const r=await fetch(endpoint+"?days="+encodeURIComponent(period),{headers:{authorization:"Bearer "+token}});
         const j=await r.json();
         if(!r.ok)throw new Error(j.message||j.error||("HTTP "+r.status));
         sessionStorage.setItem("surfsappStatsToken",token);
         $("status").textContent="Gesamtdauer: "+(period==="all"?"alle gespeicherten Daten":period+" Tage")+" · Aktualisiert: "+new Date(j.generated).toLocaleString();
-        $("total").textContent=j.total||0;$("first").textContent=j.perDay&&j.perDay.length?j.perDay[0].day:"–";
-        $("daily").innerHTML=(j.perDay||[]).map(r=>"<tr><td>"+esc(r.day)+"</td><td>"+r.views+"</td></tr>").join("");
+        const recorded=j.perDay||[];
+        const firstRecorded=recorded.length?recorded[0].day:"–";
+        $("total").textContent=j.total||0;
+        $("first").textContent=firstRecorded;
+        const byDay=new Map(recorded.map(r=>[r.day,Number(r.views)||0]));
+        const endDay=new Date(j.generated).toISOString().slice(0,10);
+        const startDay=period==="all"?(recorded.length?recorded[0].day:null):j.from;
+        const complete=[];
+        if(startDay){
+          const cursor=new Date(startDay+"T00:00:00Z");
+          const last=new Date(endDay+"T00:00:00Z");
+          while(cursor<=last){
+            const day=cursor.toISOString().slice(0,10);
+            complete.push({day,views:byDay.get(day)||0});
+            cursor.setUTCDate(cursor.getUTCDate()+1);
+          }
+        }
+        $("daily").innerHTML=complete.map(r=>"<tr><td>"+esc(r.day)+"</td><td>"+r.views+"</td></tr>").join("");
         $("builds").innerHTML=(j.perBuild||[]).map(r=>"<tr><td>"+esc(r.build)+"</td><td>"+r.views+"</td></tr>").join("");
         $("pages").innerHTML=(j.perPage||[]).map(r=>"<tr><td>"+esc(r.page)+"</td><td>"+r.views+"</td></tr>").join("");
-        draw(j.perDay||[]);
+        draw(complete);
       }catch(e){$("status").textContent="";$("error").textContent=String(e.message||e);}
     }
     $("login").addEventListener("submit",e=>{e.preventDefault();load();});
