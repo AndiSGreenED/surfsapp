@@ -6,7 +6,8 @@
   <meta name="surfsapp-lite-version" content="V2">
   <title>SurfsApp Web App Einblick</title>
   <link rel="icon" href="../favicon.png?v=3">
-  <style>
+  <style>.language-switch{position:fixed;top:10px;right:14px;z-index:20;padding:7px 12px;background:#fff;border:1px solid #315366;border-radius:20px;font:600 14px system-ui;box-shadow:0 2px 8px #0005}.language-switch a{color:#0a2432;text-decoration:none}.language-switch .active{font-weight:800;color:#1379aa}
+
     :root{color-scheme:dark;--bg:#061421;--panel:#0d2230;--line:#1e4052;--text:#edf5fa;--muted:#91aaba;--blue:#55b6df;--blue2:#258ab7;--accent:#ff775f}
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:var(--text);font-family:Barlow,"Arial Narrow",system-ui,sans-serif;font-size:16px;line-height:1.5}
@@ -91,7 +92,7 @@
     }
   </style>
 </head>
-<body>
+<body><div class="language-switch"><a class="active" href="index.html" onclick="localStorage.setItem(&quot;surfsapp-language&quot;,&quot;de&quot;)">DE</a> | <a href="index.en.html" onclick="localStorage.setItem(&quot;surfsapp-language&quot;,&quot;en&quot;)">EN</a></div><script>try{if(localStorage.getItem("surfsapp-language")==="en"||(!localStorage.getItem("surfsapp-language")&&(navigator.language||"").toLowerCase().startsWith("en")))location.replace("index.en.html"+location.hash)}catch(e){}</script>
 <header class="topbar">
   <a class="brand" href="../"><img src="../symbol.png?v=3" alt=""><span>SurfsApp</span></a>
   <div class="topright">
