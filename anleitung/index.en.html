@@ -271,32 +271,32 @@
       <tr><td>Wing foiling: Jump</td><td>Counts jumps and saves metrics.</td><td>Additional measurement data for later jump analysis.</td><td>No jump detection.</td></tr>
       <tr><td>Surfing: Wave ride</td><td>Detects wave rides based on speed and movement.</td><td>Records additional motion data. The separate TURNS page still does not currently display turn or slide metrics.</td><td>No wave ride counting on the watch.</td></tr>
     </table>
-    <h3>IQ Felder und eigene Seiten sind nicht dasselbe</h3>
-    <p><b>Custom pages</b> zeigen Werte während der Aufnahme direkt auf der Uhr. <b>IQ fields</b> werden zusätzlich in der gespeicherten Garmin Aktivität abgelegt und können dort in Garmin Connect erscheinen. Die Web App berechnet weitere Kennzahlen aus der FIT Datei und den aufgezeichneten Bewegungsdaten.</p>
-    <p>Die IQ Felder sind je Sportart auswählbar. Typische Gruppen sind Geschwindigkeit, Manöver, Fahrzustände, Wellenritte, Jumps und Loops. Beim Surfen stehen stattdessen Werte zu Ritt, Paddeln und Sitzen bereit. Wählen Sie nur die Kennzahlen, die Sie tatsächlich in Garmin Connect benötigen. Die Uhr zeigt an, wenn eine Auswahl mit dem gewählten Detailmodus nicht vollständig zusammenpasst.</p>
-    <p>Garmin begrenzt die Zahl der zusätzlichen IQ Felder auf 16 pro Aktivität. Einige Detailmodi benötigen selbst Platz für ihre Messwerte. Deshalb kann die Zahl der frei auswählbaren Zusatzwerte kleiner werden, wenn Sie mehrere Detailmodi gleichzeitig aktivieren. Die Anzeige in der IQ Felder Auswahl zeigt, wie viele Werte ausgewählt sind und wie viele Plätze zur Verfügung stehen. Nicht gespeicherte IQ Felder erscheinen nicht in Garmin Connect. Die eigentliche Auswertung in SurfsApp bleibt davon unabhängig.</p>
-    <h2 id="a9">9 Windsurfen: Wellenritte, Jumps, Loops und Marker</h2>
+    <h3>IQ fields and custom pages are not the same</h3>
+    <p><b>Custom pages</b> display values live on the watch during recording. <b>IQ fields</b> are also stored in the saved Garmin activity and may appear in Garmin Connect. The web app calculates additional metrics from the FIT file and the recorded motion data.</p>
+    <p>IQ fields can be selected separately for each sport. Typical groups include speed, manoeuvres, activity states, wave rides, jumps and loops. For surfing, the available values instead cover riding, paddling and sitting. Select only the metrics you actually need in Garmin Connect. The watch indicates when a selection is incompatible with the chosen detail mode.</p>
+    <p>Garmin limits the number of additional IQ fields to 16 per activity. Some detail modes use slots for their own measurements. As a result, fewer additional fields may be available when several detail modes are enabled at the same time. The IQ field selection shows how many values are selected and how many slots are available. IQ fields that were not saved will not appear in Garmin Connect. SurfsApp analysis is independent of this limit.</p>
+    <h2 id="a9">9 Windsurfing: wave rides, jumps, loops and markers</h2>
     <h3>Wave rides</h3>
-    <p>Die Uhr erkennt Wellenritte automatisch. Im Menü <b>Windsurfen → Modus → Wellenritt</b> wählen Sie die Detailstufe.</p>
+    <p>The watch detects wave rides automatically. Under <b>Windsurfing → Mode → Wave ride</b> select the detail level.</p>
     <table>
-      <tr><th>Level</th><th>Ergebnis</th></tr>
-      <tr><td><b>Connect</b></td><td>Die Uhr zählt Wellenritte und Turns. Ein Turn besteht aus Bottom Turn und anschließendem Cutback. Die Auswertung zeigt unter anderem den besten Ritt, Tempo vor und nach den Turns sowie Wellen je Runde.</td></tr>
-      <tr><td><b>Visu</b></td><td>Ergänzt die Connect Werte um Brettkurs und Slide Analyse. Auf der Uhr erscheint zusätzlich die Seite Rittdetails. In der Web App können Sie den Verlauf eines Ritts und die Slides je Turn genauer ansehen.</td></tr>
-      <tr><td><b>Off</b></td><td>Die Wellenritt Seiten und die Zählung auf der Uhr entfallen. Die Web App kann Wellenritte weiterhin aus der GPS Spur ableiten, aber keine zusätzlichen Bewegungsdetails anzeigen.</td></tr>
+      <tr><th>Level</th><th>Result</th></tr>
+      <tr><td><b>Connect</b></td><td>The watch counts wave rides and turns. A turn consists of a bottom turn followed by a cutback. The analysis shows, among other things, the best ride, speed before and after turns, and waves per run.</td></tr>
+      <tr><td><b>Visu</b></td><td>Adds board direction and slide analysis to the Connect metrics. The Ride Details page also appears on the watch. In the web app, you can examine the course of a ride and the slides for each turn in more detail.</td></tr>
+      <tr><td><b>Off</b></td><td>The wave ride pages and on watch counting are disabled. The web app can still derive wave rides from the GPS track, but cannot display additional motion details.</td></tr>
     </table>
-    <p>Ein <b>Slide</b> ist eine deutliche seitliche Bewegung des Brettes während des Cutbacks. Die Uhr leitet die Brettbewegung aus der Armbewegung ab. Wenn Sie während des Ritts umgreifen, kann die Richtung daher abweichen. Visu liefert die Grundlage für diese Detailauswertung.</p>
+    <p>A <b>Slide</b> is a pronounced sideways movement of the board during the cutback. The watch derives board movement from arm movement. If you change your grip during the ride, the direction may therefore differ. Visu provides the data required for this detailed analysis.</p>
     <h3>Jumps</h3>
-    <p>Ein Jump ist ein Sprung ohne Loop. SurfsApp ermittelt Anzahl, geschätzte Höhe und Flugzeit. Im Menü <b>Windsurfen → Modus → Jump</b> stehen Connect, Visu und Aus zur Wahl.</p>
-    <p><b>Jump ab</b> legt die Mindesthöhe fest, ab der ein Sprung zählt. Der Startwert beträgt 0,3 m. Kleine Hüpfer können Sie damit aus der Zählung heraushalten. Die Höhe ist eine Berechnung aus den Bewegungsdaten und keine direkte Höhenmessung.</p>
+    <p>A jump is a leap without a loop. SurfsApp calculates the count, estimated height and airtime. Under <b>Windsurfing → Mode → Jump</b> you can choose Connect, Visu or Off.</p>
+    <p><b>Jump threshold</b> sets the minimum height for a jump to be counted. The default is 0.3 m. This allows you to filter out small hops. Height is calculated from motion data and is not a direct altitude measurement.</p>
     <h3>Loops</h3>
-    <p>Loops werden getrennt von normalen Jumps erfasst. Die Uhr unterscheidet Frontloop, Backloop und Double Forward. Wenn eine Zuordnung nicht sicher ist, erscheint die allgemeine Bezeichnung Loop.</p>
-    <p><b>Loop Connect</b> zählt die Loops und speichert die wichtigsten Kennzahlen. <b>Loop Visu</b> ergänzt Messdaten für die räumliche Analyse in der Web App. Unter <b>Advanced Loops</b> können bei Loop Visu zusätzliche Bewegungsdetails für anspruchsvollere Loop Formen erfasst werden.</p>
-    <h3>Priorität Loop und Jump</h3>
-    <p>Die Einstellung <b>Priorität</b> bevorzugt das Schreiben der detaillierten Loop und Jump Daten. Das kann die Wartezeit beim Speichern verkürzen. Dafür stehen weniger Plätze für andere zusätzliche IQ Felder zur Verfügung. Nutzen Sie die Einstellung vor allem dann, wenn Ihnen die detaillierte Sprunganalyse wichtiger ist als eine möglichst große Auswahl an Connect Kennzahlen.</p>
+    <p>Loops are recorded separately from regular jumps. The watch distinguishes front loops, back loops and double forwards. If the classification is uncertain, the generic label Loop is used.</p>
+    <p><b>Loop Connect</b> counts loops and saves the key metrics. <b>Loop Visu</b> adds measurement data for spatial analysis in the web app. Under <b>Advanced Loops</b> additional motion details for more advanced loop types can be recorded when Loop Visu is enabled.</p>
+    <h3>Loop and Jump priority</h3>
+    <p>The setting <b>Priority</b> prioritises writing detailed loop and jump data. This can reduce the time required to save. However, fewer slots remain available for other additional IQ fields. Use this setting when detailed jump analysis matters more to you than having the widest possible selection of Connect metrics.</p>
     <h3>Marker</h3>
-    <p>Mit BACK setzen Sie während der Aufnahme einen Marker, zum Beispiel für einen besonders guten Ritt oder einen Sprung. Die Uhr bestätigt den Marker mit zwei kurzen Vibrationen. Marker lassen sich später in der Web App auf der Karte und in den Diagrammen wiederfinden. In einer Pause kann kein Marker gesetzt werden.</p>
-    <p>Die sportartspezifischen Funktionen für Wingen und Surfen sind in den <a href="../wingen/index.en.html">Wingen Hinweisen</a> und der <a href="../surfen/index.en.html">Surfing guide</a> getrennt erklärt.</p>
-    <h2 id="a10">10 Auswertung in der Web App</h2>
+    <p>Press BACK during recording to set a marker, for example for a particularly good ride or a jump. The watch confirms the marker with two short vibrations. Markers can later be found on the map and in the charts in the web app. You cannot set a marker while paused.</p>
+    <p>The sport specific features for wing foiling and surfing are explained separately in the <a href="../wingen/index.en.html">wing foiling guide</a> and the <a href="../surfen/index.en.html">Surfing guide</a> guide.</p>
+    <h2 id="a10">10 Analysis in the web app</h2>
     <p>Die Uhr speichert jede Session als Garmin Aktivität. Für die ausführliche Analyse öffnen Sie die <a href="https://surfsapp.pages.dev/" target="_blank" rel="noopener">SurfsApp Web App</a> und wählen die gewünschte Aufnahme aus der Sessionsliste. Die Web App ergänzt die kurze Uhrenauswertung um Karten, Zeitverläufe und sportartspezifische Detailansichten.</p>
     <h3>Die wichtigsten Bereiche</h3>
     <table>
