@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="surfsapp-lite-version" content="V2">
+  <title>SurfsApp web app preview</title>
+  <link rel="icon" href="../favicon.png?v=3">
+  <style>
+    :root{color-scheme:dark;--bg:#061421;--panel:#0d2230;--line:#1e4052;--text:#edf5fa;--muted:#91aaba;--blue:#55b6df;--blue2:#258ab7;--accent:#ff775f}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Barlow,"Arial Narrow",system-ui,sans-serif;font-size:16px;line-height:1.5}
+    a{color:var(--blue)}
+    button,input{font:inherit}
+    .topbar{height:68px;background:#091b29;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:0 max(24px,calc((100vw - 1320px)/2))}
+    .brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-size:22px;font-weight:750;letter-spacing:.02em}
+    .brand img{width:34px;height:34px;object-fit:contain}
+    .topright{margin-left:auto;display:flex;align-items:center;gap:18px}
+    .small-link{color:var(--muted);text-decoration:none;font-size:14px}
+    .request-btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:9px 18px;border:1px solid #48a7d2;border-radius:8px;background:#1b759e;color:white;font-weight:700;text-decoration:none;cursor:pointer}
+    .request-btn:hover{background:#258bb7}
+    .request-btn:disabled{opacity:.55;cursor:wait}
+    main{max-width:1320px;margin:0 auto;padding:36px 28px 64px}
+    .hero{max-width:800px;margin:0 0 28px}
+    .eyebrow{color:var(--blue);font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+    h1{font-size:clamp(30px,4vw,44px);line-height:1.12;letter-spacing:-.02em;margin:8px 0 12px}
+    .intro{color:#b4c6d1;font-size:18px;max-width:740px;margin:0}
+    .support-note{margin:20px 0 24px;padding:16px 18px;background:#102c3c;border:1px solid #285066;border-left:4px solid #55b6df;border-radius:10px;color:#dceaf1}.support-note strong{font-size:16px;color:#fff}.support-note p{margin:6px 0 0;color:#b4c6d1}.support-note a{color:#7bd0f3;font-weight:700}
+    .viewbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:30px 0 14px}
+    .view-switch{display:inline-flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:10px;background:#091b29}
+    .view-switch button{border:0;border-radius:7px;color:#9bb1bf;background:transparent;padding:10px 18px;cursor:pointer;font-weight:700}
+    .view-switch button[aria-pressed="true"]{background:#17435a;color:#f4fbff;box-shadow:inset 0 0 0 1px #2b6884}
+    .view-note{font-size:13px;color:var(--muted)}
+    .view-panel[hidden]{display:none}
+    .capture-card{background:var(--panel);border:1px solid var(--line);border-radius:13px;overflow:hidden}
+    .capture-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 18px;border-bottom:1px solid var(--line)}
+    .capture-title{font-weight:750;font-size:17px}
+    .capture-subtitle{font-size:13px;color:var(--muted)}
+    .capture-content{padding:18px;background:#081925}
+    .gif-stage{display:flex;align-items:center;justify-content:center;min-height:420px;border:1px solid #264657;border-radius:9px;background:#091d2a;overflow:hidden}
+    .gif-stage img{width:100%;height:auto;max-height:780px;object-fit:contain;display:block}
+    .gif-stage img[hidden]{display:none}
+    .gif-placeholder{width:100%;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:36px;color:var(--muted);background:linear-gradient(135deg,#0c2534,#091a27)}
+    .gif-placeholder[hidden]{display:none}
+    .placeholder-mark{width:60px;height:44px;border:1px solid #3c667d;border-radius:7px;display:grid;place-items:center;margin-bottom:15px;color:var(--blue);font-size:23px}
+    .gif-placeholder strong{font-size:17px;color:#dceaf1}
+    .gif-placeholder span{max-width:430px;margin-top:6px;font-size:14px}
+    .view-panel.mobile{max-width:590px}
+    .mobile-frame{margin:0 auto;padding:12px;border:1px solid #466072;border-radius:30px;background:#020b11;max-width:430px;box-shadow:0 18px 50px #0006}
+    .mobile-screen{min-height:660px;border-radius:20px;background:#091b28;overflow:hidden;display:flex;flex-direction:column}
+    .mobile-status{height:28px;padding:5px 13px;color:#90aaba;font-size:11px;background:#071622;display:flex;justify-content:space-between}
+    .mobile-appbar{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--line);font-weight:750}
+    .mobile-appbar span:last-child{color:var(--muted);font-size:12px;font-weight:500}
+    .mobile-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:8px;background:#071622;border-bottom:1px solid var(--line)}
+    .mobile-tabs button{border:0;border-radius:7px;background:transparent;color:#9db3c0;padding:10px 4px;font-size:13px;font-weight:700;cursor:pointer}
+    .mobile-tabs button[aria-selected="true"]{background:#1b759e;color:#fff}
+    .mobile-content{flex:1;padding:12px}
+    .mobile-content .gif-stage{min-height:500px;border:0;background:#091b28}
+    .mobile-content .gif-placeholder{min-height:500px;padding:20px}
+    .mobile-homebar{height:22px;display:flex;align-items:center;justify-content:center;background:#071622}
+    .mobile-homebar span{width:92px;height:4px;border-radius:6px;background:#8ea5b3}
+    .mobile-description{color:var(--muted);font-size:13px;text-align:center;margin:12px auto 0;max-width:440px}
+    .access-card{margin-top:34px;background:linear-gradient(145deg,#102c3c,#0b1e2b);border:1px solid #285066;border-radius:14px;padding:24px}
+    .access-card h2{font-size:23px;margin:0 0 6px}
+    .access-card>p{max-width:740px;color:#b3c6d1;margin:0 0 18px}
+    .access-form{display:none;margin-top:18px;max-width:620px}
+    .access-form.open{display:block}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field label{display:block;color:#c4d3dc;font-size:13px;margin:0 0 5px}
+    .field input{width:100%;background:#071923;border:1px solid #315366;border-radius:7px;padding:11px 12px;color:var(--text);outline:none}
+    .field input:focus{border-color:var(--blue);box-shadow:0 0 0 2px #55b6df22}
+    .form-actions{display:flex;align-items:center;gap:14px;margin-top:15px;flex-wrap:wrap}
+    .form-note{font-size:12px;color:#91aaba;max-width:520px;margin-top:12px}
+    .form-status{display:none;padding:11px 13px;border-radius:8px;margin-top:14px;font-size:14px}
+    .form-status.show{display:block}
+    .form-status.good{background:#0b352f;color:#9af0d2;border:1px solid #246d5b}
+    .form-status.bad{background:#3a211f;color:#ffb7aa;border:1px solid #8d473c}
+    .trap{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important}
+    footer{border-top:1px solid var(--line);color:#7892a3;text-align:center;font-size:13px;padding:20px}
+    @media(max-width:700px){
+      .topbar{height:58px;padding:0 16px}.topright .small-link{display:none}
+      main{padding:25px 14px 44px}.intro{font-size:16px}
+      .viewbar{margin-top:22px}.view-switch{width:100%}.view-switch button{flex:1;padding:10px 8px}
+      .view-note{width:100%}.gif-stage,.gif-placeholder{min-height:280px}
+      .capture-head{align-items:flex-start;flex-direction:column}
+      .capture-content{padding:8px}
+      .mobile-frame{padding:7px;border-radius:24px}.mobile-screen{min-height:600px}
+      .mobile-content .gif-stage,.mobile-content .gif-placeholder{min-height:440px}
+      .form-grid{grid-template-columns:1fr}
+      .access-card{padding:18px}
+    }
+  </style>
+</head>
+<body><div class="language-switch" style="position:fixed;top:10px;right:14px;z-index:20;padding:7px 12px;background:#fff;border:1px solid #cbd5e1;border-radius:20px;font:600 14px system-ui;box-shadow:0 2px 8px #0002"><a href="index.html" onclick="localStorage.setItem(&quot;surfsapp-language&quot;,&quot;de&quot;)" style="text-decoration:none">DE</a> <span aria-hidden="true">|</span> <a href="index.en.html" onclick="localStorage.setItem(&quot;surfsapp-language&quot;,&quot;en&quot;)" style="font-weight:800;text-decoration:none">EN</a></div><script>try{localStorage.setItem("surfsapp-language","en")}catch(e){}</script>
+<header class="topbar">
+  <a class="brand" href="../?lang=en"><img src="../symbol.png?v=3" alt=""><span>SurfsApp</span></a>
+  <div class="topright">
+    <a class="small-link" href="../anleitung/index.en.html">User guide</a>
+    <button class="request-btn" type="button" id="topRequest">Request access</button>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="eyebrow">Explore the web app</div>
+    <h1>One session. Every important detail.</h1>
+    <p class="intro">The web app analyses your recordings with maps, metrics, timelines and sport specific detailed views. Switch here between the full desktop view and the mobile layout.</p>
+    <section class="support-note" aria-label="SurfsApp development">
+      <strong>Help develop SurfsApp</strong>
+      <p>Would you like to support development or request a particular feature? Sanitized FIT files from real sessions help improve sport specific functions and develop new features, such as detecting specific manoeuvres. Remove personal information first using the <a href="https://andisgreened.github.io/Fit-Privacy-Cleaner/">FIT Privacy Cleaner</a>. The option to send me the sanitized FIT file directly will be added to the FIT Privacy Cleaner.</p>
+    </section>
+  </div>
+
+  <div class="viewbar">
+    <div class="view-switch" role="group" aria-label="Choose a view">
+      <button type="button" data-view="desktop" aria-pressed="true">Desktop view</button>
+      <button type="button" data-view="mobile" aria-pressed="false">Mobile</button>
+    </div>
+    <div class="view-note">Switch between the desktop and mobile views. Original GIF recordings from the real web app are displayed in these sections.</div>
+  </div>
+
+  <section class="view-panel" id="desktopView" aria-label="Desktop view">
+    <div class="capture-card">
+      <div class="capture-head">
+        <div class="capture-title">Desktop view</div>
+        <div class="capture-subtitle">Sessions, analysis, reports and detailed charts</div>
+      </div>
+      <div class="capture-content">
+        <div class="gif-stage">
+          <img src="media/vollansicht.gif" alt="Animated original recording of the SurfsApp desktop view" data-capture>
+          <div class="gif-placeholder" data-placeholder>
+            <div class="placeholder-mark">▣</div>
+            <strong>Original desktop GIF will be added</strong>
+            <span>The actual screen recording of the current web app will appear here. No recreated metrics or fabricated charts are used.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view-panel mobile" id="mobileView" aria-label="Mobile view" hidden>
+    <div class="mobile-frame">
+      <div class="mobile-screen">
+        <div class="mobile-status"><span>9:41</span><span>SurfsApp</span></div>
+        <div class="mobile-appbar"><span>SurfsApp</span><span>Mobile view</span></div>
+        <div class="mobile-tabs" role="tablist" aria-label="Mobile sections">
+          <button type="button" data-mobile-tab="sessions" aria-selected="true">Sessions</button>
+          <button type="button" data-mobile-tab="numbers" aria-selected="false">Metrics</button>
+          <button type="button" data-mobile-tab="charts" aria-selected="false">Charts</button>
+        </div>
+        <div class="mobile-content">
+          <div class="gif-stage" data-mobile-pane="sessions">
+            <img src="media/handy-sessions.gif" alt="Animated original recording of the Sessions tab on mobile" data-capture>
+            <div class="gif-placeholder" data-placeholder>
+              <div class="placeholder-mark">▣</div>
+              <strong>Sessions on mobile</strong>
+              <span>The original GIF recording of the Sessions tab will be shown here.</span>
+            </div>
+          </div>
+          <div class="gif-stage" data-mobile-pane="numbers" hidden>
+            <img src="media/handy-zahlen.gif" alt="Animated original recording of the Metrics tab on mobile" data-capture>
+            <div class="gif-placeholder" data-placeholder>
+              <div class="placeholder-mark">▣</div>
+              <strong>Metrics on mobile</strong>
+              <span>The original GIF recording of the Metrics tab will be shown here.</span>
+            </div>
+          </div>
+          <div class="gif-stage" data-mobile-pane="charts" hidden>
+            <img src="media/handy-diagramme.gif" alt="Animated original recording of the Charts tab on mobile" data-capture>
+            <div class="gif-placeholder" data-placeholder>
+              <div class="placeholder-mark">▣</div>
+              <strong>Charts on mobile</strong>
+              <span>The original GIF recording of the Charts tab will be shown here.</span>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-homebar"><span></span></div>
+      </div>
+    </div>
+    <p class="mobile-description">Three separate tabs for Sessions, Metrics and Charts. This view can be used independently of the desktop view.</p>
+  </section>
+
+  <section class="access-card" id="zugang">
+    <h2>Access to the SurfsApp web app</h2>
+    <p>The web app itself is access restricted. You can request a personal account here. After your request has been reviewed and approved, an invitation will be sent to your email address.</p>
+    <button class="request-btn" type="button" id="openRequest">Request personal access</button>
+
+    <form class="access-form" id="accessForm" novalidate>
+      <div class="form-grid">
+        <div class="field">
+          <label for="requestName">Name</label>
+          <input id="requestName" name="name" type="text" maxlength="80" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="requestEmail">Email address</label>
+          <input id="requestEmail" name="email" type="email" maxlength="254" autocomplete="email" required>
+        </div>
+      </div>
+      <div class="trap" aria-hidden="true">
+        <label for="requestWebsite">Website</label>
+        <input id="requestWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="form-actions">
+        <button class="request-btn" type="submit" id="submitRequest">Send request</button>
+        <span class="view-note">Your request is sent directly to SurfsApp.</span>
+      </div>
+      <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+      <p class="form-note">Your name and email address are used to review and process the access request. Your personal access will only be created after approval.</p>
+    </form>
+  </section>
+</main>
+
+<footer>SurfsApp · Personal access required</footer>
+
+<script>
+  const viewButtons = [...document.querySelectorAll("[data-view]")];
+  const desktopView = document.getElementById("desktopView");
+  const mobileView = document.getElementById("mobileView");
+
+  function setView(mode) {
+    const mobile = mode === "mobile";
+    desktopView.hidden = mobile;
+    mobileView.hidden = !mobile;
+    viewButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.view === mode)));
+  }
+  viewButtons.forEach(button => button.addEventListener("click", () => setView(button.dataset.view)));
+
+  document.querySelectorAll("[data-mobile-tab]").forEach(button => {
+    button.addEventListener("click", () => {
+      const key = button.dataset.mobileTab;
+      document.querySelectorAll("[data-mobile-tab]").forEach(tab => {
+        tab.setAttribute("aria-selected", String(tab === button));
+      });
+      document.querySelectorAll("[data-mobile-pane]").forEach(pane => {
+        pane.hidden = pane.dataset.mobilePane !== key;
+      });
+    });
+  });
+
+  document.querySelectorAll("[data-capture]").forEach(image => {
+    const showImage = () => {
+      image.hidden = false;
+      const fallback = image.parentElement.querySelector("[data-placeholder]");
+      if (fallback) fallback.hidden = true;
+    };
+    const showFallback = () => {
+      image.hidden = true;
+      const fallback = image.parentElement.querySelector("[data-placeholder]");
+      if (fallback) fallback.hidden = false;
+    };
+    image.addEventListener("load", showImage);
+    image.addEventListener("error", showFallback);
+    if (image.complete) image.naturalWidth ? showImage() : showFallback();
+  });
+
+  const accessForm = document.getElementById("accessForm");
+  const statusBox = document.getElementById("formStatus");
+  const submitButton = document.getElementById("submitRequest");
+
+  function openAccessForm() {
+    accessForm.classList.add("open");
+    document.getElementById("requestName").focus({preventScroll:true});
+    document.getElementById("zugang").scrollIntoView({behavior:"smooth",block:"center"});
+  }
+  document.getElementById("topRequest").addEventListener("click", openAccessForm);
+  document.getElementById("openRequest").addEventListener("click", openAccessForm);
+  if (location.hash === "#zugang") accessForm.classList.add("open");
+
+  function showStatus(message, good) {
+    statusBox.textContent = message;
+    statusBox.className = "form-status show " + (good ? "good" : "bad");
+  }
+
+  accessForm.addEventListener("submit", async event => {
+    event.preventDefault();
+    const name = document.getElementById("requestName").value.trim();
+    const email = document.getElementById("requestEmail").value.trim();
+    const website = document.getElementById("requestWebsite").value.trim();
+    if (name.length < 2) return showStatus("Please enter your name.", false);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showStatus("Please enter a valid email address.", false);
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending…";
+    statusBox.className = "form-status";
+    try {
+      const response = await fetch("https://garmin-abruf.andigreen.workers.dev/api/request", {
+        method:"POST",
+        headers:{"content-type":"application/json"},
+        body:JSON.stringify({name,email,website})
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        const messages = {
+          ALREADY_ACTIVE:"An active account already exists for this email address.",
+          EMAIL_EXISTS:"A blocked account already exists for this email address. Please contact the site administrator directly.",
+          RATE_LIMIT:"Too many requests have been submitted. Please try again later.",
+          BAD_EMAIL:"Please enter a valid email address.",
+          BAD_NAME:"Please enter your name."
+        };
+        throw new Error(messages[result.error] || result.message || "The request could not be sent.");
+      }
+      if (result.alreadyPending) {
+        showStatus("There is already a pending request for this email address. You do not need to submit another one.", true);
+      } else if (result.mailSent) {
+        showStatus("Your request has been received. After it has been reviewed, you will receive an invitation by email.", true);
+        accessForm.reset();
+      } else {
+        showStatus("Your request has been saved. The automatic notification could not be sent at this time.", true);
+        accessForm.reset();
+      }
+    } catch (error) {
+      showStatus(error.message || "Connection error. Please try again later.", false);
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Anfrage senden";
+    }
+  });
+</script>
+</body>
+</html>
