@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SurfsApp: Windsurfen, Wingen und Surfen</title><link rel="icon" href="favicon.png?v=3">
-<meta name="surfsapp-manual-revision" content="V11">
+<meta name="surfsapp-manual-revision" content="V12">
 <meta name="surfsapp-build" content="0.25.24">
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#fff;background:linear-gradient(160deg,#04122b 0%,#06306b 55%,#0a5cc9 100%);min-height:100vh;display:flex;flex-direction:column}
@@ -12,8 +12,6 @@ h1{font-size:3.2rem;margin:1.4rem 0 .2rem;letter-spacing:.5px}
 a.card:hover{background:rgba(255,255,255,.17);transform:translateY(-2px)}
 .card h2{margin:0 0 .4rem;font-size:1.25rem}.card p{margin:0;color:#cfe2ff;line-height:1.45}
 .soon{opacity:.6}.badge{display:inline-block;font-size:.75rem;background:#0055FF;border-radius:20px;padding:.1rem .6rem;margin-left:.4rem;vertical-align:middle}
-.feat{margin:2.4rem 0 0;display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
-.feat span{background:rgba(0,0,0,.28);border-radius:20px;padding:.35rem .9rem;font-size:.95rem}
 footer{text-align:center;padding:1.2rem;color:#8fb2e6;font-size:.85rem}
 </style></head><body><main>
 <img class="icon" src="symbol.png?v=3" alt="SurfsApp Symbol">
@@ -23,10 +21,9 @@ footer{text-align:center;padding:1.2rem;color:#8fb2e6;font-size:.85rem}
 <a class="card" href="anleitung/"><h2>Bedienungsanleitung</h2><p>Tasten, Touch, Seiten, Einstellungen und alle Funktionen Schritt für Schritt.</p></a>
 <a class="card" href="wingen/"><h2>Wingen Anleitung</h2><p>Wingen starten, Jumps einrichten, Live Seiten und Auswertung verstehen.</p></a>
 <a class="card" href="surfen/"><h2>Surf Anleitung</h2><p>Surf Modus, Grenzwerte, Surf Seiten, Wellen und Sessionauswertung.</p></a>
-<a class="card" href="https://surfsapp.pages.dev/"><h2>SurfsApp Web App</h2><p>Sessions verwalten und mit Karten, Zahlen und Diagrammen auswerten.</p></a>
-<a class="card" href="lite/"><h2>Session ansehen</h2><p>Eigene Aufnahme laden und auswerten. Alles läuft lokal in deinem Browser.</p></a>
+<a class="card" href="lite/#zugang"><h2>Zugang zur Web App</h2><p>Persönlichen Zugang anfragen. Die Auswertung ist nur nach Freigabe erreichbar.</p></a>
+<a class="card" href="lite/"><h2>Web App Einblick</h2><p>Die Vollansicht und die Handyansicht kennenlernen und zwischen beiden wechseln.</p></a>
 </div>
-<div class="feat"><span>Tempo und Vmax</span><span>Gleiten, Halsen, Wenden</span><span>Wellenritte</span><span>Loops</span><span>Marker</span><span>Eigene Seiten</span></div>
 </main><footer>SurfsApp ist kostenlos.</footer>
 <script>
   fetch("https://garmin-abruf.andigreen.workers.dev/api/manual/view",{
