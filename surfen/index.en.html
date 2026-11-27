@@ -24,7 +24,7 @@
   <h1>Surfing with SurfsApp</h1>
   <p class="sub">User guide for surfing sessions on your Garmin watch</p>
   <p class="sub">Guide revision V10 · Updated: 27 November 2026</p>
-<section class="support-note" aria-label="SurfsApp Weiterentwicklung">
+<section class="support-note" aria-label="SurfsApp development">
   <strong>Help develop SurfsApp</strong>
   <p>Would you like to support development or request a particular feature? Sanitized FIT files from real sessions help improve sport specific functions and develop new features, such as detecting specific manoeuvres. Remove personal information first using the <a href="https://andisgreened.github.io/Fit-Privacy-Cleaner/">FIT Privacy Cleaner</a>. The option to send me the sanitized FIT file directly will be added to the FIT Privacy Cleaner.</p>
 </section>
@@ -52,14 +52,14 @@
   </ol>
   <p>SurfsApp records time, GPS track, speed and heart rate. Time spent sitting, paddling and riding is also recorded separately.</p>
   <div class="grid">
-    <figure><img src="img/surf-sportwahl.svg" alt="Auswahl der Sportart Surfen"><figcaption><b>Sport selection</b><br>Select surfing as a separate sport.</figcaption></figure>
-    <figure><img src="img/surf-menue.svg" alt="Surf Menü"><figcaption><b>Surf menu</b><br>Mode, defaults, pages and IQ fields.</figcaption></figure>
+    <figure><img src="img/surf-sportwahl.svg" alt="Surf sport selection"><figcaption><b>Sport selection</b><br>Select surfing as a separate sport.</figcaption></figure>
+    <figure><img src="img/surf-menue.svg" alt="Surf menu"><figcaption><b>Surf menu</b><br>Mode, defaults, pages and IQ fields.</figcaption></figure>
   </div>
 
   <h2 id="zeiten">2 How SurfsApp divides a session</h2>
   <p>SurfsApp uses two speed thresholds to divide session time. The defaults are 2.5 km/h for paddling and 6.5 km/h for the start of a ride. You can adjust both values to suit your conditions.</p>
   <div class="grid">
-    <figure><img src="img/surf-phases.svg" alt="Einteilung der Surf Zeit nach Geschwindigkeit"><figcaption><b>Sitting, paddling and riding</b><br>Three activity states with separate time and distance totals.</figcaption></figure>
+    <figure><img src="img/surf-phases.svg" alt="Surf time classification by speed"><figcaption><b>Sitting, paddling and riding</b><br>Three activity states with separate time and distance totals.</figcaption></figure>
   </div>
   <table>
     <tr><th>Speed</th><th>Classification</th><th>Description</th></tr>
@@ -72,10 +72,10 @@
   <h2 id="seiten">3 The four surfing pages</h2>
   <p>During recording, use UP and DOWN or swipe on a supported touchscreen watch to browse the pages. Under <b>Surfing → Pages</b> you can enable or disable each of the four surfing pages. At least one custom or fixed surfing page should remain enabled.</p>
   <div class="grid">
-    <figure><img src="img/surf-live.svg" alt="Surf Live Anzeige"><figcaption><b>SURF LIVE</b><br>Active time, paddling time, ride time, wave count and sitting time. The heart rate zone arc adds context to the live display.</figcaption></figure>
-    <figure><img src="img/surf-waves.svg" alt="Surf Wellen Anzeige"><figcaption><b>WAVES</b><br>Provisional wave count, longest ride, best average speed and distance of the longest ride.</figcaption></figure>
-    <figure><img src="img/surf-turns.svg" alt="Surf Turns Anzeige"><figcaption><b>TURNS</b><br>This page is reserved as a dedicated display area. Separate turn and slide metrics are not currently shown.</figcaption></figure>
-    <figure><img src="img/surf-session.svg" alt="Surf Session Anzeige"><figcaption><b>SURF SESSION</b><br>Total distance, maximum speed, and average and maximum heart rate.</figcaption></figure>
+    <figure><img src="img/surf-live.svg" alt="Surf live display"><figcaption><b>SURF LIVE</b><br>Active time, paddling time, ride time, wave count and sitting time. The heart rate zone arc adds context to the live display.</figcaption></figure>
+    <figure><img src="img/surf-waves.svg" alt="Surf waves display"><figcaption><b>WAVES</b><br>Provisional wave count, longest ride, best average speed and distance of the longest ride.</figcaption></figure>
+    <figure><img src="img/surf-turns.svg" alt="Surf turns display"><figcaption><b>TURNS</b><br>This page is reserved as a dedicated display area. Separate turn and slide metrics are not currently shown.</figcaption></figure>
+    <figure><img src="img/surf-session.svg" alt="Surf session display"><figcaption><b>SURF SESSION</b><br>Total distance, maximum speed, and average and maximum heart rate.</figcaption></figure>
   </div>
   <p>The wave count shown on the watch is provisional during the session. The final analysis may classify individual sections differently. This is especially relevant with GPS reception issues, slow paddling and changing speeds.</p>
 
@@ -105,43 +105,43 @@
   <p>The default values are a useful starting point. A lower ride threshold increases counted ride time. A lower paddling threshold assigns more time to paddling instead of sitting. Turn rate and turn angle affect the detection of turning movements used for wave counting.</p>
   <p>Windsurfing and wing foiling settings remain independent. Changes made during an active recording may be queued for the next session. If the watch displays <b>Applies to next session</b>, the new value does not apply retroactively.</p>
 
-  <h2 id="pause">6 Pause, Marker und Speichern</h2>
-  <h3>Manuelle Pause</h3>
-  <p>Beim Surfen wird die Aufnahme manuell pausiert. Drücken Sie START/STOP, wählen Sie <b>Pause</b> und bestätigen Sie mit <b>Yes</b>. Zum Fortsetzen öffnen Sie das Aktionsmenü erneut und wählen <b>Weiter</b>.</p>
-  <p>Wartezeiten zwischen den Wellen bleiben Bestandteil der Session. So erhalten Sie eine vollständige Aufzeichnung vom Start bis zum Speichern. Die Surf Pause verwendet nicht die automatische Pause von Windsurfen oder Wingen.</p>
-  <h3>Marker setzen</h3>
-  <p>Drücken Sie während der Aufnahme BACK, um einen Marker zu setzen, zum Beispiel nach einem besonders guten Ritt. Die Uhr bestätigt den Marker mit zwei kurzen Vibrationen. Marker können später in der Web App auf der Karte und in den Diagrammen wiedergefunden werden. In der Pause wird kein Marker gesetzt.</p>
-  <h3>Session speichern</h3>
-  <p>Öffnen Sie mit START/STOP das Aktionsmenü, wählen Sie <b>Save</b> und bestätigen Sie mit <b>Yes</b>. Die Aufnahme wird als Garmin Aktivität gesichert und kann mit Garmin Connect synchronisiert werden.</p>
+  <h2 id="pause">6 Pause, markers and saving</h2>
+  <h3>Manual pause</h3>
+  <p>Surfing recordings are paused manually. Press START/STOP, select <b>Pause</b> and confirm with <b>Yes</b>. Zum Fortsetzen öffnen Sie das Aktionsmenü erneut und wählen <b>Resume</b>.</p>
+  <p>Waiting time between waves remains part of the session. This gives you a complete recording from start to save. Surfing pause does not use the automatic pause feature for windsurfing or wing foiling.</p>
+  <h3>Set a marker</h3>
+  <p>During recording, press BACK to set a marker, for example after a particularly good ride. The watch confirms the marker with two short vibrations. Markers can later be found on the map and in the charts in the web app. A marker cannot be set while paused.</p>
+  <h3>Save the session</h3>
+  <p>Press START/STOP to open the action menu, select <b>Save</b> and confirm with <b>Yes</b>. Die Aufnahme wird als Garmin Aktivität gesichert und kann mit Garmin Connect synchronisiert werden.</p>
 
-  <h2 id="auswertung">7 Auswertung auf Uhr und Web App</h2>
-  <h3>Auf der Uhr</h3>
-  <p>Nach dem Speichern zeigt SurfsApp die Session Zusammenfassung. Sie können die Seiten mit HOCH und RUNTER durchblättern. Über <b>Letzte Session</b> auf der Startseite lässt sich die letzte Auswertung erneut öffnen.</p>
+  <h2 id="auswertung">7 Analysis on the watch and in the web app</h2>
+  <h3>On the watch</h3>
+  <p>After saving, SurfsApp displays the session summary. Use UP and DOWN to browse the pages. Select <b>Last session</b> on the home screen to reopen the most recent analysis.</p>
   <ul>
-    <li><b>Zeiten:</b> Gesamtdauer, aktive Zeit und Pausen.</li>
-    <li><b>Surf Werte:</b> Sitzen, Paddeln und Rittzeit sowie die erkannten Wellenwerte.</li>
-    <li><b>Session:</b> Gesamtstrecke, Höchstgeschwindigkeit und Herzfrequenz.</li>
-    <li><b>Summe:</b> Gesamtwerte über die gespeicherten Surf Sessions.</li>
+    <li><b>Timing:</b> Total duration, active time and pauses.</li>
+    <li><b>Surf metrics:</b> Sitting, paddling and ride time, as well as detected wave metrics.</li>
+    <li><b>Session:</b> Total distance, maximum speed and heart rate.</li>
+    <li><b>Totals:</b> Totals across saved surfing sessions.</li>
   </ul>
-  <h3>In der SurfsApp Web App</h3>
-  <p>Öffnen Sie die <a href="https://surfsapp.pages.dev/" target="_blank" rel="noopener">SurfsApp Web App</a> und wählen Sie Ihre Surf Session in der Sessionsliste aus. Die Web App bietet eine Karte mit GPS Strecke, Zahlen zu Zeit, Tempo und Strecke sowie Diagramme über den Verlauf. Erkannte Wellenabschnitte und die zugehörigen Werte werden in den Surf Ansichten dargestellt, sofern die Daten dafür vorhanden sind.</p>
-  <p>Beim Surfen werden die Fahrzustände als Sitzen, Paddeln und Ritt dargestellt. Windsurf Kennzahlen wie Halsen, Gleiten, Loops und Slides werden nicht auf die Surf Session übertragen. Auf schmalen Bildschirmen wechseln Sie über die unteren Reiter zwischen Sessions, Zahlen und Diagrammen.</p>
-  <p class="note">Die Web App kann GPS, Geschwindigkeit, Zeit und Herzfrequenz auswerten. Zusätzliche Bewegungsdetails müssen während der Aufnahme mit dem passenden Modus erfasst werden. Nachträglich lassen sie sich nicht aus einer normalen GPS Spur rekonstruieren.</p>
+  <h3>In the SurfsApp web app</h3>
+  <p>Open the <a href="https://surfsapp.pages.dev/" target="_blank" rel="noopener">SurfsApp web app</a> and select your surfing session from the session list. The web app provides a map with the GPS track, time, speed and distance metrics, and charts over time. Detected wave sections and their metrics appear in the surfing views when the required data is available.</p>
+  <p>For surfing, activity states are shown as Sitting, Paddling and Ride. Windsurfing metrics such as jibes, planing, loops and slides are not applied to surfing sessions. On narrow screens, use the bottom tabs to switch between Sessions, Numbers and Charts.</p>
+  <p class="note">The web app can analyse GPS, speed, time and heart rate. Additional motion details must be captured during recording with the appropriate mode. They cannot be reconstructed later from a standard GPS track.</p>
 
-  <h2 id="abstimmen">8 Erkennung sinnvoll abstimmen</h2>
-  <p>Beginnen Sie mit den Standardwerten. Vergleichen Sie nach mehreren Sessions die erkannte Rittzeit und Wellenzahl mit Ihrer Erinnerung. Ändern Sie jeweils nur einen Grenzwert, damit Sie die Wirkung beurteilen können.</p>
+  <h2 id="abstimmen">8 Fine tune detection</h2>
+  <p>Start with the default values. After several sessions, compare the detected ride time and wave count with your recollection. Change only one threshold at a time so you can assess its effect.</p>
   <table>
-    <tr><th>Beobachtung</th><th>Mögliche Anpassung</th></tr>
-    <tr><td>Die Rittzeit ist deutlich zu kurz.</td><td>Die Gleitschwelle vorsichtig verringern.</td></tr>
-    <tr><td>Zu viel Zeit wird als Ritt statt als Paddeln gezählt.</td><td>Die Gleitschwelle etwas erhöhen.</td></tr>
-    <tr><td>Zu viel Zeit wird als Paddeln statt als Sitzen gezählt.</td><td>Die Paddelschwelle leicht verringern.</td></tr>
-    <tr><td>Zu wenig Zeit wird als Paddeln gezählt.</td><td>Die Paddelschwelle leicht erhöhen.</td></tr>
-    <tr><td>Wellenabschnitte werden nicht als Wellenritt gezählt.</td><td>Prüfen Sie Gleitschwelle, Turn Rate und Turn Winkel. Ändern Sie nur einen Wert nach dem anderen.</td></tr>
-    <tr><td>Es werden zu viele Wellenritte gezählt.</td><td>Prüfen Sie zuerst, ob die Gleitschwelle zu niedrig ist. Erhöhen Sie bei Bedarf Turn Rate oder Turn Winkel.</td></tr>
+    <tr><th>Observation</th><th>Possible adjustment</th></tr>
+    <tr><td>Ride time is much too short.</td><td>Carefully lower the ride threshold.</td></tr>
+    <tr><td>Too much time is counted as riding instead of paddling.</td><td>Slightly increase the ride threshold.</td></tr>
+    <tr><td>Too much time is counted as paddling instead of sitting.</td><td>Slightly lower the paddling threshold.</td></tr>
+    <tr><td>Too little time is counted as paddling.</td><td>Slightly increase the paddling threshold.</td></tr>
+    <tr><td>Wave sections are not counted as wave rides.</td><td>Check the ride threshold, turn rate and turn angle. Change only one value at a time.</td></tr>
+    <tr><td>Too many wave rides are counted.</td><td>First check whether the ride threshold is too low. Increase the turn rate or turn angle if necessary.</td></tr>
   </table>
-  <p>GPS Geschwindigkeit ist eine Messgröße und keine direkte Messung der Wellenbewegung. Kurze GPS Aussetzer, sehr langsames Paddeln und wechselnde Bedingungen können die Einordnung beeinflussen. Nutzen Sie die Einstellungen deshalb als Abstimmung für Ihre üblichen Bedingungen, nicht als universelle Grenze für jeden Spot.</p>
+  <p>GPS speed is a measured value, not a direct measurement of wave motion. Brief GPS dropouts, very slow paddling and changing conditions can affect classification. Use these settings to tune detection for your usual conditions, not as a universal threshold for every spot.</p>
 
-  <p class="foot"><a href="../">Zur SurfsApp Startseite</a> · <a href="../anleitung/">Allgemeine Bedienungsanleitung</a> · <a href="../wingen/">Wingen Anleitung</a></p>
+  <p class="foot"><a href="../?lang=en">Back to the SurfsApp home page</a> · <a href="../anleitung/index.en.html">General user guide</a> · <a href="../wingen/index.en.html">Wing foiling guide</a></p>
   <script>
     fetch("https://garmin-abruf.andigreen.workers.dev/api/manual/view", {
       method:"POST",
