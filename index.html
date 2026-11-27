@@ -1,35 +1,58 @@
-<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SurfsApp: Windsurfen, Wingen und Surfen</title><link rel="icon" href="favicon.png?v=3">
-<meta name="surfsapp-manual-revision" content="V12">
-<meta name="surfsapp-build" content="0.25.24">
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SurfsApp: Windsurfen, Wingen und Surfen</title>
+<link rel="icon" href="favicon.png?v=3">
+<meta name="surfsapp-build" content="0.25.25">
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#fff;background:linear-gradient(160deg,#04122b 0%,#06306b 55%,#0a5cc9 100%);min-height:100vh;display:flex;flex-direction:column}
-main{flex:1;max-width:760px;margin:0 auto;padding:4rem 1.4rem 2rem;text-align:center}
-.icon{width:210px;height:210px;image-rendering:auto;object-fit:contain;filter:drop-shadow(0 14px 22px rgba(0,0,0,.45))}
-h1{font-size:3.2rem;margin:1.4rem 0 .2rem;letter-spacing:.5px}
-.tag{font-size:1.3rem;color:#a8cbff;margin:0 0 2.2rem}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;text-align:left}
-.card{display:block;text-decoration:none;color:#fff;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:1.3rem 1.4rem;transition:.15s}
+main{flex:1;width:100%;max-width:900px;margin:0 auto;padding:3.5rem 1.4rem 2.5rem;text-align:center}
+.icon{width:170px;height:170px;object-fit:contain;filter:drop-shadow(0 14px 22px rgba(0,0,0,.45))}
+h1{font-size:3rem;margin:1rem 0 .2rem;letter-spacing:.5px}.tag{font-size:1.2rem;color:#a8cbff;margin:0 0 2.4rem}
+h2.section-title{text-align:left;font-size:1.35rem;margin:2rem 0 .85rem;color:#fff}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;text-align:left}
+.card{display:block;text-decoration:none;color:#fff;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:1.2rem 1.3rem;transition:.15s}
 a.card:hover{background:rgba(255,255,255,.17);transform:translateY(-2px)}
-.card h2{margin:0 0 .4rem;font-size:1.25rem}.card p{margin:0;color:#cfe2ff;line-height:1.45}
-.soon{opacity:.6}.badge{display:inline-block;font-size:.75rem;background:#0055FF;border-radius:20px;padding:.1rem .6rem;margin-left:.4rem;vertical-align:middle}
+.card h3{margin:0 0 .4rem;font-size:1.18rem}.card p{margin:0;color:#cfe2ff;line-height:1.48}
+.support{margin:2rem 0 0;text-align:left;background:rgba(255,255,255,.1);border:1px solid rgba(168,203,255,.35);border-radius:14px;padding:1.2rem 1.35rem;line-height:1.55;color:#e8f2ff}
+.support strong{color:#fff}.support a{color:#fff;font-weight:700}
 footer{text-align:center;padding:1.2rem;color:#8fb2e6;font-size:.85rem}
-</style></head><body><main>
+@media(max-width:560px){main{padding:2rem 1rem}.icon{width:140px;height:140px}h1{font-size:2.5rem}.tag{font-size:1.05rem}}
+</style>
+</head>
+<body>
+<main>
 <img class="icon" src="symbol.png?v=3" alt="SurfsApp Symbol">
 <h1>SurfsApp</h1>
-<p class="tag">Windsurfen, Wingen und Surfen auf der Garmin-Uhr</p>
+<p class="tag">Windsurfen, Wingen und Surfen auf der Garmin Uhr</p>
+
+<h2 class="section-title">Bedienungsanleitung</h2>
 <div class="cards">
-<a class="card" href="anleitung/"><h2>Bedienungsanleitung</h2><p>Tasten, Touch, Seiten, Einstellungen und alle Funktionen Schritt für Schritt.</p></a>
-<a class="card" href="https://andisgreened.github.io/Fit-Privacy-Cleaner/"><h2>FIT Privacy Cleaner</h2><p>Garmin FIT Dateien prüfen und persönliche Geräteinformationen oder GPS Daten gezielt entfernen.</p></a>
-<a class="card" href="wingen/"><h2>Wingen Anleitung</h2><p>Wingen starten, Jumps einrichten, Live Seiten und Auswertung verstehen.</p></a>
-<a class="card" href="surfen/"><h2>Surf Anleitung</h2><p>Surf Modus, Grenzwerte, Surf Seiten, Wellen und Sessionauswertung.</p></a>
-<a class="card" href="lite/#zugang"><h2>Zugang zur Web App</h2><p>Persönlichen Zugang anfragen. Die Auswertung ist nur nach Freigabe erreichbar.</p></a>
-<a class="card" href="lite/"><h2>Web App Einblick</h2><p>Die Vollansicht und die Handyansicht kennenlernen und zwischen beiden wechseln.</p></a>
+<a class="card" href="anleitung/"><h3>Windsurfen</h3><p>Aufnahme, Einstellungen, Live Seiten, Gleiten, Halsen, Wellenritte, Jumps und Loops.</p></a>
+<a class="card" href="wingen/"><h3>Wingen</h3><p>Wingfoil Sessions, Fahrzustände, Manöver, Jumps und die sportartspezifische Auswertung.</p></a>
+<a class="card" href="surfen/"><h3>Surfen</h3><p>Surf Modus, Paddeln, Wellen, Ritte, Zeitmessung und Sessionauswertung.</p></a>
 </div>
-</main><footer>SurfsApp ist kostenlos.</footer>
+
+<h2 class="section-title">Web App und Werkzeuge</h2>
+<div class="cards">
+<a class="card" href="lite/"><h3>Web App Einblick</h3><p>Vollansicht und Handyansicht mit Beispielen der Auswertung kennenlernen.</p></a>
+<a class="card" href="lite/#zugang"><h3>Zugang</h3><p>Persönlichen Zugang zur SurfsApp Web App anfragen. Die Auswertung ist nur nach Freigabe erreichbar.</p></a>
+<a class="card" href="https://andisgreened.github.io/Fit-Privacy-Cleaner/"><h3>FIT Privacy Cleaner</h3><p>Garmin FIT Dateien prüfen und persönliche Geräteinformationen oder GPS Daten gezielt entfernen.</p></a>
+</div>
+
+<section class="support">
+<strong>SurfsApp weiterentwickeln und neue Funktionen ermöglichen</strong><br>
+Du möchtest die Weiterentwicklung unterstützen oder vermisst eine bestimmte Funktion? Bereinigte FIT Dateien aus echten Sessions helfen dabei, sportartspezifische Funktionen zu verbessern und neue Features zu entwickeln, zum Beispiel die Erkennung spezieller Manöver. Entferne persönliche Informationen vorab mit dem <a href="https://andisgreened.github.io/Fit-Privacy-Cleaner/">FIT Privacy Cleaner</a>. Wenn du eine Datei beisteuern möchtest, kannst du mir diese bereinigte Datei zur Verfügung stellen.
+</section>
+</main>
+<footer>SurfsApp ist kostenlos.</footer>
 <script>
-  fetch("https://garmin-abruf.andigreen.workers.dev/api/manual/view",{
-    method:"POST",headers:{"content-type":"application/json"},
-    body:JSON.stringify({page:"index",build:document.querySelector('meta[name="surfsapp-build"]')?.content || "0.25.22"}),keepalive:true
-  }).catch(error=>console.warn("SurfsApp Seitenaufruf konnte nicht erfasst werden.",error));
+fetch("https://garmin-abruf.andigreen.workers.dev/api/manual/view",{
+ method:"POST",headers:{"content-type":"application/json"},
+ body:JSON.stringify({page:"index",build:document.querySelector('meta[name="surfsapp-build"]')?.content || "0.25.25"}),keepalive:true
+}).catch(error=>console.warn("SurfsApp Seitenaufruf konnte nicht erfasst werden.",error));
 </script>
-</body></html>
+</body>
+</html>
