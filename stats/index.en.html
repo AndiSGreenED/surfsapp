@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SurfsApp – Page view statistics</title>
+  <style>
+    body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;max-width:980px;margin:0 auto;padding:1.5rem;color:#17202a}
+    h1{margin:.2rem 0 1rem}form{display:flex;gap:.6rem;flex-wrap:wrap;margin:1rem 0}
+    input,button,select{font:inherit;padding:.55rem .7rem}input{min-width:280px}
+    #error{color:#a40000}#status{color:#557}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.8rem}
+    .card{border:1px solid #ccd6df;border-radius:.7rem;padding:.9rem}.card b{display:block;font-size:1.8rem}
+    svg{width:100%;height:300px;border:1px solid #ccd6df;border-radius:.7rem;background:#fafcfe}
+    table{border-collapse:collapse;width:100%;margin-top:.8rem}th,td{border:1px solid #ccd6df;padding:.45rem;text-align:left}
+  </style>
+</head>
+<body><div class="language-switch" style="position:fixed;top:10px;right:14px;z-index:20;padding:7px 12px;background:#fff;border:1px solid #cbd5e1;border-radius:20px;font:600 14px system-ui;box-shadow:0 2px 8px #0002"><a href="index.html" onclick="localStorage.setItem(&quot;surfsapp-language&quot;,&quot;de&quot;)" style="text-decoration:none">DE</a> <span aria-hidden="true">|</span> <a href="index.en.html" onclick="localStorage.setItem(&quot;surfsapp-language&quot;,&quot;en&quot;)" style="font-weight:800;text-decoration:none">EN</a></div><script>try{localStorage.setItem("surfsapp-language","en")}catch(e){}</script>
+  <h1>SurfsApp page view statistics</h1>
+  <form id="login">
+    <input id="token" type="password" autocomplete="current-password" placeholder="Statistics access code" aria-label="Statistics access code">
+    <select id="period" aria-label="Date range">
+      <option value="all">All time</option>
+      <option value="365">365 days</option>
+      <option value="90">90 days</option>
+      <option value="30">30 days</option>
+    </select>
+    <button type="submit">Show</button>
+  </form>
+  <p id="error"></p>
+  <p id="status"></p>
+  <div class="cards">
+    <div class="card">Views in period<b id="total">–</b></div>
+    <div class="card">First recorded day in period<b id="first">–</b></div>
+  </div>
+  <svg id="chart" role="img" aria-label="Views per day"></svg>
+  <table>
+    <thead><tr><th>Day</th><th>Views</th></tr></thead>
+    <tbody id="daily"></tbody>
+  </table>
+  <h2>By app version</h2>
+  <table>
+    <thead><tr><th>Build</th><th>Views</th></tr></thead>
+    <tbody id="builds"></tbody>
+  </table>
+  <h2>By page</h2>
+  <table>
+    <thead><tr><th>Page</th><th>Views</th></tr></thead>
+    <tbody id="pages"></tbody>
+  </table>
+  <script>
+    const endpoint="https://garmin-abruf.andigreen.workers.dev/api/manual/stats";
+    const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+    const $=id=>document.getElementById(id);
+    function draw(rows){
+      const svg=$("chart"), W=940,H=300,L=50,R=12,T=14,B=34;
+      svg.setAttribute("viewBox","0 0 "+W+" "+H);
+      if(!rows.length){svg.innerHTML="<text x='20' y='30'>No data</text>";return;}
+      const max=Math.max(1,...rows.map(r=>+r.views));
+      const x=i=>L+(rows.length===1?W-L-R: i*(W-L-R)/(rows.length-1));
+      const y=v=>T+(H-T-B)*(1-v/max);
+      let path="";
+      rows.forEach((r,i)=>{path+=(i?"L":"M")+x(i).toFixed(1)+","+y(+r.views).toFixed(1)+" ";});
+      const cols=["#0b5f8c","#83b4d4","#b9d7ea"];
+      let html="<line x1='"+L+"' y1='"+(H-B)+"' x2='"+(W-R)+"' y2='"+(H-B)+"' stroke='#607080'/>";
+      html+="<line x1='"+L+"' y1='"+T+"' x2='"+L+"' y2='"+(H-B)+"' stroke='#607080'/>";
+      html+="<path d='"+path+"' fill='none' stroke='"+cols[0]+"' stroke-width='3'/>";
+      rows.forEach((r,i)=>{if(i===0||i===rows.length-1||rows.length<25||i%Math.ceil(rows.length/12)===0){
+        html+="<circle cx='"+x(i).toFixed(1)+"' cy='"+y(+r.views).toFixed(1)+"' r='3' fill='"+cols[0]+"'/>";
+        html+="<text x='"+x(i).toFixed(1)+"' y='"+(H-8)+"' font-size='10' text-anchor='middle' fill='#607080'>"+esc(r.day.slice(5))+"</text>";
+      }});
+      html+="<text x='"+L+"' y='"+(T-3)+"' font-size='11' fill='#607080'>"+max+" views</text>";
+      svg.innerHTML=html;
+    }
+    async function load(){
+      const token=$("token").value.trim(), period=$("period").value;
+      $("error").textContent="";$("status").textContent="Loading…";
+      if(!token){$("status").textContent="";$("error").textContent="Please enter the statistics access code.";return;}
+      try{
+        const r=await fetch(endpoint+"?days="+encodeURIComponent(period),{headers:{authorization:"Bearer "+token}});
+        const j=await r.json();
+        if(!r.ok)throw new Error(j.message||j.error||("HTTP "+r.status));
+        sessionStorage.setItem("surfsappStatsToken",token);
+        $("status").textContent="Period: "+(period==="all"?"all stored data":period+" days")+" · Updated: "+new Date(j.generated).toLocaleString();
+        const recorded=j.perDay||[];
+        const firstRecorded=recorded.length?recorded[0].day:"–";
+        $("total").textContent=j.total||0;
+        $("first").textContent=firstRecorded;
+        const byDay=new Map(recorded.map(r=>[r.day,Number(r.views)||0]));
+        const endDay=new Date(j.generated).toISOString().slice(0,10);
+        const startDay=period==="all"?(recorded.length?recorded[0].day:null):j.from;
+        const complete=[];
+        if(startDay){
+          const cursor=new Date(startDay+"T00:00:00Z");
+          const last=new Date(endDay+"T00:00:00Z");
+          while(cursor<=last){
+            const day=cursor.toISOString().slice(0,10);
+            complete.push({day,views:byDay.get(day)||0});
+            cursor.setUTCDate(cursor.getUTCDate()+1);
+          }
+        }
+        $("daily").innerHTML=complete.map(r=>"<tr><td>"+esc(r.day)+"</td><td>"+r.views+"</td></tr>").join("");
+        $("builds").innerHTML=(j.perBuild||[]).map(r=>"<tr><td>"+esc(r.build)+"</td><td>"+r.views+"</td></tr>").join("");
+        $("pages").innerHTML=(j.perPage||[]).map(r=>"<tr><td>"+esc(r.page)+"</td><td>"+r.views+"</td></tr>").join("");
+        draw(complete);
+      }catch(e){$("status").textContent="";$("error").textContent=String(e.message||e);}
+    }
+    $("login").addEventListener("submit",e=>{e.preventDefault();load();});
+    const old=sessionStorage.getItem("surfsappStatsToken");if(old){$("token").value=old;load();}
+  </script>
+</body>
+</html>
