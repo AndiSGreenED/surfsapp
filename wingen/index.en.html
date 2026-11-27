@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="surfsapp-manual-revision" content="V2">
+  <meta name="surfsapp-build" content="0.25.24">
+  <title>Wing Foiling with SurfsApp</title>
+  <style>
+    body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;max-width:960px;margin:2rem auto;padding:0 1.2rem;color:#172033;line-height:1.58}
+    h1{font-size:2.35rem;margin:0}h2{margin-top:2.5rem;border-bottom:2px solid #0055ff;padding-bottom:.3rem}h3{margin-top:1.6rem}
+    .sub{color:#596274;margin:.25rem 0 1.1rem}nav{background:#f2f5fa;padding:.8rem 1rem;border-radius:.6rem;margin:1.3rem 0}
+    nav ol{columns:2;margin:.3rem 0}a{color:#0055ff}table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.95rem}
+    th,td{border:1px solid #d9dee8;padding:.5rem .65rem;text-align:left;vertical-align:top}th{background:#edf2f8}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin:1rem 0}
+    figure{margin:0;text-align:center}figure img{width:190px;height:190px;object-fit:contain;background:#222;border-radius:50%}
+    figcaption{font-size:.88rem;color:#444;margin-top:.45rem}.note{background:#f5f7fa;padding:.8rem 1rem;border-left:3px solid #8091a8;border-radius:.25rem}
+    .foot{margin-top:3rem;border-top:1px solid #d9dee8;padding-top:1rem}
+    @media(max-width:600px){nav ol{columns:1}table{display:block;overflow-x:auto}}
+      .support-note{margin:1.2rem 0;padding:1rem 1.15rem;background:#eef5ff;border-left:4px solid #0055ff;border-radius:6px}.support-note p{margin:.35rem 0 0}.support-note a{font-weight:650}
+  </style>
+</head>
+<body><div class="language-switch" style="position:fixed;top:10px;right:14px;z-index:20;padding:7px 12px;background:#fff;border:1px solid #cbd5e1;border-radius:20px;font:600 14px system-ui;box-shadow:0 2px 8px #0002"><a href="index.html" onclick="localStorage.setItem(&quot;surfsapp-language&quot;,&quot;de&quot;)" style="text-decoration:none">DE</a> <span aria-hidden="true">|</span> <a href="index.en.html" onclick="localStorage.setItem(&quot;surfsapp-language&quot;,&quot;en&quot;)" style="font-weight:800;text-decoration:none">EN</a></div><script>try{localStorage.setItem("surfsapp-language","en")}catch(e){}</script>
+  <h1>Wing Foiling with SurfsApp</h1>
+  <p class="sub">User guide for wing foiling sessions on your Garmin watch</p>
+  <p class="sub">Guide revision V2 · Updated: 27 November 2026</p>
+<section class="support-note" aria-label="SurfsApp development">
+  <strong>Help develop SurfsApp</strong>
+  <p>Would you like to support development or request a particular feature? Sanitized FIT files from real sessions help improve sport specific functions and develop new features, such as detecting specific manoeuvres. Remove personal information first using the <a href="https://andisgreened.github.io/Fit-Privacy-Cleaner/">FIT Privacy Cleaner</a>. The option to send me the sanitized FIT file directly will be added to the FIT Privacy Cleaner.</p>
+</section>
+  <nav>
+    <ol>
+      <li><a href="#start">Prepare and start a session</a></li>
+      <li><a href="#anzeigen">Pages during recording</a></li>
+      <li><a href="#jump">Jumps and detail levels</a></li>
+      <li><a href="#einstellungen">Wing foiling settings</a></li>
+      <li><a href="#felder">Custom pages and IQ fields</a></li>
+      <li><a href="#web">Analyse a session in the web app</a></li>
+      <li><a href="#faq">Tips and troubleshooting</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="start">1 Prepare and start a session</h2>
+  <p>Open SurfsApp on your watch and select <b>Wing foiling</b>If Wing foiling is not shown in the sport selection, enable it under <b>Settings → Sports</b>.</p>
+  <p>Open the Wing foiling settings and check the following sections before starting <b>Mode</b>, <b>Defaults</b>, <b>Pages</b> und <b>IQ Fields</b>. Wing foiling settings are stored separately from windsurfing and surfing.</p>
+  <ol>
+    <li>Select Wing foiling on the home screen <b>Wing foiling</b>.</li>
+    <li>Press START. The preview opens. You can browse the available pages without recording anything yet.</li>
+    <li>Press START again to begin recording.</li>
+    <li>After the session, press START/STOP to open the action menu, select <b>Save</b> und bestätigen mit <b>Yes</b>.</li>
+  </ol>
+  <p>The recording includes the GPS track, speed, time, heart rate and the metrics available for wing foiling. The activity is saved to Garmin Connect.</p>
+
+  <h2 id="anzeigen">2 Pages during recording</h2>
+  <p>Use UP and DOWN to browse the pages. Which additional pages appear depends on the selected modes and whether relevant events have already been detected.</p>
+  <div class="grid">
+    <figure>
+      <img src="../anleitung/img/Live_00.png" alt="Main page during a wing foiling session">
+      <figcaption><b>Main page</b><br>Active time, speed, heart rate, distance and heart rate zones.</figcaption>
+    </figure>
+    <figure>
+      <img src="../anleitung/img/Live_02.png" alt="Maxima page">
+      <figcaption><b>Maxima</b><br>Maximum speed, heart rate and other personal bests.</figcaption>
+    </figure>
+    <figure>
+      <img src="../anleitung/img/Live_04.png" alt="Downwinds page">
+      <figcaption><b>Downwinds</b><br>Dedicated overview page for downwind metrics.</figcaption>
+    </figure>
+    <figure>
+      <img src="../anleitung/img/Live_07.png" alt="Jump list">
+      <figcaption><b>Jumps</b><br>List of detected jumps with height and airtime.</figcaption>
+    </figure>
+    <figure>
+      <img src="../anleitung/img/Live_09.png" alt="Compass">
+      <figcaption><b>Compass</b><br>Heading during the session.</figcaption>
+    </figure>
+  </div>
+  <p>The downwind feature does not automatically detect downwind runs from GPS data. To mark a specific downwind section for later analysis, enable both <b>Learning mode</b> and <b>Downwind</b> During recording, press BACK at the start of the section and press BACK again at the end. Three short vibrations confirm that the recording has ended. The Downwind page may still show dashes because it does not display automatically counted downwind values. The web app does not currently provide a dedicated downwind chart view.</p>
+  <p>The Jump list appears as soon as at least one jump has been detected. You can also configure custom pages with the metrics available for wing foiling.</p>
+
+  <h2 id="jump">3 Jumps and detail levels</h2>
+  <p>SurfsApp can detect jumps while wing foiling and save their count and key metrics in the session. A jump is an event with a detected flight phase. The displayed height is calculated from the watch's motion data and is not a direct altitude measurement.</p>
+  <p>Under <b>Wing Foiling → Mode → Jump</b> select the required detail level:</p>
+  <table>
+    <tr><th>Setting</th><th>What is recorded</th><th>Best suited for</th></tr>
+    <tr><td><b>Off</b></td><td>No jump detection. GPS, speed, distance and heart rate continue to be recorded as normal.</td><td>When you do not need jump analysis.</td></tr>
+    <tr><td><b>Connect</b></td><td>Jumps are detected and counted. Metrics such as count, height and airtime are available for the session.</td><td>A clear jump summary without additional motion details.</td></tr>
+    <tr><td><b>Visu</b></td><td>As with Connect, but additional motion data is saved for more detailed analysis in the SurfsApp web app.</td><td>When you want to examine individual jumps in more detail.</td></tr>
+  </table>
+  <p><b>Jump threshold</b> sets the minimum height at which a jump is counted. The default is 0.3 m. A higher value filters out smaller hops.</p>
+  <p>Select Visu before starting the session if you want to review the additional details later. The watch needs more storage and may take longer to write the jump data when saving. Without Visu, missing motion details cannot later be reconstructed from the standard GPS track.</p>
+
+  <h2 id="einstellungen">4 Wing foiling settings</h2>
+  <p>On watches with five buttons, open Settings by holding UP. On the vívoactive 4, select <b>Settings</b> on the home screen. Then select <b>Wing foiling</b>.</p>
+  <table>
+    <tr><th>Menu</th><th>Setting</th><th>Function</th></tr>
+    <tr><td><b>Mode</b></td><td>Learning mode</td><td>Records additional data about arm movement. When the relevant measurements are available, you can later view them over time in the web app under <b>Wing Foiling Learning Mode</b> . This option is not required for a standard wing foiling session.</td></tr>
+    <tr><td><b>Mode</b></td><td>Downwind</td><td>Enables the downwind feature. Together with Learning mode, you can mark a downwind section during recording by pressing BACK at the beginning and end. There is no automatic GPS based count.</td></tr>
+    <tr><td><b>Mode</b></td><td>Jump</td><td>Selects Off, Connect or Visu. This setting determines whether and how jumps are recorded.</td></tr>
+    <tr><td><b>Defaults</b></td><td>Resume speed</td><td>The speed at which recording resumes after an automatic pause. Default: 5.5 km/h.</td></tr>
+    <tr><td><b>Defaults</b></td><td>Planing threshold</td><td>The speed from which time is counted as planing. Default: 11 km/h.</td></tr>
+    <tr><td><b>Defaults</b></td><td>Jump threshold</td><td>Minimum height for jump detection. Only shown when Jump is enabled. Default: 0.3 m.</td></tr>
+    <tr><td><b>Defaults</b></td><td>Pause below</td><td>For automatic pause, the speed below which a pause can begin. Default: 5 km/h.</td></tr>
+    <tr><td><b>Defaults</b></td><td>Pause after</td><td>How long speed must remain below the threshold before recording pauses automatically. Default: 15 seconds.</td></tr>
+    <tr><td><b>Pages</b></td><td>Page 1 and Page 2</td><td>Enable custom display pages, choose a layout and select data fields.</td></tr>
+    <tr><td><b>IQ Fields</b></td><td>Connect IQ metrics</td><td>Select which additional metrics are saved in the Garmin activity.</td></tr>
+  </table>
+  <h3>Automatic or manual pause</h3>
+  <p>Pause control applies to windsurfing and wing foiling. With <b>Automatic</b> recording pauses when speed remains below <b>Pause below</b> for longer than the configured time. As soon as <b>Resume speed</b> is reached again, recording resumes. With <b>Manual</b> you control pausing and resuming yourself via the action menu.</p>
+  <p>Surfing uses manual pause only. Wing foiling settings do not affect the Surfing sport mode.</p>
+  <p class="note">Changes to speed thresholds, pause thresholds and additional recording modes may only take effect in the next session. If the watch displays “Applies to next session”, the current recording remains unchanged.</p>
+
+  <h2 id="felder">5 Custom pages and IQ fields</h2>
+  <h3>Custom pages</h3>
+  <p>You can configure two custom pages for wing foiling. Each page offers a layout with one to six cells. In each cell, choose a metric such as speed, maximum speed, heart rate, distance, time or an available wing foiling metric.</p>
+  <p>Open <b>Wing Foiling → Pages → Page 1</b> or <b>Page 2</b>. Turn <b>Active</b> on, choose a <b>Layout</b> and use <b>Field assignment</b> to set the content of each cell. These pages apply only to wing foiling.</p>
+  <h3>IQ Fields</h3>
+  <p>Custom pages and IQ fields serve different purposes. Custom pages display live values on the watch. IQ fields additionally save selected metrics in the Garmin activity so they are available in Garmin Connect. Depending on your selection, these may include speed, manoeuvres, riding states and jump metrics.</p>
+  <p>SurfsApp calculates many metrics independently from the recorded GPS and motion data. The IQ field selection therefore mainly determines which additional values Garmin Connect receives directly.</p>
+  <p>Garmin limits the number of additional IQ fields to 16 per activity. Jump Visu also uses storage slots for its measurements. If many additional fields are selected, not all of them may appear in Garmin Connect. The watch shows how many values are selected and how many slots are available. SurfsApp analysis is independent of this limit.</p>
+
+  <h2 id="web">6 Analyse a session in the web app</h2>
+  <p>Open the <a href="https://surfsapp.pages.dev/" target="_blank" rel="noopener">SurfsApp web app</a> and select your wing foiling session from the session list. The web app complements the watch display with a larger overview, a map and more detailed charts.</p>
+  <table>
+    <tr><th>Section</th><th>Content</th></tr>
+    <tr><td><b>Sessions</b></td><td>Sort recordings, filter by sport, mark favourites and add comments.</td></tr>
+    <tr><td><b>Map</b></td><td>View the GPS track and speed overlaid on the map. Markers help you find specific locations again.</td></tr>
+    <tr><td><b>Numbers</b></td><td>Time, distance, speed, heart rate, personal bests and wing foiling metrics.</td></tr>
+    <tr><td><b>Charts</b></td><td>Review speed and other available measurements over time.</td></tr>
+    <tr><td><b>Wing Foiling Learning Mode</b></td><td>For suitable recordings with Learning mode enabled, additional arm movement measurements are available as a time series.</td></tr>
+    <tr><td><b>Jump analysis</b></td><td>For a session recorded with Jump Visu, additional motion data for individual jumps can be examined.</td></tr>
+  </table>
+  <p>On narrow screens, use the tabs at the bottom to switch between Sessions, Numbers and Charts. On a larger screen, these sections are available in the full desktop view. You can switch between the two layouts.</p>
+  <p>The level of detail depends on the recording. GPS track, speed, time and heart rate are available without Visu. More detailed jump analysis requires the additional data captured by Jump Visu. The web app cannot reconstruct this data later from a standard GPS track.</p>
+
+  <h2 id="faq">7 Tips and troubleshooting</h2>
+  <h3>The Downwind page only shows dashes</h3>
+  <p>This can happen with standard recordings. The Downwind page is available as a display, but it does not automatically count downwind runs. You can hide it under <b>Wing Foiling → Mode → Downwind</b> if you do not need it.</p>
+  <h3>No jump was detected</h3>
+  <p>Check whether Jump is set to Connect or Visu. Also check <b>Jump threshold</b>. A higher minimum value filters out smaller jumps. After your next recording, check the list on the watch and the metrics in the web app.</p>
+  <h3>Detailed data for a jump is missing</h3>
+  <p>Check whether Jump was set to Visu before recording started. Connect provides the count and metrics, but not the complete motion data required for detailed analysis.</p>
+  <h3>A setting does not change during recording</h3>
+  <p>Some settings are tied to the start of a recording. If the watch displays “Applies to next session”, the new value will only be used the next time recording starts.</p>
+
+  <p class="foot"><a href="../?lang=en">Back to the SurfsApp home page</a> · <a href="../anleitung/index.en.html">General user guide</a> · <a href="../surfen/index.en.html">Surfing guide</a></p>
+  <script>
+    fetch("https://garmin-abruf.andigreen.workers.dev/api/manual/view", {
+      method:"POST",
+      headers:{"content-type":"application/json"},
+      body:JSON.stringify({page:"wingen",build:document.querySelector('meta[name="surfsapp-build"]')?.content || "0.25.24"}),
+      keepalive:true
+    }).catch(error=>console.warn("SurfsApp Seitenaufruf konnte nicht erfasst werden.",error));
+  </script>
+</body>
+</html>
