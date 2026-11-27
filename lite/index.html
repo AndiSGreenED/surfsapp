@@ -111,7 +111,7 @@
       <button type="button" data-view="desktop" aria-pressed="true">Vollansicht</button>
       <button type="button" data-view="mobile" aria-pressed="false">Handy</button>
     </div>
-    <div class="view-note">Die Vorschau zeigt animierte Originalaufnahmen der Oberfläche.</div>
+    <div class="view-note">Vollansicht und Handyansicht lassen sich umschalten. Die Original GIF Aufnahmen der echten Web App werden in diesen Bereichen angezeigt.</div>
   </div>
 
   <section class="view-panel" id="desktopView" aria-label="Vollansicht">
@@ -272,7 +272,7 @@
     const email = document.getElementById("requestEmail").value.trim();
     const website = document.getElementById("requestWebsite").value.trim();
     if (name.length < 2) return showStatus("Bitte gib deinen Namen ein.", false);
-    if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) return showStatus("Bitte gib eine gültige E-Mail-Adresse ein.", false);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showStatus("Bitte gib eine gültige E-Mail-Adresse ein.", false);
 
     submitButton.disabled = true;
     submitButton.textContent = "Wird gesendet …";
