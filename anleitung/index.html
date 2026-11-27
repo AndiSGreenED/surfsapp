@@ -97,80 +97,30 @@
       </figure>
       <figure>
         <img src="img/Auf_01.png" alt="Bestätigung">
-        <figcaption><b>Bestätigung</b><br>Bei Speichern und Verwerfen ist „Nein“ vorgewählt.</figcaption>
+        <figcaption><b>Bestätigung</b><br>Bei Speichern und Verwerfen ist „Nein“ vorausgewählt.</figcaption>
       </figure>
     </div>
-    <p>START/STOP öffnet während der Aufnahme das Aktionsmenü:</p>
-    <ul>
-      <li><b>Pause</b> bzw. <b>Weiter</b> – Aufnahme anhalten oder fortsetzen.</li>
-      <li><b>Speichern</b> – Aufnahme beenden und speichern.</li>
-      <li><b>Verwerfen</b> – Aufnahme beenden, ohne zu speichern.</li>
-      <li><b>Einstellungen</b> – nur auf der vívoactive 4.</li>
-    </ul>
-    <p>Jede Aktion verlangt eine Bestätigung mit „Ja“ oder „Nein“. HOCH und RUNTER wechseln die Auswahl, START bestätigt, BACK führt zurück.</p>
-    <h3>Pause</h3>
-    <p>Die Pause wird von Hand oder automatisch ausgelöst (Einstellung „Pause“). Bei „Automatic“ hält die Aufnahme an, wenn die Geschwindigkeit länger als „Pause nach“ unter „Pause unter“ liegt, und läuft weiter, sobald „Fahrt ab“ für einige Sekunden überschritten wird. Auf der Hauptseite steht in der Pause oben „AUTO“ (automatisch) bzw. das Pausezeichen (von Hand); statt des Tempos zeigt sie Vmax.</p>
-    <p>Warten beim Pausieren noch Sprungdaten (Jump oder Loop auf Visu), schreibt die Uhr sie zuerst in die Aktivität und pausiert danach. Auf der Hauptseite steht solange gelb „PAUSE“ mit der Restzeit in Sekunden. Ein zweites Pausieren bricht das Warten ab. Diese Wartezeit zählt auf der Uhr und in der Web-App als Pause, siehe „Pausenzeiten“ weiter unten.</p>
-    <h3>Marker</h3>
-    <p>Ist Marker eingeschaltet, setzt BACK während der Aufnahme einen Marker. Die Uhr bestätigt mit zwei kurzen Vibrationen. Zwei Marker müssen mindestens zwei Sekunden auseinander liegen. In der Pause setzt BACK keinen Marker. Mehr dazu in Abschnitt 9.</p>
-    <h3>Symbole in der Kopfzeile</h3>
-    <p>Auf jeder Seite der Aufnahme zeigt die Kopfzeile links den GPS-Empfang (grün = gut, rot = noch kein Empfang), rechts den Akku und in der Mitte den Zustand der Aufnahme:</p>
+    <p>START/STOP öffnet während der Aufnahme das Aktionsmenü. Sie können dort die Session pausieren, fortsetzen, speichern, verwerfen oder die Einstellungen öffnen. Die verfügbaren Menüpunkte unterscheiden sich je nach Uhrmodell.</p>
     <table>
-      <tr><th>Anzeige in der Mitte</th><th>Bedeutung</th></tr>
-      <tr><td>Grüner Punkt</td><td>Die Aufnahme läuft.</td></tr>
-      <tr><td>Grüner Punkt mit blauem Ring und einer Zahl daneben</td><td>Die Aufnahme läuft, und so viele Sprung-Datenpakete warten noch darauf, in die Aktivität geschrieben zu werden (nur mit Jump oder Loop auf Visu). Die Zahl sinkt, während die Daten geschrieben werden.</td></tr>
-      <tr><td>Gelbe Zahl mit „s“</td><td>Die Uhr schreibt vor dem Speichern noch Sprungdaten (Restzeit in Sekunden).</td></tr>
-      <tr><td>Blaues Quadrat</td><td>Der Speicher der Uhr für diese Aufnahme ist voll. Die Uhr speichert gleich und beginnt einen neuen Teil, siehe unten.</td></tr>
-      <tr><td>Pausezeichen oder „AUTO“</td><td>Die Aufnahme ist angehalten, von Hand oder automatisch.</td></tr>
+      <tr><th>Aktion</th><th>Was passiert?</th></tr>
+      <tr><td><b>Pause</b></td><td>Hält die Aufnahme an. Beim Fortsetzen wird dieselbe Session weitergeführt.</td></tr>
+      <tr><td><b>Weiter</b></td><td>Setzt eine pausierte Aufnahme fort.</td></tr>
+      <tr><td><b>Speichern</b></td><td>Beendet die Aufnahme und speichert die Aktivität.</td></tr>
+      <tr><td><b>Verwerfen</b></td><td>Beendet die Aufnahme ohne eine Aktivität zu speichern.</td></tr>
+      <tr><td><b>Einstellungen</b></td><td>Öffnet die Einstellungen auf unterstützten Uhrmodellen.</td></tr>
     </table>
-    <h3>Speichern und die Wartezeit für Sprungdaten</h3>
-    <div class="grid">
-      <figure>
-        <img src="img/Auf_02.png" alt="Speichern wartet">
-        <figcaption><b>Speichern wartet</b><br>Restdauer in Minuten und Sekunden. START verwirft die restlichen Sprungdaten.</figcaption>
-      </figure>
-      <figure>
-        <img src="img/Auf_03.png" alt="Rückfrage nach START">
-        <figcaption><b>Rückfrage nach START</b><br>START = Ja, sofort speichern. ZURÜCK = Nein, weiter schreiben.</figcaption>
-      </figure>
-    </div>
-    <p>Mit Jump oder Loop auf Visu legt die Uhr zu jedem Sprung Messdaten in die Aktivität. Sie schreibt sie nach und nach, deshalb können beim Speichern noch Daten warten. Dann gilt:</p>
-    <ol>
-      <li>Nach „Speichern“ zeigt die Uhr das Fenster „Speichern“ mit der Restdauer, zum Beispiel „Dauer 2:15“. Die Aufnahme läuft so lange weiter, auch wenn Sie aus der Pause heraus speichern; diese Zeit zählt trotzdem als Pause.</li>
-      <li>Sind alle Daten geschrieben, speichert die Uhr von selbst, vibriert und zeigt die Auswertung. Die Wartezeit ist höchstens vier Minuten lang.</li>
-      <li>Wollen Sie nicht warten, drücken Sie START. Die Uhr fragt: „Möchtest du deine Sprungdaten wirklich verwerfen?“ Mit START (Ja) speichert sie sofort; die noch nicht geschriebenen Sprungdaten fehlen dann in der Aktivität, alle übrigen Werte bleiben erhalten. Mit ZURÜCK (Nein) schreibt sie weiter.</li>
-    </ol>
-    <p>Mit „Priorität Loop/Jump“ schreibt die Uhr die Sprungdaten deutlich schneller (Abschnitt 9). Bei leerem Akku speichert die Uhr immer sofort.</p>
-    <h3>Pausenzeiten</h3>
-    <p>Damit Sprungdaten in die Aktivität kommen, muss die Aufnahme laufen. Wartet beim Pausieren, bei der automatischen Pause oder beim Speichern noch etwas, läuft die Aufnahme deshalb kurz weiter. Diese Zeit kennzeichnet die Uhr als Pause: Fahrzeit, Tempo und Ritte auf der Uhr und in der Web-App rechnen sie nicht mit. Garmin Connect zählt sie dagegen als Aktivitätszeit, weil die Aufnahme dort lief.</p>
-    <h3>Einstellungen während der Aufnahme ändern</h3>
-    <div class="grid">
-      <figure>
-        <img src="img/Auf_04.png" alt="Hinweis">
-        <figcaption><b>Hinweis</b><br>Erscheint gut sechs Sekunden fensterfüllend, mit Vibration.</figcaption>
-      </figure>
-    </div>
-    <p>Die Einstellungen lassen sich auch während der Aufnahme öffnen. Einstellungen, die bestimmen, welche Felder die Aktivität bekommt, liegen ab dem Start fest. Ändern Sie eine davon, zeigt die Uhr beim Verlassen der Einstellungen „Umschaltung bei neuer Session“; die Änderung gilt dann ab der nächsten Aufnahme. Das betrifft Jump, Jump ab, Priorität Loop/Jump, Advanced Loops, Wingen, Wellenritt Aus, die Connect-Felder sowie Marker und Akku-Diagramm.</p>
-    <p>Loop (Visu, Connect, Aus) und Wellenritt (Visu, Connect) lassen sich in einer Windsurf-Aufnahme, die mit einer Visu-Stellung begonnen wurde, sofort umschalten, soweit die nötigen Felder seit dem Start angelegt sind: Loop auf Visu nur, wenn Loop oder Jump beim Start auf Visu stand, Wellenritt auf Visu nur, wenn Wellenritt beim Start auf Visu stand. Sonst erscheint ebenfalls der Hinweis.</p>
-    <h3>Wenn der Speicher voll wird: neuer Teil</h3>
-    <p>Die Uhr hat für jede Aufnahme nur begrenzt Platz für die Sekundenwerte. Reicht er auf Ihrer Uhr nur für eine kürzere Aufnahme als üblich, erscheint nach dem Start fünf Sekunden lang ein Hinweis mit der möglichen Dauer, zum Beispiel „Speicher für 1:20 h, dann neuer Teil“. START schließt ihn sofort.</p>
-    <p>Ist der Speicher während der Aufnahme voll, geht es so weiter:</p>
-    <ol>
-      <li>Die Kopfzeile zeigt das blaue Quadrat, und die Uhr vibriert lang. Solange sie noch Sprungdaten schreibt, wechseln Kopfzeile und Hauptseite im Takt von drei Sekunden zwischen „SPEICHER VOLL“ und der Restzeit.</li>
-      <li>Die Uhr schreibt noch ausstehende Sprungdaten und speichert die Aufnahme automatisch.</li>
-      <li>Sofort danach beginnt ein neuer Teil. Fünf Sekunden lang steht auf der Hauptseite „NEUER TEIL“. Sie müssen nichts tun.</li>
-    </ol>
-    <p>In Garmin Connect erscheinen die Teile als getrennte Aktivitäten. Die Auswertung nach dem Speichern gibt es erst nach dem letzten Teil.</p>
-    <h3>Aufnahme fortsetzen, wenn die Uhr die App beendet hat</h3>
-    <p>Manchmal beendet die Uhr die App mitten in der Aufnahme, zum Beispiel wenn Sie aus der Aufnahme heraus Nachrichten oder den Kompass der Uhr öffnen. Starten Sie die App innerhalb von zehn Minuten wieder, setzt sie die Aufnahme sofort fort: Es beginnt ein neuer Teil, und fünf Sekunden lang steht auf der Hauptseite „FORTGESETZT“. Auch hier sind die beiden Teile in Garmin Connect zwei Aktivitäten. Liegt das Beenden länger als zehn Minuten zurück, startet die App wie gewohnt auf der Startseite.</p>
-    <h3>Akku leer</h3>
-    <p>Fällt der Akku während der Aufnahme unter 4 %, speichert die Uhr die Aufnahme von selbst, damit nichts verloren geht. Die Uhr vibriert, und es erscheint ein gelbes Warnzeichen mit „Akku leer“ und darunter:</p>
-    <ul>
-      <li>„Aufzeichnung wird gespeichert“, solange die Uhr noch speichert,</li>
-      <li>„Aufzeichnung gespeichert“, sobald alles in der Aktivität steht,</li>
-      <li>„Nichts aufgenommen“, wenn noch keine Fahrt aufgezeichnet war (zum Beispiel weil Automatic noch auf die erste Fahrt gewartet hat).</li>
-    </ul>
-    <p>BACK beendet die App. Bei leerem Akku zeigt die Uhr keine Auswertung und beginnt keinen neuen Teil. Laden Sie die Uhr, bevor Sie weiterfahren.</p>
+    <p>Bei Speichern und Verwerfen erscheint eine Sicherheitsabfrage. Mit HOCH und RUNTER wählen Sie <b>Ja</b> oder <b>Nein</b>. <b>Nein</b> ist vorausgewählt. START bestätigt, BACK führt zurück.</p>
+    <h3>Pause</h3>
+    <p>Windsurfen und Wingen können manuell oder automatisch pausieren. Bei <b>Automatic</b> pausiert die Uhr, wenn die Geschwindigkeit länger als die eingestellte Zeit unter <b>Pause unter</b> bleibt. Sobald <b>Fahrt ab</b> wieder erreicht ist, setzt die Aufnahme fort. Bei <b>Manuell</b> steuern Sie Pause und Fortsetzen selbst.</p>
+    <p>Beim <b>Surfen</b> wird ausschließlich manuell pausiert. Wartezeiten zwischen den Wellen bleiben dadurch Bestandteil der Session. Die Unterschiede der Grenzwerte und die Surf Zeiteinteilung erklärt die <a href="../surfen/">Surf Anleitung</a>.</p>
+    <h3>Speichern bei Detailaufzeichnung</h3>
+    <p>Wenn Sie bei Windsurfen oder Wingen eine Detailstufe wie Visu verwenden, erfasst die Uhr zusätzliche Bewegungsdaten. Das Speichern kann deshalb länger dauern als bei einer normalen GPS Aufnahme. Lassen Sie den Speichervorgang vollständig abschließen, wenn Sie diese Detaildaten behalten möchten. Die Uhr zeigt an, wenn noch Daten verarbeitet werden.</p>
+    <h3>Marker</h3>
+    <p>Ist Marker eingeschaltet, setzen Sie während der Aufnahme mit BACK einen Marker, zum Beispiel nach einem besonders guten Ritt oder Sprung. Die Uhr bestätigt ihn mit zwei kurzen Vibrationen. In der Pause wird kein Marker gesetzt. Die Marker lassen sich später in der Web App auf der Karte und in den Diagrammen wiederfinden.</p>
+    <h3>Einstellungen während der Aufnahme</h3>
+    <p>Die Einstellungen lassen sich auch während einer Aufnahme öffnen. Einige Änderungen können erst bei der nächsten Session verwendet werden, weil die Uhr die zusätzlichen Daten bereits beim Start vorbereitet. Zeigt die Uhr den Hinweis <b>Umschaltung bei neuer Session</b>, bleibt die laufende Aufnahme unverändert. Stellen Sie wichtige Erkennungsmodi und Grenzwerte daher möglichst vor dem Start ein.</p>
+    <h3>Wenn die Uhr die Aufnahme teilt</h3>
+    <p>Bei besonders langen Aufnahmen oder begrenztem freiem Speicher kann die Uhr eine Session automatisch in mehrere Aktivitäten aufteilen. Die Uhr zeigt den Wechsel an und setzt die Aufzeichnung anschließend fort. In Garmin Connect erscheinen die Teile als getrennte Aktivitäten. Prüfen Sie nach dem Synchronisieren, ob alle Teile übertragen wurden.</p>
     <h2 id="a5">5 Seiten während der Aufnahme</h2>
     <p>Mit HOCH und RUNTER blättern Sie durch die verfügbaren Seiten. Die Punkte am rechten Rand zeigen die aktuelle Position. Eigene Seiten haben einen blauen Punkt. Welche Seiten erscheinen, hängt von der Sportart und den eingeschalteten Modi ab.</p>
     <table>
