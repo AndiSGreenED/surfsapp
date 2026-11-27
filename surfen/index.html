@@ -6,7 +6,8 @@
   <meta name="surfsapp-manual-revision" content="V10">
   <meta name="surfsapp-build" content="0.25.24">
   <title>Surfen mit SurfsApp</title>
-  <style>
+  <style>.language-switch{position:fixed;top:10px;right:14px;z-index:20;padding:7px 12px;background:#fff;border:1px solid #cbd5e1;border-radius:20px;font:600 14px system-ui;box-shadow:0 2px 8px #0002}.language-switch a{text-decoration:none}.language-switch .active{font-weight:800;color:#0055ff}
+
     body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;max-width:960px;margin:2rem auto;padding:0 1.2rem;color:#172033;line-height:1.58}
     h1{font-size:2.35rem;margin:0}h2{margin-top:2.5rem;border-bottom:2px solid #0055ff;padding-bottom:.3rem}h3{margin-top:1.6rem}
     .sub{color:#596274;margin:.25rem 0 1.1rem}nav{background:#f2f5fa;padding:.8rem 1rem;border-radius:.6rem;margin:1.3rem 0}
@@ -20,7 +21,7 @@
       .support-note{margin:1.2rem 0;padding:1rem 1.15rem;background:#eef5ff;border-left:4px solid #0055ff;border-radius:6px}.support-note p{margin:.35rem 0 0}.support-note a{font-weight:650}
   </style>
 </head>
-<body>
+<body><div class="language-switch"><a class="active" href="index.html" onclick="localStorage.setItem(&quot;surfsapp-language&quot;,&quot;de&quot;)">DE</a> | <a href="index.en.html" onclick="localStorage.setItem(&quot;surfsapp-language&quot;,&quot;en&quot;)">EN</a></div><script>try{if(localStorage.getItem("surfsapp-language")==="en"||(!localStorage.getItem("surfsapp-language")&&(navigator.language||"").toLowerCase().startsWith("en")))location.replace("index.en.html"+location.hash)}catch(e){}</script>
   <h1>Surfen mit SurfsApp</h1>
   <p class="sub">Bedienungsanleitung für Surf Sessions auf der Garmin Uhr</p>
   <p class="sub">Anleitungsrevision V10 · Stand: 27.11.2026</p>
