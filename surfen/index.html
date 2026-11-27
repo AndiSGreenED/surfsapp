@@ -1,111 +1,150 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="surfsapp-surf-manual-revision" content="V8">
-    <title>SurfsApp – Surf-Anleitung</title>
-    <style>
-      body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;max-width:980px;margin:2rem auto;padding:0 1.2rem;color:#172033;line-height:1.55}
-      h1{font-size:2.4rem;margin:0}h2{margin-top:2.6rem;border-bottom:2px solid #0055ff;padding-bottom:.25rem}h3{margin-top:1.5rem}
-      .sub{color:#596274;margin:.2rem 0}nav{background:#f2f5fa;padding:.8rem 1rem;border-radius:.6rem}
-      nav ol{columns:2;margin:.3rem 0}a{color:#0055ff}table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.94rem}
-      th,td{border:1px solid #d9dee8;padding:.48rem .62rem;text-align:left;vertical-align:top}th{background:#edf2f8}
-      .foot{margin-top:3rem;border-top:1px solid #d9dee8;padding-top:1rem}
-      @media(max-width:600px){nav ol{columns:1}table{display:block;overflow-x:auto}}
-    </style>
-  </head>
-  <body>
-    <h1>Surfen mit SurfsApp</h1>
-    <p class="sub">Bedienungsanleitung für Ihre Garmin-Uhr</p>
-    <p class="sub">Anleitungsrevision V8</p>
-
-    <nav aria-label="Inhalt">
-      <ol>
-        <li><a href="#start">Session vorbereiten und starten</a></li>
-        <li><a href="#einstellungen">Surf-Einstellungen</a></li>
-        <li><a href="#erkennung">Wellenritte und Zeiten</a></li>
-        <li><a href="#seiten">Anzeigen auf der Uhr</a></li>
-        <li><a href="#aufnahme">Pause, Marker und Speichern</a></li>
-        <li><a href="#auswertung">Session auswerten</a></li>
-        <li><a href="#abstimmen">Einstellungen abstimmen</a></li>
-      </ol>
-    </nav>
-
-    <h2 id="start">1 Session vorbereiten und starten</h2>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="surfsapp-manual-revision" content="V9">
+  <meta name="surfsapp-build" content="0.25.24">
+  <title>Surfen mit SurfsApp</title>
+  <style>
+    body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;max-width:960px;margin:2rem auto;padding:0 1.2rem;color:#172033;line-height:1.58}
+    h1{font-size:2.35rem;margin:0}h2{margin-top:2.5rem;border-bottom:2px solid #0055ff;padding-bottom:.3rem}h3{margin-top:1.6rem}
+    .sub{color:#596274;margin:.25rem 0 1.1rem}nav{background:#f2f5fa;padding:.8rem 1rem;border-radius:.6rem;margin:1.3rem 0}
+    nav ol{columns:2;margin:.3rem 0}a{color:#0055ff}table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.95rem}
+    th,td{border:1px solid #d9dee8;padding:.5rem .65rem;text-align:left;vertical-align:top}th{background:#edf2f8}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin:1rem 0}
+    figure{margin:0;text-align:center}figure img{width:100%;max-width:290px;max-height:250px;object-fit:contain;background:#f5f7fa;border-radius:.5rem}
+    figcaption{font-size:.88rem;color:#444;margin-top:.45rem}.note{background:#f5f7fa;padding:.8rem 1rem;border-left:3px solid #8091a8;border-radius:.25rem}
+    .foot{margin-top:3rem;border-top:1px solid #d9dee8;padding-top:1rem}
+    @media(max-width:600px){nav ol{columns:1}table{display:block;overflow-x:auto}}
+  </style>
+</head>
+<body>
+  <h1>Surfen mit SurfsApp</h1>
+  <p class="sub">Bedienungsanleitung für Surf Sessions auf der Garmin Uhr</p>
+  <p class="sub">Anleitungsrevision V9 · Stand: 27.11.2026</p>
+  <nav>
     <ol>
-      <li>Öffnen Sie SurfsApp auf Ihrer Uhr und wählen Sie auf der Startseite <b>Surfen</b>. Falls die Sportart nicht angezeigt wird, schalten Sie sie in den Einstellungen unter <b>Sportarten → Surfen</b> ein.</li>
-      <li>Öffnen Sie bei ausgewählter Sportart die Einstellungen und prüfen Sie unter <b>Surf</b> die Werte für Ihre Session. Auf Tasten-Uhren halten Sie dazu HOCH gedrückt; auf der vívoactive 4 wählen Sie <b>Einstellungen</b>.</li>
-      <li>Drücken Sie START, um die Vorschau zu öffnen. Dort können Sie die Anzeigen ansehen; die Aufnahme läuft noch nicht.</li>
-      <li>Drücken Sie erneut START, um die Aufnahme zu beginnen.</li>
+      <li><a href="#start">Session starten</a></li>
+      <li><a href="#zeiten">Wie SurfsApp die Session einteilt</a></li>
+      <li><a href="#seiten">Die vier Surf Seiten</a></li>
+      <li><a href="#modus">Wellenritt und Detailstufen</a></li>
+      <li><a href="#einstellungen">Surf Einstellungen</a></li>
+      <li><a href="#pause">Pause, Marker und Speichern</a></li>
+      <li><a href="#auswertung">Auswertung auf Uhr und Web App</a></li>
+      <li><a href="#abstimmen">Erkennung sinnvoll abstimmen</a></li>
     </ol>
-    <p>Beginnen Sie die Aufnahme vor dem Rauspaddeln und speichern Sie sie nach dem Surfen. So umfasst Ihre Session auch die Paddel- und Wartezeiten.</p>
+  </nav>
 
-    <h2 id="einstellungen">2 Surf-Einstellungen</h2>
-    <p>Für den Einstieg empfehlen wir die folgenden Werte. Prüfen Sie diese vor der Aufnahme im Menü <b>Surf</b>, insbesondere wenn Sie bereits eigene Einstellungen gespeichert haben.</p>
-    <table>
-      <tr><th>Einstellung</th><th>Empfehlung</th><th>Funktion</th></tr>
-      <tr><td><b>Ritt ab</b></td><td>5,5 km/h</td><td>Geschwindigkeit, ab der ein Wellenritt erkannt werden kann und die Zeit als Rittzeit zählt.</td></tr>
-      <tr><td><b>Paddeln ab</b></td><td>1,5 km/h</td><td>Ab dieser Geschwindigkeit zählt die Zeit als Paddeln, solange die Rittgeschwindigkeit nicht erreicht ist.</td></tr>
-      <tr><td><b>Wellen erkennen</b></td><td>An</td><td>Erkennt Wellenritte und zeigt ihre Anzahl auf der Uhr an.</td></tr>
-      <tr><td><b>Ritt mind. Dauer</b></td><td>5 s</td><td>Ein Wellenritt muss mindestens diese Dauer erreichen.</td></tr>
-      <tr><td><b>Ritt mind. Strecke</b></td><td>15 m</td><td>Ein Wellenritt muss mindestens diese Strecke erreichen.</td></tr>
-      <tr><td><b>GPS-Ausreißer</b></td><td>45 km/h</td><td>Legt die obere Geschwindigkeitsgrenze für die Erkennung fest.</td></tr>
-      <tr><td><b>GPS Visu</b></td><td>Aus</td><td>Bei „An“ zeigt die Wellenauswertung in der Web-App verworfene GPS-Kandidaten mit Dauer, Strecke und Grund, sofern diese vorliegen.</td></tr>
-    </table>
-    <p>Mit <b>Wellen erkennen</b> auf „Aus“ entfällt die Wellenseite. Änderungen der Surf-Einstellungen während einer Aufnahme gelten ab der nächsten Session.</p>
+  <h2 id="start">1 Session starten</h2>
+  <p>Wählen Sie auf der Startseite der Uhr <b>Surfen</b>. Wenn die Sportart dort fehlt, aktivieren Sie sie unter <b>Einstellungen → Sportarten</b>.</p>
+  <p>Prüfen Sie vor dem Start die Surf Einstellungen. Die Grenzwerte für Surfen sind eigenständig und verändern weder Windsurfen noch Wingen.</p>
+  <ol>
+    <li>Wählen Sie <b>Surfen</b> und drücken Sie START. Die Vorschau öffnet sich.</li>
+    <li>Blättern Sie bei Bedarf durch die Vorschauseiten. Es läuft noch keine Aufnahme.</li>
+    <li>Drücken Sie erneut START, um die Session aufzuzeichnen.</li>
+    <li>Nach dem Surfen öffnen Sie mit START/STOP das Aktionsmenü, wählen <b>Speichern</b> und bestätigen mit <b>Ja</b>.</li>
+  </ol>
+  <p>SurfsApp zeichnet Zeit, GPS Strecke, Geschwindigkeit und Herzfrequenz auf. Zusätzlich werden die Zeiten für Sitzen, Paddeln und Ritt getrennt erfasst.</p>
+  <div class="grid">
+    <figure><img src="img/surf-sportwahl.svg" alt="Auswahl der Sportart Surfen"><figcaption><b>Sportauswahl</b><br>Surfen als eigene Sportart auswählen.</figcaption></figure>
+    <figure><img src="img/surf-menue.svg" alt="Surf Menü"><figcaption><b>Surf Menü</b><br>Modus, Defaults, Seiten und IQ Felder.</figcaption></figure>
+  </div>
 
-    <h2 id="erkennung">3 Wellenritte und Zeiten</h2>
-    <p>SurfsApp erkennt Wellenritte anhand der GPS-Geschwindigkeit und der zurückgelegten Strecke. Für die Zählung müssen die eingestellte Mindestdauer und Mindeststrecke erreicht werden. Auch ein gerader Ritt kann gezählt werden.</p>
-    <p>Die Uhr ordnet die Zeit nach der Geschwindigkeit ein: ab <b>Ritt ab</b> als Ritt, ab <b>Paddeln ab</b> bis zur Rittgeschwindigkeit als Paddeln und darunter als Sitzen. Die Rittzeit umfasst die Zeit oberhalb der Rittgeschwindigkeit; die Anzahl der Wellen berücksichtigt zusätzlich Mindestdauer und Mindeststrecke.</p>
-    <p>Die angezeigte Wellenzahl während der Aufnahme ist vorläufig. Schnelles Paddeln und ein Wellenritt lassen sich anhand von GPS allein nicht immer sicher unterscheiden.</p>
+  <h2 id="zeiten">2 Wie SurfsApp die Session einteilt</h2>
+  <p>Für die Zeiteinteilung verwendet SurfsApp zwei Geschwindigkeitsgrenzen. Die Standardwerte sind 2,5 km/h für Paddeln und 6,5 km/h für den Beginn eines Ritts. Sie können beide Werte an Ihre Bedingungen anpassen.</p>
+  <div class="grid">
+    <figure><img src="img/surf-phases.svg" alt="Einteilung der Surf Zeit nach Geschwindigkeit"><figcaption><b>Sitzen, Paddeln und Ritt</b><br>Drei Fahrzustände mit getrennten Zeiten und Strecken.</figcaption></figure>
+  </div>
+  <table>
+    <tr><th>Geschwindigkeit</th><th>Einordnung</th><th>Bedeutung</th></tr>
+    <tr><td>Unter 2,5 km/h</td><td><b>Sitzen</b></td><td>Warten, Position halten oder sehr langsame Bewegung.</td></tr>
+    <tr><td>Ab 2,5 bis unter 6,5 km/h</td><td><b>Paddeln</b></td><td>Bewegung unterhalb der eingestellten Rittgeschwindigkeit.</td></tr>
+    <tr><td>Ab 6,5 km/h</td><td><b>Ritt</b></td><td>Die Zeit wird als Rittzeit gezählt.</td></tr>
+  </table>
+  <p>Die Grenzwerte steuern die Zeitanteile. Die Wellenzählung ist eine zusätzliche Erkennung und kann deshalb von der reinen Rittzeit abweichen. Ein Abschnitt wird nicht allein deshalb als Wellenritt gezählt, weil die Geschwindigkeit kurz über der Rittgrenze liegt.</p>
 
-    <h2 id="seiten">4 Anzeigen auf der Uhr</h2>
-    <p>Blättern Sie während der Aufnahme mit HOCH und RUNTER beziehungsweise auf der Touch-Uhr durch Wischen zwischen den Seiten.</p>
-    <table>
-      <tr><th>Seite</th><th>Anzeige</th></tr>
-      <tr><td><b>SURF LIVE</b></td><td>Aktive Zeit, Paddelzeit, Rittzeit, Wellenzahl und Sitzzeit sowie der Herzfrequenz-Zonenbogen.</td></tr>
-      <tr><td><b>WELLEN</b></td><td>Vorläufige Wellenzahl, Dauer des längsten Ritts, beste Durchschnittsgeschwindigkeit und Strecke des längsten Ritts.</td></tr>
-      <tr><td><b>SURF-SESSION</b></td><td>Gesamtstrecke, Höchstgeschwindigkeit sowie durchschnittliche und maximale Herzfrequenz.</td></tr>
-    </table>
-    <p>Die Seite <b>WELLEN</b> erscheint, wenn <b>Wellen erkennen</b> eingeschaltet ist.</p>
+  <h2 id="seiten">3 Die vier Surf Seiten</h2>
+  <p>Während der Aufnahme blättern Sie mit HOCH und RUNTER beziehungsweise durch Wischen auf einer unterstützten Touch Uhr. Unter <b>Surfen → Seiten</b> können Sie jede der vier Surf Seiten ein oder ausschalten. Mindestens eine eigene oder feste Surf Seite sollte aktiv bleiben.</p>
+  <div class="grid">
+    <figure><img src="img/surf-live.svg" alt="Surf Live Anzeige"><figcaption><b>SURF LIVE</b><br>Aktive Zeit, Paddelzeit, Rittzeit, Wellenzahl und Sitzzeit. Der Pulszonenbogen ergänzt die Live Anzeige.</figcaption></figure>
+    <figure><img src="img/surf-waves.svg" alt="Surf Wellen Anzeige"><figcaption><b>WELLEN</b><br>Vorläufige Wellenzahl, längster Ritt, beste Durchschnittsgeschwindigkeit und Strecke des längsten Ritts.</figcaption></figure>
+    <figure><img src="img/surf-turns.svg" alt="Surf Turns Anzeige"><figcaption><b>TURNS</b><br>Die Seite ist als eigener Anzeigebereich vorgesehen. Separate Turn und Slide Werte werden dort derzeit nicht angezeigt.</figcaption></figure>
+    <figure><img src="img/surf-session.svg" alt="Surf Session Anzeige"><figcaption><b>SURF SESSION</b><br>Gesamtstrecke, Höchstgeschwindigkeit sowie durchschnittliche und maximale Herzfrequenz.</figcaption></figure>
+  </div>
+  <p>Die Wellenzahl auf der Uhr ist während der Session vorläufig. Die abschließende Auswertung kann einzelne Abschnitte anders bewerten. Das ist besonders bei GPS Empfang, langsamem Paddeln und wechselndem Tempo zu berücksichtigen.</p>
 
-    <h2 id="aufnahme">5 Pause, Marker und Speichern</h2>
-    <h3>Pause und Fortsetzen</h3>
-    <p>Drücken Sie während der Aufnahme START/STOP, wählen Sie <b>Pause</b> und bestätigen Sie mit „Ja“. Zum Fortsetzen öffnen Sie das Aktionsmenü erneut und wählen <b>Weiter</b>. Beim Surfen wird die Pause von Hand gesteuert.</p>
-    <h3>Marker setzen</h3>
-    <p>Mit BACK beziehungsweise der unteren Taste setzen Sie während der Aufnahme einen Marker, zum Beispiel nach einem besonderen Ritt. Die Uhr bestätigt ihn durch zwei kurze Vibrationen. Unter <b>System → Marker*</b> können Sie die Funktion ein- oder ausschalten. In der Pause werden keine Marker gesetzt.</p>
-    <h3>Session speichern</h3>
-    <p>Öffnen Sie mit START/STOP das Aktionsmenü, wählen Sie <b>Speichern</b> und bestätigen Sie mit „Ja“. Die Aufnahme wird als Aktivität gespeichert und kann mit Garmin Connect synchronisiert werden.</p>
+  <h2 id="modus">4 Wellenritt und Detailstufen</h2>
+  <p>Unter <b>Surfen → Modus → Wellenritt</b> wählen Sie, wie umfangreich die Wellenritt Erkennung arbeiten soll. Die Auswahl betrifft nur die Surf Sportart.</p>
+  <table>
+    <tr><th>Stellung</th><th>Was sie leistet</th><th>Wann sie sinnvoll ist</th></tr>
+    <tr><td><b>Connect</b></td><td>Erkennt und zählt Wellenritte. Die Uhr verwendet die eingestellte Rittgeschwindigkeit sowie die Turn Erkennung. Die wichtigsten Wellenwerte stehen auf der Uhr und in der Sessionauswertung zur Verfügung.</td><td>Für die normale Surf Aufzeichnung und eine Übersicht der Wellen.</td></tr>
+    <tr><td><b>Visu</b></td><td>Wie Connect, zusätzlich werden detailliertere Drehungsdaten erfasst. Diese Daten unterstützen die Bewegungserkennung während des Ritts.</td><td>Wenn Sie neben den Standardwerten auch zusätzliche Bewegungsdaten erfassen möchten.</td></tr>
+    <tr><td><b>Aus</b></td><td>Die Wellenritt Zählung auf der Uhr wird ausgeschaltet. GPS Strecke, Zeit, Tempo und Herzfrequenz werden weiterhin aufgezeichnet. Die Web App kann Abschnitte weiterhin anhand der GPS Daten auswerten.</td><td>Wenn Sie nur die grundlegende Session aufzeichnen möchten.</td></tr>
+  </table>
+  <p>Ein gezählter Wellenritt setzt einen ausreichend schnellen Abschnitt und mindestens eine erkannte Turn Bewegung voraus. Die dafür verwendeten Bewegungsgrenzen lassen sich unter Defaults einstellen.</p>
+  <p><b>Wichtig zur TURNS Seite:</b> Die Detailstufe Visu ergänzt die Aufzeichnung um Drehungsdaten. Die separate TURNS Seite zeigt derzeit aber noch keine eigenständige Turn oder Slide Statistik. Die zusätzlichen Werte sollten deshalb nicht mit einer bereits verfügbaren vollständigen Turn Analyse verwechselt werden.</p>
 
-    <h2 id="auswertung">6 Session auswerten</h2>
-    <h3>Auf der Uhr</h3>
-    <p>Nach dem Speichern zeigt die Uhr die Zusammenfassung. Blättern Sie mit HOCH und RUNTER durch die Seiten und schließen Sie die Auswertung mit BACK.</p>
-    <ul>
-      <li><b>SURF LIVE:</b> Gesamtzeit sowie Paddel-, Ritt- und Sitzzeit.</li>
-      <li><b>WELLEN:</b> Anzahl, längster und schnellster Ritt, wenn die Wellenerkennung eingeschaltet ist.</li>
-      <li><b>SURF-SESSION:</b> Strecke, Höchstgeschwindigkeit und Herzfrequenz.</li>
-      <li><b>SUMME:</b> Anzahl der Sessions, Fahrzeit und Gesamtstrecke.</li>
-    </ul>
-    <p>Die letzte Auswertung können Sie auf der Startseite über <b>Letzte Session</b> erneut öffnen.</p>
-    <h3>In der Web-App</h3>
-    <ol>
-      <li>Öffnen Sie die SurfsApp-Web-App und laden Sie die FIT-Datei Ihrer gespeicherten Surf-Aktivität über <b>FIT-Dateien laden</b>.</li>
-      <li>Sehen Sie sich die Strecke, Diagramme und die Liste der erkannten Wellenritte an. Dort finden Sie unter anderem Uhrzeit, Dauer, Strecke sowie Durchschnitts- und Höchstgeschwindigkeit.</li>
-      <li>Gesetzte Marker helfen Ihnen, besondere Stellen in der Aufnahme wiederzufinden.</li>
-    </ol>
-    <p>Wenn Sie vor der Aufnahme <b>GPS Visu</b> eingeschaltet haben, können Sie in der Wellenauswertung auch verworfene Kandidaten ansehen und die Einstellungen gezielt abstimmen.</p>
+  <h2 id="einstellungen">5 Surf Einstellungen</h2>
+  <p>Öffnen Sie auf einer Uhr mit fünf Tasten die Einstellungen mit HOCH lang. Bei einer vívoactive 4 wählen Sie auf der Startseite den Eintrag <b>Einstellungen</b>. Danach wählen Sie <b>Surfen</b>.</p>
+  <table>
+    <tr><th>Bereich</th><th>Einstellung</th><th>Startwert</th><th>Wofür sie verwendet wird</th></tr>
+    <tr><td><b>Modus</b></td><td>Wellenritt</td><td>Connect</td><td>Legt die Detailstufe der Wellenritt Erkennung fest: Connect, Visu oder Aus.</td></tr>
+    <tr><td><b>Defaults</b></td><td>Gleitschwelle</td><td>6,5 km/h</td><td>Ab dieser Geschwindigkeit zählt die Zeit als Rittzeit.</td></tr>
+    <tr><td><b>Defaults</b></td><td>Paddelschwelle</td><td>2,5 km/h</td><td>Ab dieser Geschwindigkeit zählt die Zeit als Paddelzeit. Darunter zählt sie als Sitzzeit.</td></tr>
+    <tr><td><b>Defaults</b></td><td>Turn Rate</td><td>25°/s</td><td>Legt fest, wie schnell die Drehbewegung mindestens sein muss, um als Turn Beginn erkannt zu werden.</td></tr>
+    <tr><td><b>Defaults</b></td><td>Turn Winkel</td><td>45°</td><td>Legt fest, welcher Mindest Drehwinkel für einen erkannten Turn erreicht werden muss.</td></tr>
+    <tr><td><b>Seiten</b></td><td>Live, Wellen, Turns, Session</td><td>Alle an</td><td>Schaltet die festen Surf Seiten ein oder aus.</td></tr>
+    <tr><td><b>IQ Felder</b></td><td>Surf Kennzahlen</td><td>Auswahl</td><td>Legt fest, welche zusätzlichen Surf Werte in der Garmin Aktivität gespeichert werden.</td></tr>
+  </table>
+  <p>Die Startwerte sind ein sinnvoller Ausgangspunkt. Eine niedrigere Gleitschwelle erhöht die gezählte Rittzeit. Eine niedrigere Paddelschwelle ordnet mehr Zeit dem Paddeln statt dem Sitzen zu. Turn Rate und Turn Winkel beeinflussen die Erkennung von Drehbewegungen für die Wellenzählung.</p>
+  <p>Die Einstellungen für Windsurfen und Wingen bleiben davon unabhängig. Änderungen während einer laufenden Aufnahme können für die nächste Session vorgemerkt werden. Zeigt die Uhr <b>Umschaltung bei neuer Session</b>, gilt der neue Wert nicht rückwirkend.</p>
 
-    <h2 id="abstimmen">7 Einstellungen abstimmen</h2>
-    <p>Starten Sie mit <b>5,5 km/h</b>, <b>5 s</b> und <b>15 m</b>. Vergleichen Sie nach einigen Sessions die erkannten Ritte mit Ihrer Erinnerung und ändern Sie jeweils nur einen Wert.</p>
-    <ul>
-      <li><b>Kurze Ritte fehlen:</b> Verringern Sie schrittweise die Mindestdauer oder Mindeststrecke.</li>
-      <li><b>Zu viele Abschnitte werden als Welle gezählt:</b> Erhöhen Sie schrittweise die Mindestdauer, Mindeststrecke oder Rittgeschwindigkeit.</li>
-      <li><b>Paddel- und Sitzzeit passen nicht zu Ihrer Session:</b> Passen Sie <b>Paddeln ab</b> in kleinen Schritten an.</li>
-      <li><b>Sie möchten die Erkennung genauer nachvollziehen:</b> Schalten Sie <b>GPS Visu</b> vor der nächsten Session ein und sehen Sie sich die verworfenen Kandidaten in der Web-App an.</li>
-    </ul>
-    <p>Übernehmen Sie Änderungen jeweils vor Beginn der nächsten Aufnahme und vergleichen Sie das Ergebnis über mehrere Sessions.</p>
+  <h2 id="pause">6 Pause, Marker und Speichern</h2>
+  <h3>Manuelle Pause</h3>
+  <p>Beim Surfen wird die Aufnahme manuell pausiert. Drücken Sie START/STOP, wählen Sie <b>Pause</b> und bestätigen Sie mit <b>Ja</b>. Zum Fortsetzen öffnen Sie das Aktionsmenü erneut und wählen <b>Weiter</b>.</p>
+  <p>Wartezeiten zwischen den Wellen bleiben Bestandteil der Session. So erhalten Sie eine vollständige Aufzeichnung vom Start bis zum Speichern. Die Surf Pause verwendet nicht die automatische Pause von Windsurfen oder Wingen.</p>
+  <h3>Marker setzen</h3>
+  <p>Drücken Sie während der Aufnahme BACK, um einen Marker zu setzen, zum Beispiel nach einem besonders guten Ritt. Die Uhr bestätigt den Marker mit zwei kurzen Vibrationen. Marker können später in der Web App auf der Karte und in den Diagrammen wiedergefunden werden. In der Pause wird kein Marker gesetzt.</p>
+  <h3>Session speichern</h3>
+  <p>Öffnen Sie mit START/STOP das Aktionsmenü, wählen Sie <b>Speichern</b> und bestätigen Sie mit <b>Ja</b>. Die Aufnahme wird als Garmin Aktivität gesichert und kann mit Garmin Connect synchronisiert werden.</p>
 
-    <p class="foot"><a href="../">Zur SurfsApp-Startseite</a> · <a href="../anleitung/">Allgemeine Bedienungsanleitung</a></p>
-  </body>
+  <h2 id="auswertung">7 Auswertung auf Uhr und Web App</h2>
+  <h3>Auf der Uhr</h3>
+  <p>Nach dem Speichern zeigt SurfsApp die Session Zusammenfassung. Sie können die Seiten mit HOCH und RUNTER durchblättern. Über <b>Letzte Session</b> auf der Startseite lässt sich die letzte Auswertung erneut öffnen.</p>
+  <ul>
+    <li><b>Zeiten:</b> Gesamtdauer, aktive Zeit und Pausen.</li>
+    <li><b>Surf Werte:</b> Sitzen, Paddeln und Rittzeit sowie die erkannten Wellenwerte.</li>
+    <li><b>Session:</b> Gesamtstrecke, Höchstgeschwindigkeit und Herzfrequenz.</li>
+    <li><b>Summe:</b> Gesamtwerte über die gespeicherten Surf Sessions.</li>
+  </ul>
+  <h3>In der SurfsApp Web App</h3>
+  <p>Öffnen Sie die <a href="https://surfsapp.pages.dev/" target="_blank" rel="noopener">SurfsApp Web App</a>. Neue Garmin Sessions werden bei eingerichteter Verbindung beim Öffnen abgerufen. Über <b>Jetzt nach neuen Dateien suchen</b> können Sie den Abruf erneut starten. Alternativ laden Sie über <b>FIT Dateien laden</b> eine einzelne FIT Datei oder einen Garmin ZIP Export.</p>
+  <p>Wählen Sie Ihre Surf Session in der Liste aus. Die Web App bietet eine Karte mit GPS Strecke, Zahlen zu Zeit, Tempo und Strecke sowie Diagramme über den Verlauf. Erkannte Wellenabschnitte und die zugehörigen Werte werden in den Surf Ansichten dargestellt, sofern die Daten dafür vorhanden sind.</p>
+  <p>Beim Surfen werden die Fahrzustände als Sitzen, Paddeln und Ritt dargestellt. Windsurf Kennzahlen wie Halsen, Gleiten, Loops und Slides werden nicht auf die Surf Session übertragen. Auf schmalen Bildschirmen wechseln Sie über die unteren Reiter zwischen Sessions, Zahlen und Diagrammen.</p>
+  <p class="note">Die Web App kann GPS, Geschwindigkeit, Zeit und Herzfrequenz auswerten. Zusätzliche Bewegungsdetails müssen während der Aufnahme mit dem passenden Modus erfasst werden. Nachträglich lassen sie sich nicht aus einer normalen GPS Spur rekonstruieren.</p>
+
+  <h2 id="abstimmen">8 Erkennung sinnvoll abstimmen</h2>
+  <p>Beginnen Sie mit den Standardwerten. Vergleichen Sie nach mehreren Sessions die erkannte Rittzeit und Wellenzahl mit Ihrer Erinnerung. Ändern Sie jeweils nur einen Grenzwert, damit Sie die Wirkung beurteilen können.</p>
+  <table>
+    <tr><th>Beobachtung</th><th>Mögliche Anpassung</th></tr>
+    <tr><td>Die Rittzeit ist deutlich zu kurz.</td><td>Die Gleitschwelle vorsichtig verringern.</td></tr>
+    <tr><td>Zu viel Zeit wird als Ritt statt als Paddeln gezählt.</td><td>Die Gleitschwelle etwas erhöhen.</td></tr>
+    <tr><td>Zu viel Zeit wird als Paddeln statt als Sitzen gezählt.</td><td>Die Paddelschwelle leicht verringern.</td></tr>
+    <tr><td>Zu wenig Zeit wird als Paddeln gezählt.</td><td>Die Paddelschwelle leicht erhöhen.</td></tr>
+    <tr><td>Wellenabschnitte werden nicht als Wellenritt gezählt.</td><td>Prüfen Sie Gleitschwelle, Turn Rate und Turn Winkel. Ändern Sie nur einen Wert nach dem anderen.</td></tr>
+    <tr><td>Es werden zu viele Wellenritte gezählt.</td><td>Prüfen Sie zuerst, ob die Gleitschwelle zu niedrig ist. Erhöhen Sie bei Bedarf Turn Rate oder Turn Winkel.</td></tr>
+  </table>
+  <p>GPS Geschwindigkeit ist eine Messgröße und keine direkte Messung der Wellenbewegung. Kurze GPS Aussetzer, sehr langsames Paddeln und wechselnde Bedingungen können die Einordnung beeinflussen. Nutzen Sie die Einstellungen deshalb als Abstimmung für Ihre üblichen Bedingungen, nicht als universelle Grenze für jeden Spot.</p>
+
+  <p class="foot"><a href="../">Zur SurfsApp Startseite</a> · <a href="../anleitung/">Allgemeine Bedienungsanleitung</a> · <a href="../wingen/">Wingen Anleitung</a></p>
+  <script>
+    fetch("https://garmin-abruf.andigreen.workers.dev/api/manual/view", {
+      method:"POST",
+      headers:{"content-type":"application/json"},
+      body:JSON.stringify({page:"surfen",build:document.querySelector('meta[name="surfsapp-build"]')?.content || "0.25.24"}),
+      keepalive:true
+    }).catch(error=>console.warn("SurfsApp Seitenaufruf konnte nicht erfasst werden.",error));
+  </script>
+</body>
 </html>
