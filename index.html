@@ -43,15 +43,15 @@ footer{text-align:center;padding:1.2rem;color:#8fb2e6;font-size:.85rem}
 
 <h2 class="section-title" data-i18n="manualHeading">Bedienungsanleitung</h2>
 <div class="cards">
-<a class="card" href="anleitung/"><h3 data-i18n="windsurfTitle">Windsurfen</h3><p data-i18n="windsurfDescription">Aufnahme, Einstellungen, Live Seiten, Gleiten, Halsen, Wellenritte, Jumps und Loops.</p></a>
-<a class="card" href="wingen/"><h3 data-i18n="wingTitle">Wingen</h3><p data-i18n="wingDescription">Wingfoil Sessions, Fahrzustände, Manöver, Jumps und die sportartspezifische Auswertung.</p></a>
-<a class="card" href="surfen/"><h3 data-i18n="surfTitle">Surfen</h3><p data-i18n="surfDescription">Surf Modus, Paddeln, Wellen, Ritte, Zeitmessung und Sessionauswertung.</p></a>
+<a class="card" href="anleitung/" data-link-de="anleitung/" data-link-en="anleitung/index.en.html"><h3 data-i18n="windsurfTitle">Windsurfen</h3><p data-i18n="windsurfDescription">Aufnahme, Einstellungen, Live Seiten, Gleiten, Halsen, Wellenritte, Jumps und Loops.</p></a>
+<a class="card" href="wingen/" data-link-de="wingen/" data-link-en="wingen/index.en.html"><h3 data-i18n="wingTitle">Wingen</h3><p data-i18n="wingDescription">Wingfoil Sessions, Fahrzustände, Manöver, Jumps und die sportartspezifische Auswertung.</p></a>
+<a class="card" href="surfen/" data-link-de="surfen/" data-link-en="surfen/index.en.html"><h3 data-i18n="surfTitle">Surfen</h3><p data-i18n="surfDescription">Surf Modus, Paddeln, Wellen, Ritte, Zeitmessung und Sessionauswertung.</p></a>
 </div>
 
 <h2 class="section-title" data-i18n="toolsHeading">Web App und Werkzeuge</h2>
 <div class="cards">
-<a class="card" href="lite/"><h3 data-i18n="previewTitle">Web App Einblick</h3><p data-i18n="previewDescription">Vollansicht und Handyansicht mit Beispielen der Auswertung kennenlernen.</p></a>
-<a class="card" href="lite/#zugang"><h3 data-i18n="accessTitle">Zugang</h3><p data-i18n="accessDescription">Persönlichen Zugang zur SurfsApp Web App anfragen. Die Auswertung ist nur nach Freigabe erreichbar.</p></a>
+<a class="card" href="lite/" data-link-de="lite/" data-link-en="lite/index.en.html"><h3 data-i18n="previewTitle">Web App Einblick</h3><p data-i18n="previewDescription">Vollansicht und Handyansicht mit Beispielen der Auswertung kennenlernen.</p></a>
+<a class="card" href="lite/#zugang" data-link-de="lite/#zugang" data-link-en="lite/index.en.html#zugang"><h3 data-i18n="accessTitle">Zugang</h3><p data-i18n="accessDescription">Persönlichen Zugang zur SurfsApp Web App anfragen. Die Auswertung ist nur nach Freigabe erreichbar.</p></a>
 <a class="card" href="https://andisgreened.github.io/Fit-Privacy-Cleaner/"><h3>FIT Privacy Cleaner</h3><p data-i18n="cleanerDescription">Garmin FIT Dateien prüfen und persönliche Geräteinformationen oder GPS Daten gezielt entfernen.</p></a>
 </div>
 
@@ -132,7 +132,7 @@ footer{text-align:center;padding:1.2rem;color:#8fb2e6;font-size:.85rem}
     });
     const switcher = document.querySelector(".language-switch");
     if (switcher) switcher.setAttribute("aria-label", text.languageLabel);
-    document.querySelectorAll("[data-language]").forEach(button => {
+    document.querySelectorAll("[data-link-en]").forEach(link => {\n      link.href = lang === "en" ? link.dataset.linkEn : link.dataset.linkDe;\n    });\n    document.querySelectorAll("[data-language]").forEach(button => {
       button.setAttribute("aria-pressed", String(button.dataset.language === lang));
     });
     try { localStorage.setItem("surfsapp-language", lang); } catch (error) {}
