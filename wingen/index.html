@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="surfsapp-manual-revision" content="V1">
+  <meta name="surfsapp-build" content="0.25.24">
+  <title>Wingen mit SurfsApp</title>
+  <style>
+    body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;max-width:960px;margin:2rem auto;padding:0 1.2rem;color:#172033;line-height:1.58}
+    h1{font-size:2.35rem;margin:0}h2{margin-top:2.5rem;border-bottom:2px solid #0055ff;padding-bottom:.3rem}h3{margin-top:1.6rem}
+    .sub{color:#596274;margin:.25rem 0 1.1rem}nav{background:#f2f5fa;padding:.8rem 1rem;border-radius:.6rem;margin:1.3rem 0}
+    nav ol{columns:2;margin:.3rem 0}a{color:#0055ff}table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.95rem}
+    th,td{border:1px solid #d9dee8;padding:.5rem .65rem;text-align:left;vertical-align:top}th{background:#edf2f8}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin:1rem 0}
+    figure{margin:0;text-align:center}figure img{width:190px;height:190px;object-fit:contain;background:#222;border-radius:50%}
+    figcaption{font-size:.88rem;color:#444;margin-top:.45rem}.note{background:#f5f7fa;padding:.8rem 1rem;border-left:3px solid #8091a8;border-radius:.25rem}
+    .foot{margin-top:3rem;border-top:1px solid #d9dee8;padding-top:1rem}
+    @media(max-width:600px){nav ol{columns:1}table{display:block;overflow-x:auto}}
+  </style>
+</head>
+<body>
+  <h1>Wingen mit SurfsApp</h1>
+  <p class="sub">Bedienungsanleitung für Wingfoil Sessions auf der Garmin Uhr</p>
+  <p class="sub">Anleitungsrevision V1 · Stand: 27.11.2026</p>
+  <nav>
+    <ol>
+      <li><a href="#start">Session vorbereiten und starten</a></li>
+      <li><a href="#anzeigen">Seiten während der Aufnahme</a></li>
+      <li><a href="#jump">Jumps und Detailstufen</a></li>
+      <li><a href="#einstellungen">Wingen Einstellungen</a></li>
+      <li><a href="#felder">Eigene Seiten und IQ Felder</a></li>
+      <li><a href="#web">Session in der Web App auswerten</a></li>
+      <li><a href="#faq">Hinweise und Fehlersuche</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="start">1 Session vorbereiten und starten</h2>
+  <p>Öffnen Sie SurfsApp auf der Uhr und wählen Sie <b>Wingen</b>. Falls Wingen nicht in der Sportauswahl erscheint, aktivieren Sie es unter <b>Einstellungen → Sportarten</b>.</p>
+  <p>Öffnen Sie die Einstellungen für Wingen und prüfen Sie vor dem Start die Bereiche <b>Modus</b>, <b>Defaults</b>, <b>Seiten</b> und <b>IQ Felder</b>. Die Wing Einstellungen sind von Windsurfen und Surfen getrennt gespeichert.</p>
+  <ol>
+    <li>Wählen Sie auf der Startseite <b>Wingen</b>.</li>
+    <li>Drücken Sie START. Die Vorschau öffnet sich. Sie können die verfügbaren Seiten ansehen, ohne bereits aufzuzeichnen.</li>
+    <li>Drücken Sie erneut START, um die Aufnahme zu beginnen.</li>
+    <li>Nach der Session öffnen Sie mit START/STOP das Aktionsmenü, wählen <b>Speichern</b> und bestätigen mit <b>Ja</b>.</li>
+  </ol>
+  <p>Die Aufnahme enthält die GPS Strecke, Geschwindigkeit, Zeit, Herzfrequenz und die für Wingen verfügbaren Kennzahlen. Die Aktivität wird in Garmin Connect gespeichert.</p>
+
+  <h2 id="anzeigen">2 Seiten während der Aufnahme</h2>
+  <p>Mit HOCH und RUNTER blättern Sie durch die Seiten. Welche zusätzlichen Seiten erscheinen, hängt von den gewählten Modi und davon ab, ob bereits passende Ereignisse erkannt wurden.</p>
+  <div class="grid">
+    <figure>
+      <img src="../anleitung/img/Live_00.png" alt="Hauptseite während einer Wingen Session">
+      <figcaption><b>Hauptseite</b><br>Aktive Zeit, Tempo, Herzfrequenz, Strecke und Pulszonen.</figcaption>
+    </figure>
+    <figure>
+      <img src="../anleitung/img/Live_02.png" alt="Maxima Seite">
+      <figcaption><b>Maxima</b><br>Höchstgeschwindigkeit, Herzfrequenz und weitere Bestwerte.</figcaption>
+    </figure>
+    <figure>
+      <img src="../anleitung/img/Live_04.png" alt="Downwinds Seite">
+      <figcaption><b>Downwinds</b><br>Eigene Übersichtsseite für Downwind Werte.</figcaption>
+    </figure>
+    <figure>
+      <img src="../anleitung/img/Live_07.png" alt="Jump Liste">
+      <figcaption><b>Jumps</b><br>Liste der erkannten Sprünge mit Höhe und Flugzeit.</figcaption>
+    </figure>
+    <figure>
+      <img src="../anleitung/img/Live_09.png" alt="Kompass">
+      <figcaption><b>Kompass</b><br>Orientierung während der Session.</figcaption>
+    </figure>
+  </div>
+  <p>Die Downwind Seite kann in den Einstellungen ein und ausgeschaltet werden. Die angezeigten Downwind Zähler können derzeit noch als Striche erscheinen. Die Seite allein bedeutet nicht, dass Downwinds automatisch gezählt werden.</p>
+  <p>Die Jump Liste erscheint, sobald mindestens ein Sprung erkannt wurde. Eigene Seiten können Sie zusätzlich mit den für Wingen verfügbaren Werten belegen.</p>
+
+  <h2 id="jump">3 Jumps und Detailstufen</h2>
+  <p>SurfsApp kann beim Wingen Jumps erkennen und ihre Anzahl sowie wichtige Kennzahlen in der Session speichern. Ein Jump ist ein Sprung mit erkannter Flugphase. Die angezeigte Höhe ist eine Berechnung aus den Bewegungsdaten der Uhr und keine direkte Höhenmessung.</p>
+  <p>Unter <b>Wingen → Modus → Jump</b> wählen Sie die gewünschte Detailstufe:</p>
+  <table>
+    <tr><th>Stellung</th><th>Was aufgezeichnet wird</th><th>Geeignet für</th></tr>
+    <tr><td><b>Aus</b></td><td>Keine Jump Erkennung. GPS, Tempo, Strecke und Puls werden normal weiter aufgezeichnet.</td><td>Wenn Sie keine Sprungauswertung benötigen.</td></tr>
+    <tr><td><b>Connect</b></td><td>Jumps werden erkannt und gezählt. Kennzahlen wie Anzahl, Höhe und Flugzeit stehen für die Session bereit.</td><td>Eine übersichtliche Sprungstatistik ohne zusätzliche Bewegungsdetails.</td></tr>
+    <tr><td><b>Visu</b></td><td>Wie Connect, zusätzlich werden Bewegungsdaten für eine detailliertere Analyse in der SurfsApp Web App gespeichert.</td><td>Wenn Sie einzelne Sprünge genauer untersuchen möchten.</td></tr>
+  </table>
+  <p><b>Jump ab</b> legt die Mindesthöhe fest, ab der ein Sprung berücksichtigt wird. Der Startwert ist 0,3 m. Ein höherer Wert blendet kleinere Hüpfer eher aus.</p>
+  <p>Wählen Sie Visu vor Beginn der Session, wenn Sie die zusätzlichen Details später ansehen möchten. Die Uhr benötigt dafür mehr Speicher und kann beim Speichern länger mit dem Schreiben der Sprungdaten beschäftigt sein. Ohne Visu lassen sich fehlende Bewegungsdetails später nicht aus der normalen GPS Spur wiederherstellen.</p>
+
+  <h2 id="einstellungen">4 Wingen Einstellungen</h2>
+  <p>Öffnen Sie die Einstellungen mit HOCH lang auf Uhren mit fünf Tasten. Bei der vívoactive 4 wählen Sie <b>Einstellungen</b> auf der Startseite. Danach wählen Sie <b>Wingen</b>.</p>
+  <table>
+    <tr><th>Menü</th><th>Einstellung</th><th>Funktion</th></tr>
+    <tr><td><b>Modus</b></td><td>Lernphase</td><td>Erfasst zusätzliche Bewegungsdaten für eine vertiefte Betrachtung der Armbewegung. Für eine normale Wingen Session ist diese Option nicht erforderlich.</td></tr>
+    <tr><td><b>Modus</b></td><td>Downwind</td><td>Blendet die Downwind Seite ein oder aus. Die Aktivierung schaltet keine automatische Downwind Zählung frei.</td></tr>
+    <tr><td><b>Modus</b></td><td>Jump</td><td>Wählt Aus, Connect oder Visu. Die Einstellung bestimmt, ob und wie Sprünge erfasst werden.</td></tr>
+    <tr><td><b>Defaults</b></td><td>Fahrt ab</td><td>Geschwindigkeit, ab der nach einer automatischen Pause die Fahrt wieder aufgenommen wird. Startwert 5,5 km/h.</td></tr>
+    <tr><td><b>Defaults</b></td><td>Gleitschwelle</td><td>Geschwindigkeit, ab der die Zeit als Gleiten gewertet wird. Startwert 11 km/h.</td></tr>
+    <tr><td><b>Defaults</b></td><td>Jump ab</td><td>Mindesthöhe für die Jump Erkennung. Wird nur angezeigt, wenn Jump eingeschaltet ist. Startwert 0,3 m.</td></tr>
+    <tr><td><b>Defaults</b></td><td>Pause unter</td><td>Bei automatischer Pause die Geschwindigkeit, unter der die Pause beginnen kann. Startwert 5 km/h.</td></tr>
+    <tr><td><b>Defaults</b></td><td>Pause nach</td><td>Wie lange die Geschwindigkeit unter dem Grenzwert liegen muss, bevor automatisch pausiert wird. Startwert 15 Sekunden.</td></tr>
+    <tr><td><b>Seiten</b></td><td>Seite 1 und Seite 2</td><td>Eigene Anzeigeseiten einschalten, Layout und Datenfelder wählen.</td></tr>
+    <tr><td><b>IQ Felder</b></td><td>Connect IQ Kennzahlen</td><td>Auswahl, welche zusätzlichen Kennzahlen in der Garmin Aktivität gespeichert werden.</td></tr>
+  </table>
+  <h3>Automatische oder manuelle Pause</h3>
+  <p>Die Pausensteuerung gilt für Windsurfen und Wingen. Bei <b>Automatic</b> pausiert die Aufnahme, wenn die Geschwindigkeit länger als die eingestellte Zeit unter <b>Pause unter</b> bleibt. Sobald <b>Fahrt ab</b> wieder erreicht wird, setzt die Aufnahme fort. Bei <b>Manuell</b> steuern Sie Pause und Fortsetzen selbst über das Aktionsmenü.</p>
+  <p>Beim Surfen wird nur manuell pausiert. Die Wingen Einstellungen haben keinen Einfluss auf die Surf Sportart.</p>
+  <p class="note">Änderungen an Fahrtgrenzen, Pausengrenzen und zusätzlichen Datenmodi können erst für die nächste Session gelten. Zeigt die Uhr den Hinweis „Umschaltung bei neuer Session“, bleibt die laufende Aufnahme unverändert.</p>
+
+  <h2 id="felder">5 Eigene Seiten und IQ Felder</h2>
+  <h3>Eigene Seiten</h3>
+  <p>Sie können zwei eigene Seiten für Wingen einrichten. Jede Seite bietet ein Layout mit einer bis sechs Zellen. In jeder Zelle wählen Sie einen Wert, zum Beispiel Tempo, Vmax, Herzfrequenz, Strecke, Zeit oder eine verfügbare Wingen Kennzahl.</p>
+  <p>Öffnen Sie <b>Wingen → Seiten → Seite 1</b> oder <b>Seite 2</b>. Schalten Sie <b>Aktiv</b> ein, wählen Sie ein <b>Layout</b> und legen Sie unter <b>Belegung</b> die Inhalte der Zellen fest. Diese Seiten gelten nur für Wingen.</p>
+  <h3>IQ Felder</h3>
+  <p>Eigene Seiten und IQ Felder erfüllen unterschiedliche Aufgaben. Eigene Seiten zeigen Werte live auf der Uhr. IQ Felder speichern ausgewählte Kennzahlen zusätzlich in der Garmin Aktivität, damit sie in Garmin Connect verfügbar sind. Dazu gehören je nach Auswahl beispielsweise Geschwindigkeit, Manöver, Fahrzustände und Jump Werte.</p>
+  <p>Die Auswertung in SurfsApp berechnet viele Kennzahlen unabhängig davon aus den gespeicherten GPS und Bewegungsdaten. Die Auswahl der IQ Felder bestimmt daher vor allem, welche Zusatzwerte Garmin Connect direkt erhält.</p>
+
+  <h2 id="web">6 Session in der Web App auswerten</h2>
+  <p>Die <a href="https://surfsapp.pages.dev/" target="_blank" rel="noopener">SurfsApp Web App</a> ergänzt die Uhrenanzeige um eine größere Sessionübersicht und detailliertere Diagramme.</p>
+  <ol>
+    <li>Öffnen Sie die Web App und melden Sie sich an.</li>
+    <li>Neue Garmin Aktivitäten werden beim Öffnen abgerufen, sofern der Garmin Zugang eingerichtet ist. Neue Sessions sind in der Liste hervorgehoben.</li>
+    <li>Mit <b>Jetzt nach neuen Dateien suchen</b> starten Sie einen weiteren Abruf.</li>
+    <li>Alternativ laden Sie über <b>FIT Dateien laden</b> eine einzelne FIT Datei oder einen Garmin ZIP Export.</li>
+    <li>Wählen Sie die gewünschte Wingen Session aus, um Karte, Kennzahlen und Diagramme zu öffnen.</li>
+  </ol>
+  <table>
+    <tr><th>Bereich</th><th>Inhalt</th></tr>
+    <tr><td><b>Sessions</b></td><td>Aufnahmen sortieren, nach Sportart filtern, Favoriten setzen und Kommentare ergänzen.</td></tr>
+    <tr><td><b>Karte</b></td><td>GPS Strecke und Tempoverlauf räumlich betrachten. Marker helfen beim Wiederfinden bestimmter Stellen.</td></tr>
+    <tr><td><b>Zahlen</b></td><td>Zeit, Strecke, Geschwindigkeit, Herzfrequenz, Bestwerte und Wingen Kennzahlen.</td></tr>
+    <tr><td><b>Diagramme</b></td><td>Tempo und weitere verfügbare Messwerte über die Zeit untersuchen.</td></tr>
+    <tr><td><b>Jump Analyse</b></td><td>Bei einer Session mit Jump Visu können zusätzliche Bewegungsdaten einzelner Sprünge untersucht werden.</td></tr>
+  </table>
+  <p>Auf schmalen Bildschirmen wechseln Sie über die Reiter am unteren Rand zwischen Sessions, Zahlen und Diagrammen. Auf einem größeren Bildschirm stehen die Bereiche in der Vollansicht zur Verfügung.</p>
+  <p>Die Detailtiefe hängt von der Aufnahme ab. GPS Strecke, Tempo, Zeit und Puls sind auch ohne Visu verfügbar. Eine genauere Sprunganalyse benötigt dagegen die zusätzlichen Daten aus Jump Visu. Die Web App kann solche Daten nicht nachträglich aus einer normalen GPS Spur erzeugen.</p>
+
+  <h2 id="faq">7 Hinweise und Fehlersuche</h2>
+  <h3>Die Downwind Seite zeigt nur Striche</h3>
+  <p>Das ist bei normalen Aufnahmen möglich. Die Downwind Seite ist bereits als Anzeige vorhanden, zählt Downwinds aber nicht automatisch. Sie können sie unter <b>Wingen → Modus → Downwind</b> ausblenden, wenn Sie sie nicht benötigen.</p>
+  <h3>Es wurde kein Jump erkannt</h3>
+  <p>Prüfen Sie, ob Jump auf Connect oder Visu steht. Kontrollieren Sie außerdem <b>Jump ab</b>. Ein höherer Mindestwert filtert kleinere Sprünge aus. Prüfen Sie nach der nächsten Aufnahme die Liste auf der Uhr und die Kennzahlen in der Web App.</p>
+  <h3>Es fehlen Detaildaten zu einem Sprung</h3>
+  <p>Prüfen Sie, ob Jump vor dem Start auf Visu stand. Connect liefert die Zählung und Kennzahlen, aber nicht die vollständigen Bewegungsdaten für eine detaillierte Analyse.</p>
+  <h3>Eine Einstellung ändert sich während der Aufnahme nicht</h3>
+  <p>Einige Einstellungen sind an den Start der Aufnahme gebunden. Wenn die Uhr „Umschaltung bei neuer Session“ anzeigt, wird der neue Wert erst beim nächsten Start verwendet.</p>
+
+  <p class="foot"><a href="../">Zur SurfsApp Startseite</a> · <a href="../anleitung/">Allgemeine Bedienungsanleitung</a> · <a href="../surfen/">Surf Anleitung</a></p>
+  <script>
+    fetch("https://garmin-abruf.andigreen.workers.dev/api/manual/view", {
+      method:"POST",
+      headers:{"content-type":"application/json"},
+      body:JSON.stringify({page:"wingen",build:document.querySelector('meta[name="surfsapp-build"]')?.content || "0.25.24"}),
+      keepalive:true
+    }).catch(error=>console.warn("SurfsApp Seitenaufruf konnte nicht erfasst werden.",error));
+  </script>
+</body>
+</html>
