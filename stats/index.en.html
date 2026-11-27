@@ -80,7 +80,7 @@
         const j=await r.json();
         if(!r.ok)throw new Error(j.message||j.error||("HTTP "+r.status));
         sessionStorage.setItem("surfsappStatsToken",token);
-        $("status").textContent="Period: "+(period==="all"?"all stored data":period+" days")+" · Updated: "+new Date(j.generated).toLocaleString();
+        $("status").textContent="Period: "+(period==="all"?"all stored data":period+" days")+" · Updated: "+new Date(j.generated).toLocaleString('en-GB');
         const recorded=j.perDay||[];
         const firstRecorded=recorded.length?recorded[0].day:"–";
         $("total").textContent=j.total||0;
