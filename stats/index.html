@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>SurfsApp – Aufrufstatistik</title>
-  <style>
+  <style>.language-switch{position:fixed;top:10px;right:14px;z-index:20;padding:7px 12px;background:#fff;border:1px solid #cbd5e1;border-radius:20px;font:600 14px system-ui;box-shadow:0 2px 8px #0002}.language-switch a{text-decoration:none}.language-switch .active{font-weight:800;color:#0055ff}
+
     body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;max-width:980px;margin:0 auto;padding:1.5rem;color:#17202a}
     h1{margin:.2rem 0 1rem}form{display:flex;gap:.6rem;flex-wrap:wrap;margin:1rem 0}
     input,button,select{font:inherit;padding:.55rem .7rem}input{min-width:280px}
@@ -14,7 +15,7 @@
     table{border-collapse:collapse;width:100%;margin-top:.8rem}th,td{border:1px solid #ccd6df;padding:.45rem;text-align:left}
   </style>
 </head>
-<body>
+<body><div class="language-switch"><a class="active" href="index.html" onclick="localStorage.setItem(&quot;surfsapp-language&quot;,&quot;de&quot;)">DE</a> | <a href="index.en.html" onclick="localStorage.setItem(&quot;surfsapp-language&quot;,&quot;en&quot;)">EN</a></div>
   <h1>Aufrufstatistik der SurfsApp</h1>
   <form id="login">
     <input id="token" type="password" autocomplete="current-password" placeholder="STATs-Zugangscode" aria-label="Statistik-Zugangscode">
