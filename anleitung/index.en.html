@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="surfsapp-manual-revision" content="V15">
+    <meta name="surfsapp-build" content="0.25.24">
+    <title>SurfsApp User Guide</title>
+    <style>body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;max-width:900px;margin:2rem auto;padding:0 1.2rem;color:#1a1a1a;line-height:1.55}h1{font-size:2.4rem;margin:0}.sub{color:#555;margin-top:.2rem}h2{margin-top:2.4rem;border-bottom:2px solid #0055FF;padding-bottom:.25rem}h3{margin-top:1.5rem}nav{background:#f3f6fb;padding:.6rem 1rem;border-radius:6px;margin:1.2rem 0}nav ol{columns:2;margin:.2rem 0}a{color:#0055FF}table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.95rem}th,td{border:1px solid #d5d9e0;padding:.4rem .6rem;text-align:left;vertical-align:top}th{background:#eef2f8}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;margin:1rem 0}figure{margin:0;text-align:center}figure img{width:190px;height:190px;background:#222;border-radius:50%}figcaption{font-size:.82rem;color:#444;margin-top:.4rem}.cols{columns:3}.foot{margin-top:3rem;color:#555;font-size:.9rem;border-top:1px solid #ddd;padding-top:1rem}@media(max-width:600px){nav ol,.cols{columns:1}table{display:block;max-width:100%;overflow-x:auto}}    .support-note{margin:1.2rem 0;padding:1rem 1.15rem;background:#eef5ff;border-left:4px solid #0055FF;border-radius:6px}.support-note p{margin:.35rem 0 0}.support-note a{font-weight:650}
+  </style>
+  </head>
+  <body><div class="language-switch" style="position:fixed;top:10px;right:14px;z-index:20;padding:7px 12px;background:#fff;border:1px solid #cbd5e1;border-radius:20px;font:600 14px system-ui;box-shadow:0 2px 8px #0002"><a href="index.html" onclick="localStorage.setItem(&quot;surfsapp-language&quot;,&quot;de&quot;)" style="text-decoration:none">DE</a> <span aria-hidden="true">|</span> <a href="index.en.html" onclick="localStorage.setItem(&quot;surfsapp-language&quot;,&quot;en&quot;)" style="font-weight:800;text-decoration:none">EN</a></div><script>try{localStorage.setItem("surfsapp-language","en")}catch(e){}</script>
+    <h1>SurfsApp</h1>
+    <p class="sub">User guide · Garmin Connect IQ · Windsurfing, Wing Foiling and Surfing</p>
+    <p class="sub">Guide revision V15 · Updated: 27 November 2026</p>
+<section class="support-note" aria-label="SurfsApp development">
+  <strong>Help develop SurfsApp</strong>
+  <p>Would you like to support development or request a particular feature? Sanitized FIT files from real sessions help improve sport specific functions and develop new features, such as detecting specific manoeuvres. Remove personal information first using the <a href="https://andisgreened.github.io/Fit-Privacy-Cleaner/">FIT Privacy Cleaner</a>. The option to send me the sanitized FIT file directly will be added to the FIT Privacy Cleaner.</p>
+</section>
+    <nav>
+      <ol>
+        <li><a href="#a1">Overview and sports</a></li>
+        <li><a href="#a2">Controls</a></li>
+        <li><a href="#a3">Home screen and preview</a></li>
+        <li><a href="#a4">Recording and pause</a></li>
+        <li><a href="#a5">Pages during recording</a></li>
+        <li><a href="#a6">Custom pages</a></li>
+        <li><a href="#a7">Settings</a></li>
+        <li><a href="#a8">Detail levels and IQ fields</a></li>
+        <li><a href="#a9">Windsurfing: waves, jumps and loops</a></li>
+        <li><a href="#a10">Analysis in the web app</a></li>
+        <li><a href="#a11">Data fields for custom pages</a></li>
+        <li><a href="#a12">Supported watches</a></li>
+      </ol>
+    </nav>
+    <h2 id="a1">1 Overview and sports</h2>
+    <p>SurfsApp records windsurfing, wing foiling and surfing as separate sports. Each sport has its own settings, metrics and display pages. This keeps planing time and jibes separate from surfing paddling time or wing foiling jumps.</p>
+    <div class="grid">
+      <figure>
+        <img src="img/Live_00.png" alt="Live session display">
+        <figcaption><b>Windsurfing</b><br>Planing, jibes, tacks, wave rides, slides, jumps and loops. Details are provided in this guide.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/Live_04.png" alt="Downwind page">
+        <figcaption><b>Wing foiling</b><br>Speed, distance, riding states, manoeuvres and dedicated jump analysis. <a href="../wingen/index.en.html">Go to the wing foiling guide</a>.</figcaption>
+      </figure>
+      <figure>
+        <img src="../surfen/img/surf-live.svg" alt="Surf live page">
+        <figcaption><b>Surfing</b><br>Sitting, paddling, ride time and waves. <a href="../surfen/index.en.html">Go to the surfing guide</a>.</figcaption>
+      </figure>
+    </div>
+    <p>The recording is saved as a Garmin activity. You can see live metrics on the watch and a summary after saving. The SurfsApp web app supplements this data with maps, charts and sport specific detailed analysis.</p>
+    <p>Select the three sports on the home screen. Under <b>Settings → Sports</b> you choose which sports are available there. Settings for one sport do not change the settings for another.</p>
+    <p>The images in this guide show a round watch with a 260 × 260 pixel display. Font sizes and spacing may vary slightly between watch models. The values shown are examples.</p>
+    <h2 id="a2">2 Controls</h2>
+    <h3>Button operated watches (fēnix)</h3>
+    <table>
+      <tr><th>Control</th><th>Function</th></tr>
+      <tr><td>START/STOP</td><td>Select, confirm and start recording. During recording: open the action menu.</td></tr>
+      <tr><td>UP / DOWN</td><td>Move through lists, change values and browse pages during recording.</td></tr>
+      <tr><td>Hold UP</td><td>Open Settings, including during recording.</td></tr>
+      <tr><td>BACK</td><td>Go back one level. On the home screen, it exits the app. During recording, it sets a marker.</td></tr>
+      <tr><td>Touchscreen</td><td>The touchscreen is not used. Water droplets do not trigger any actions.</td></tr>
+    </table>
+    <h3>Touchscreen watches with two buttons</h3>
+    <table>
+      <tr><th>Control</th><th>Function</th></tr>
+      <tr><td>Upper button</td><td>Select, confirm and start recording. During recording: open the action menu.</td></tr>
+      <tr><td>Lower button</td><td>Go back one level. On the home screen, exit the app. During recording: set a marker.</td></tr>
+      <tr><td>Swipe up / down</td><td>Browse lists and pages, including during recording.</td></tr>
+      <tr><td>Swipe left / right</td><td>Browse pages only during recording and while paused (left = forward, right = back).</td></tr>
+      <tr><td>Tap</td><td>No function. Selection is always made with the upper button.</td></tr>
+      <tr><td>Long press on the screen</td><td>No function. Settings are available as a separate “Settings” item on the home screen and in the action menu.</td></tr>
+    </table>
+    <p>During an active recording, the screen is locked. Only swiping to browse pages is possible. The screen is unlocked in sport selection, in the preview and during a manually set pause.</p>
+    <p>In every list, the selected item appears in the centre with a blue border, with the adjacent items shown in grey above and below. Blue arrows on short lists indicate that more items are available in that direction. Lists loop continuously: the first item follows the last.</p>
+    <h2 id="a3">3 Home screen and preview</h2>
+    <div class="grid">
+      <figure>
+        <img src="img/Start_00.png" alt="Home screen">
+        <figcaption><b>Home screen</b><br>Select a sport. “Last session” appears as soon as an analysis has been saved.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/Start_01.png" alt="Preview">
+        <figcaption><b>Preview</b><br>Green triangle: recording has not started yet. The green arc points to the START button.</figcaption>
+      </figure>
+    </div>
+    <p>Use UP and DOWN to select Windsurfing, Wing Foiling or Surfing. Choose which sports are shown under “Sports”. When a saved analysis is available, “Last session” is also displayed. On the vívoactive 4, “Settings” is shown as well. If only two entries are available, the version number and any messages appear below them.</p>
+    <ol>
+      <li>Select a sport and press START. The preview opens. Nothing is recorded yet.</li>
+      <li>You can browse all pages in the preview. After the compass, the “Totals” page shows the totals for all saved sessions in that sport.</li>
+      <li>Press START to begin recording. BACK returns to sport selection.</li>
+    </ol>
+    <p>Check the settings under <b>Mode</b>. Some settings determine which fields are included in the activity and therefore only take effect from the next session onwards (Section 7).</p>
+    <p>If the watch has enough storage for only a shorter recording than usual, the preview displays a message showing the available recording time. Press any button to close it.</p>
+    <h2 id="a4">4 Recording</h2>
+    <h3>Action menu</h3>
+    <div class="grid">
+      <figure>
+        <img src="img/Auf_00.png" alt="Action menu">
+        <figcaption><b>Action menu</b><br>Press START during recording to open it.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/Auf_01.png" alt="Confirmation">
+        <figcaption><b>Confirmation</b><br>For Save and Discard, “No” is selected by default.</figcaption>
+      </figure>
+    </div>
+    <p>During recording, START/STOP opens the action menu. You can pause, resume, save or discard the session, or open Settings. Available menu items vary by watch model.</p>
+    <table>
+      <tr><th>Action</th><th>What happens?</th></tr>
+      <tr><td><b>Pause</b></td><td>Pauses the recording. Resuming continues the same session.</td></tr>
+      <tr><td><b>Resume</b></td><td>Resumes a paused recording.</td></tr>
+      <tr><td><b>Save</b></td><td>Ends the recording and saves the activity.</td></tr>
+      <tr><td><b>Discard</b></td><td>Ends the recording without saving an activity.</td></tr>
+      <tr><td><b>Settings</b></td><td>Opens Settings on supported watch models.</td></tr>
+    </table>
+    <p>When saving or discarding, a confirmation prompt appears. Use UP and DOWN to choose <b>Yes</b> or <b>No</b>. <b>No</b> is selected by default. START confirms; BACK returns.</p>
+    <h3>Pause</h3>
+    <p>Windsurfing and wing foiling can be paused manually or automatically. With <b>Automatic</b> the watch pauses recording when speed remains below <b>Pause below</b> for longer than the configured time. As soon as <b>Resume speed</b> is reached again, recording resumes. With <b>Manual</b> you control pausing and resuming yourself.</p>
+    <p>For <b>Surfing</b> recording is paused manually only. Waiting time between waves therefore remains part of the session. The surfing guide explains the different thresholds and how surfing time is classified: <a href="../surfen/index.en.html">Surfing guide</a>.</p>
+    <h3>Saving detailed recordings</h3>
+    <p>When you use a detail level such as Visu for windsurfing or wing foiling, the watch records additional motion data. Saving may therefore take longer than for a standard GPS recording. Allow the save process to finish completely if you want to keep these details. The watch indicates when data is still being processed.</p>
+    <h3>Marker</h3>
+    <p>When markers are enabled, press BACK during recording to set one, for example after a particularly good ride or jump. The watch confirms it with two short vibrations. Markers cannot be set while paused. They can later be found on the map and in the charts in the web app.</p>
+    <h3>Settings during recording</h3>
+    <p>Settings can also be opened during a recording. Some changes only take effect in the next session because the watch prepares the additional data at the start. If the watch displays <b>Applies to next session</b>, the current recording remains unchanged. Therefore, set important detection modes and thresholds before starting whenever possible.</p>
+    <h3>When the watch splits a recording</h3>
+    <p>For particularly long recordings or when free storage is limited, the watch may automatically split a session into several activities. The watch indicates the change and then continues recording. In Garmin Connect, the parts appear as separate activities. After syncing, check that all parts have been transferred.</p>
+    <h2 id="a5">5 Seiten während der Aufnahme</h2>
+    <p>Mit HOCH und RUNTER blättern Sie durch die verfügbaren Seiten. Die Punkte am rechten Rand zeigen die aktuelle Position. Eigene Seiten haben einen blauen Punkt. Welche Seiten erscheinen, hängt von der Sportart und den eingeschalteten Modi ab.</p>
+    <table>
+      <tr><th>Sportart</th><th>Seiten und Inhalt</th></tr>
+      <tr><td><b>Alle Sportarten</b></td><td>Hauptseite mit Zeit, Tempo, Herzfrequenz und Strecke, danach Maxima und Kompass. Die Summe aller gespeicherten Sessions erscheint in der Vorschau.</td></tr>
+      <tr><td><b>Windsurfing</b></td><td>Wellen und Wellenritte, Rittdetails bei Wellenritt Visu, Loop Seite und Loop Liste, Jump Liste. Seiten erscheinen, sobald Daten vorhanden sind.</td></tr>
+      <tr><td><b>Wing foiling</b></td><td>Downwind Seite und Jump Liste. Mit aktivierter Lernphase und Downwind können Sie einen Downwind Abschnitt manuell mit BACK markieren. Die Seite selbst zählt Downwinds nicht automatisch und kann deshalb Platzhalter enthalten. Details stehen in der <a href="../wingen/index.en.html">Wingen Anleitung</a>.</td></tr>
+      <tr><td><b>Surfing</b></td><td>SURF LIVE, WELLEN, TURNS und SURF SESSION. Die Surf Seiten werden in der <a href="../surfen/index.en.html">Surfing guide</a> einzeln erklärt. Die TURNS Seite zeigt derzeit noch keine eigenständigen Turn oder Slide Messwerte.</td></tr>
+    </table>
+    <div class="grid">
+      <figure>
+        <img src="img/Live_00.png" alt="Main page">
+        <figcaption><b>Hauptseite</b><br>Zeit, Tempo, Herzfrequenz, Strecke und Pulszonenbogen.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/Live_01.png" alt="Main page while paused">
+        <figcaption><b>Pause</b><br>Oben steht AUTO oder das Pausezeichen. Das Tempo wird durch Vmax ersetzt.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/Live_02.png" alt="Maxima">
+        <figcaption><b>Maxima</b><br>Höchstgeschwindigkeit, Herzfrequenz und sportartspezifische Bestwerte.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/Live_03.png" alt="Windsurfing waves">
+        <figcaption><b>Wellen beim Windsurfen</b><br>Letzter Ritt und seine Turns.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/Live_04.png" alt="Wing foiling downwinds">
+        <figcaption><b>Downwinds beim Wingen</b><br>Separate Seite. Nicht verfügbare Werte erscheinen als Striche.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/Live_08.png" alt="Loop page">
+        <figcaption><b>Loops</b><br>Letzter Loop und verfügbare Detailwerte.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/Live_09.png" alt="Compass">
+        <figcaption><b>Kompass</b><br>Blickrichtung und, sofern vorhanden, die Windrichtung.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/Live_10.png" alt="Totals">
+        <figcaption><b>Summe</b><br>Gesamtwerte aller gespeicherten Sessions dieser Sportart. Nur in der Vorschau.</figcaption>
+      </figure>
+    </div>
+    <h3>Listen für Wellenritte, Loops und Jumps</h3>
+    <div class="grid">
+      <figure>
+        <img src="img/Live_05.png" alt="Wave rides">
+        <figcaption><b>Wellenritte</b><br>Durchschnittstempo, Dauer und erkannte Turns.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/Live_06.png" alt="Loops">
+        <figcaption><b>Loops</b><br>Erkannte Loop Art und Drehung.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/Live_07.png" alt="Jumps">
+        <figcaption><b>Jumps</b><br>Sprunghöhe und Flugzeit.</figcaption>
+      </figure>
+    </div>
+    <p>Die Listen erscheinen erst, wenn mindestens ein Ereignis erkannt wurde. Sie zeigen die letzten Einträge. Die vollständige Sessionauswertung folgt nach dem Speichern.</p>
+    <h2 id="a6">6 Eigene Seiten</h2>
+    <p>Zusätzlich zu den festen Seiten können Sie pro Sportart zwei eigene Anzeigeseiten einrichten. Windsurfen, Wingen und Surfen haben jeweils ihre eigene Belegung. Eine Änderung beim Windsurfen verändert also nicht die Wing oder Surf Seiten.</p>
+    <h3>Einrichten</h3>
+    <p>Öffnen Sie die Einstellungen der gewünschten Sportart und wählen Sie <b>Seiten</b>. Öffnen Sie dort <b>Seite 1</b> or <b>Seite 2</b>.</p>
+    <ul>
+      <li><b>Aktiv</b> schaltet die Seite ein oder aus.</li>
+      <li><b>Layout</b> bestimmt, ob eine bis sechs Werte gleichzeitig angezeigt werden.</li>
+      <li><b>Position</b> legt beim Windsurfen und Wingen fest, ob die Seite hinter der Hauptseite, den Maxima oder den Wellen erscheint. Beim Surfen ist die Position fest vorgegeben.</li>
+      <li><b>Belegung</b> öffnet die Auswahl der Datenfelder für jede Zelle.</li>
+    </ul>
+    <div class="grid">
+      <figure>
+        <img src="img/Menue_14.png" alt="Seitenmenü">
+        <figcaption><b>Seitenmenü</b><br>Eigene Seiten ein und ausschalten.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/Menue_15.png" alt="Seite einstellen">
+        <figcaption><b>Seiteneinstellungen</b><br>Aktiv, Layout, Position und Belegung.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/Menue_16.png" alt="Layout wählen">
+        <figcaption><b>Layout</b><br>Ein bis sechs Zellen.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/Menue_17.png" alt="Belegung">
+        <figcaption><b>Belegung</b><br>Eine Datenanzeige für jede Zelle festlegen.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/Menue_18.png" alt="Datenfeld wählen">
+        <figcaption><b>Datenfeld wählen</b><br>Die Auswahl passt sich der Sportart an.</figcaption>
+      </figure>
+    </div>
+    <h3>Layouts</h3>
+    <div class="grid">
+      <figure><img src="img/Seiten_00.png" alt="Eine Zelle"><figcaption><b>Eine Zelle</b><br>Ein großer Wert.</figcaption></figure>
+      <figure><img src="img/Seiten_01.png" alt="Zwei Zellen"><figcaption><b>Zwei Zellen</b><br>Zwei Werte untereinander.</figcaption></figure>
+      <figure><img src="img/Seiten_02.png" alt="Drei Zellen"><figcaption><b>Drei Zellen</b><br>Ein Wert oben, zwei darunter.</figcaption></figure>
+      <figure><img src="img/Seiten_03.png" alt="Vier Zellen"><figcaption><b>Vier Zellen</b><br>Raster mit zwei Spalten.</figcaption></figure>
+      <figure><img src="img/Seiten_04.png" alt="Fünf Zellen"><figcaption><b>Fünf Zellen</b><br>Fünf Werte ohne Beschriftung.</figcaption></figure>
+      <figure><img src="img/Seiten_05.png" alt="Sechs Zellen"><figcaption><b>Sechs Zellen</b><br>Sechs Werte ohne Beschriftung.</figcaption></figure>
+    </div>
+    <p>Die erste Zelle wird grün, die zweite blau dargestellt. Bei fünf und sechs Zellen entfallen die Beschriftungen, damit die Werte gut lesbar bleiben.</p>
+    <h2 id="a7">7 Einstellungen</h2>
+    <p>Auf Uhren mit fünf Tasten halten Sie HOCH gedrückt, um die Einstellungen zu öffnen. Bei der vívoactive 4 wählen Sie auf der Startseite den Eintrag <b>Settings</b>. Während einer Aufnahme erreichen Sie die Einstellungen ebenfalls über das Aktionsmenü oder den langen Tastendruck, je nach Uhrmodell.</p>
+    <p>Die Menüs sind nach Sportarten getrennt. Wählen Sie auf der Startseite die gewünschte Sportart und öffnen Sie deren Einstellungen. Jede Sportart hat die Bereiche <b>Mode</b>, <b>Defaults</b>, <b>Seiten</b> und <b>IQ Felder</b>. Dadurch bleiben die Einstellungen übersichtlich und verändern nicht versehentlich eine andere Sportart.</p>
+    <table>
+      <tr><th>Bereich</th><th>Wofür er da ist</th></tr>
+      <tr><td><b>Sportarten</b></td><td>Legt fest, welche Sportarten auf der Startseite zur Auswahl stehen.</td></tr>
+      <tr><td><b>Pause</b></td><td>Für Windsurfen und Wingen: Manuell oder Automatic. Bei Surfen wird ausschließlich manuell pausiert.</td></tr>
+      <tr><td><b>Mode</b></td><td>Aktiviert oder deaktiviert sportartspezifische Erkennungen und wählt deren Detailstufe. Die Unterschiede stehen in Abschnitt 8 und 9.</td></tr>
+      <tr><td><b>Defaults</b></td><td>Enthält die Geschwindigkeitsgrenzen und die Pausewerte der gewählten Sportart.</td></tr>
+      <tr><td><b>Seiten</b></td><td>Schaltet feste Sportseiten und eigene Seiten ein oder aus.</td></tr>
+      <tr><td><b>IQ Felder</b></td><td>Wählt aus, welche zusätzlichen Kennzahlen als Garmin Connect IQ Felder in der Aktivität gespeichert werden.</td></tr>
+      <tr><td><b>System</b></td><td>Sprache, Connect Felder, Marker und Akku Diagramm.</td></tr>
+    </table>
+    <h3>Wichtige Grenzwerte</h3>
+    <table>
+      <tr><th>Sportart</th><th>Einstellung</th><th>Startwert</th><th>Bedeutung</th></tr>
+      <tr><td>Windsurfen und Wingen</td><td>Resume speed</td><td>5,5 km/h</td><td>Geschwindigkeit, ab der eine Fahrt nach einer automatischen Pause wieder aufgenommen wird.</td></tr>
+      <tr><td>Windsurfen und Wingen</td><td>Gleitschwelle</td><td>11 km/h</td><td>Ab dieser Geschwindigkeit zählt die Fahrt als Gleiten.</td></tr>
+      <tr><td>Windsurfen und Wingen</td><td>Pause below</td><td>5 km/h</td><td>Bei Automatic die Geschwindigkeit, unter der die Pause beginnen kann.</td></tr>
+      <tr><td>Windsurfen und Wingen</td><td>Pause nach</td><td>15 Sekunden</td><td>Wie lange die Geschwindigkeit unter dem Grenzwert liegen muss, bevor pausiert wird.</td></tr>
+      <tr><td>Surfing</td><td>Gleitschwelle</td><td>6,5 km/h</td><td>Ab dieser Geschwindigkeit zählt die Zeit als Rittzeit.</td></tr>
+      <tr><td>Surfing</td><td>Paddelschwelle</td><td>2,5 km/h</td><td>Ab dieser Geschwindigkeit zählt die Zeit als Paddelzeit. Darunter zählt sie als Sitzzeit.</td></tr>
+    </table>
+    <p>Beim Surfen kommen die Einstellungen <b>Turn Rate</b> und <b>Turn Winkel</b> hinzu. Sie beeinflussen, wie deutlich eine Drehbewegung sein muss, damit sie bei der Wellenerkennung berücksichtigt wird. Die Startwerte sind 25 Grad pro Sekunde und 45 Grad.</p>
+    <p>Änderungen an Grenzwerten oder Aufzeichnungsmodi gelten teilweise erst ab der nächsten Session. In diesem Fall zeigt die Uhr beim Verlassen der Einstellungen den Hinweis <b>Applies to next session</b>. Bereits laufende Aufnahmen behalten ihre ursprüngliche Datenbasis.</p>
+    <p>Die Einstellungen sind auch während der Aufnahme erreichbar. Änderungen sollten Sie möglichst vor dem Start vornehmen, damit Sie während der Session nicht versehentlich einen anderen Aufzeichnungsumfang wählen.</p>
+    <h2 id="a8">8 Detailstufen und IQ Felder</h2>
+    <p>SurfsApp bietet bei mehreren Erkennungen drei Stufen. Sie bestimmen, wie viel die Uhr während der Session erfasst und wie tief Sie die Daten anschließend auswerten können.</p>
+    <table>
+      <tr><th>Stufe</th><th>Was sie bedeutet</th><th>Wann sie sinnvoll ist</th></tr>
+      <tr><td><b>Aus</b></td><td>Die jeweilige sportartspezifische Erkennung ist ausgeschaltet. Die normalen GPS, Tempo, Strecken und Pulsdaten werden weiterhin aufgezeichnet.</td><td>Wenn Sie die Funktion nicht benötigen oder eine möglichst einfache Aufzeichnung wünschen.</td></tr>
+      <tr><td><b>Connect</b></td><td>Die Uhr erkennt und zählt Ereignisse und speichert die wichtigsten Kennzahlen in der Aktivität. Die Daten können in Garmin Connect und in der SurfsApp Auswertung erscheinen.</td><td>Für eine gute Übersicht mit Zählern und Bestwerten.</td></tr>
+      <tr><td><b>Visu</b></td><td>Zusätzlich zu den Kennzahlen werden erweiterte Bewegungsdaten aufgezeichnet. Damit sind in der Web App detailliertere Darstellungen möglich, sofern die jeweilige Sportart diese Auswertung unterstützt.</td><td>Wenn Sie ein Manöver oder einen Sprung später genauer nachvollziehen möchten.</td></tr>
+    </table>
+    <p><b>Wichtig:</b> Visu ist die detailreichste Stufe. Sie erzeugt mehr Daten und kann das Speichern nach der Session verlängern. Je nach Kombination stehen weniger zusätzliche IQ Felder zur Verfügung. Für eine detaillierte Analyse müssen Sie Visu vor Beginn der Aufnahme einschalten. Daten, die während der Session nicht erfasst wurden, lassen sich nachträglich nicht rekonstruieren.</p>
+    <h3>Welche Stufe gibt es in welcher Sportart?</h3>
+    <table>
+      <tr><th>Sportart und Funktion</th><th>Connect</th><th>Visu</th><th>Aus</th></tr>
+      <tr><td>Windsurfen: Wellenritt</td><td>Wellenritte, Turns und Kennzahlen zählen.</td><td>Zusätzlich Brettkurs und Slide Details für die spätere Analyse.</td><td>Keine Wellenritt Anzeige auf der Uhr. Die Web App kann Ritte weiterhin aus der GPS Spur ableiten.</td></tr>
+      <tr><td>Windsurfen: Jump</td><td>Jumps zählen, Höhe und Flugzeit anzeigen.</td><td>Zusätzliche Bewegungsdaten für die detaillierte Sprunganalyse.</td><td>Keine Jump Erkennung.</td></tr>
+      <tr><td>Windsurfen: Loop</td><td>Loops zählen und nach Möglichkeit nach Art unterscheiden.</td><td>Zusätzliche Messdaten für die räumliche Loop Analyse.</td><td>Keine Loop Erkennung.</td></tr>
+      <tr><td>Wingen: Jump</td><td>Jumps zählen und Kennzahlen speichern.</td><td>Zusätzliche Messdaten für die spätere Sprunganalyse.</td><td>Keine Jump Erkennung.</td></tr>
+      <tr><td>Surfen: Wellenritt</td><td>Wellenritte anhand von Tempo und Bewegung erfassen.</td><td>Zusätzliche Bewegungsdaten aufzeichnen. Die eigenständige TURNS Seite zeigt derzeit trotzdem noch keine Turn oder Slide Werte.</td><td>Keine Wellenritt Zählung auf der Uhr.</td></tr>
+    </table>
+    <h3>IQ Felder und eigene Seiten sind nicht dasselbe</h3>
+    <p><b>Custom pages</b> zeigen Werte während der Aufnahme direkt auf der Uhr. <b>IQ Felder</b> werden zusätzlich in der gespeicherten Garmin Aktivität abgelegt und können dort in Garmin Connect erscheinen. Die Web App berechnet weitere Kennzahlen aus der FIT Datei und den aufgezeichneten Bewegungsdaten.</p>
+    <p>Die IQ Felder sind je Sportart auswählbar. Typische Gruppen sind Geschwindigkeit, Manöver, Fahrzustände, Wellenritte, Jumps und Loops. Beim Surfen stehen stattdessen Werte zu Ritt, Paddeln und Sitzen bereit. Wählen Sie nur die Kennzahlen, die Sie tatsächlich in Garmin Connect benötigen. Die Uhr zeigt an, wenn eine Auswahl mit dem gewählten Detailmodus nicht vollständig zusammenpasst.</p>
+    <p>Garmin begrenzt die Zahl der zusätzlichen IQ Felder auf 16 pro Aktivität. Einige Detailmodi benötigen selbst Platz für ihre Messwerte. Deshalb kann die Zahl der frei auswählbaren Zusatzwerte kleiner werden, wenn Sie mehrere Detailmodi gleichzeitig aktivieren. Die Anzeige in der IQ Felder Auswahl zeigt, wie viele Werte ausgewählt sind und wie viele Plätze zur Verfügung stehen. Nicht gespeicherte IQ Felder erscheinen nicht in Garmin Connect. Die eigentliche Auswertung in SurfsApp bleibt davon unabhängig.</p>
+    <h2 id="a9">9 Windsurfen: Wellenritte, Jumps, Loops und Marker</h2>
+    <h3>Wellenritte</h3>
+    <p>Die Uhr erkennt Wellenritte automatisch. Im Menü <b>Windsurfen → Modus → Wellenritt</b> wählen Sie die Detailstufe.</p>
+    <table>
+      <tr><th>Stufe</th><th>Ergebnis</th></tr>
+      <tr><td><b>Connect</b></td><td>Die Uhr zählt Wellenritte und Turns. Ein Turn besteht aus Bottom Turn und anschließendem Cutback. Die Auswertung zeigt unter anderem den besten Ritt, Tempo vor und nach den Turns sowie Wellen je Runde.</td></tr>
+      <tr><td><b>Visu</b></td><td>Ergänzt die Connect Werte um Brettkurs und Slide Analyse. Auf der Uhr erscheint zusätzlich die Seite Rittdetails. In der Web App können Sie den Verlauf eines Ritts und die Slides je Turn genauer ansehen.</td></tr>
+      <tr><td><b>Aus</b></td><td>Die Wellenritt Seiten und die Zählung auf der Uhr entfallen. Die Web App kann Wellenritte weiterhin aus der GPS Spur ableiten, aber keine zusätzlichen Bewegungsdetails anzeigen.</td></tr>
+    </table>
+    <p>Ein <b>Slide</b> ist eine deutliche seitliche Bewegung des Brettes während des Cutbacks. Die Uhr leitet die Brettbewegung aus der Armbewegung ab. Wenn Sie während des Ritts umgreifen, kann die Richtung daher abweichen. Visu liefert die Grundlage für diese Detailauswertung.</p>
+    <h3>Jumps</h3>
+    <p>Ein Jump ist ein Sprung ohne Loop. SurfsApp ermittelt Anzahl, geschätzte Höhe und Flugzeit. Im Menü <b>Windsurfen → Modus → Jump</b> stehen Connect, Visu und Aus zur Wahl.</p>
+    <p><b>Jump ab</b> legt die Mindesthöhe fest, ab der ein Sprung zählt. Der Startwert beträgt 0,3 m. Kleine Hüpfer können Sie damit aus der Zählung heraushalten. Die Höhe ist eine Berechnung aus den Bewegungsdaten und keine direkte Höhenmessung.</p>
+    <h3>Loops</h3>
+    <p>Loops werden getrennt von normalen Jumps erfasst. Die Uhr unterscheidet Frontloop, Backloop und Double Forward. Wenn eine Zuordnung nicht sicher ist, erscheint die allgemeine Bezeichnung Loop.</p>
+    <p><b>Loop Connect</b> zählt die Loops und speichert die wichtigsten Kennzahlen. <b>Loop Visu</b> ergänzt Messdaten für die räumliche Analyse in der Web App. Unter <b>Advanced Loops</b> können bei Loop Visu zusätzliche Bewegungsdetails für anspruchsvollere Loop Formen erfasst werden.</p>
+    <h3>Priorität Loop und Jump</h3>
+    <p>Die Einstellung <b>Priorität</b> bevorzugt das Schreiben der detaillierten Loop und Jump Daten. Das kann die Wartezeit beim Speichern verkürzen. Dafür stehen weniger Plätze für andere zusätzliche IQ Felder zur Verfügung. Nutzen Sie die Einstellung vor allem dann, wenn Ihnen die detaillierte Sprunganalyse wichtiger ist als eine möglichst große Auswahl an Connect Kennzahlen.</p>
+    <h3>Marker</h3>
+    <p>Mit BACK setzen Sie während der Aufnahme einen Marker, zum Beispiel für einen besonders guten Ritt oder einen Sprung. Die Uhr bestätigt den Marker mit zwei kurzen Vibrationen. Marker lassen sich später in der Web App auf der Karte und in den Diagrammen wiederfinden. In einer Pause kann kein Marker gesetzt werden.</p>
+    <p>Die sportartspezifischen Funktionen für Wingen und Surfen sind in den <a href="../wingen/index.en.html">Wingen Hinweisen</a> und der <a href="../surfen/index.en.html">Surfing guide</a> getrennt erklärt.</p>
+    <h2 id="a10">10 Auswertung in der Web App</h2>
+    <p>Die Uhr speichert jede Session als Garmin Aktivität. Für die ausführliche Analyse öffnen Sie die <a href="https://surfsapp.pages.dev/" target="_blank" rel="noopener">SurfsApp Web App</a> und wählen die gewünschte Aufnahme aus der Sessionsliste. Die Web App ergänzt die kurze Uhrenauswertung um Karten, Zeitverläufe und sportartspezifische Detailansichten.</p>
+    <h3>Die wichtigsten Bereiche</h3>
+    <table>
+      <tr><th>Bereich</th><th>Was Sie dort finden</th></tr>
+      <tr><td><b>Sessions</b></td><td>Ihre gespeicherten Aufnahmen mit Datum, Sportart und den wichtigsten Kennzahlen. Sie können nach Sportart und Zeitraum filtern, Favoriten markieren und eigene Kommentare ergänzen.</td></tr>
+      <tr><td><b>Karte</b></td><td>Die GPS Strecke. Die Farbgebung zeigt je nach Ansicht das Tempo. Marker helfen, einzelne Stellen der Session wiederzufinden.</td></tr>
+      <tr><td><b>Zahlen</b></td><td>Zeiten, Strecken, Tempo, Herzfrequenz, Bestwerte und sportartspezifische Kennzahlen. Nicht jede Kennzahl passt zu jeder Sportart.</td></tr>
+      <tr><td><b>Diagramme</b></td><td>Verläufe über die Zeit oder Strecke, zum Beispiel Tempo und Herzfrequenz. Weitere Messreihen erscheinen, wenn die Uhr sie in der gewählten Detailstufe aufgezeichnet hat.</td></tr>
+      <tr><td><b>Detailanalysen</b></td><td>Wellenritte, Slides, Jumps, Loops und die Wingen Lernphase mit Karten, Listen und Messverläufen, soweit die erforderlichen Daten vorhanden sind.</td></tr>
+    </table>
+    <p>Auf schmalen Bildschirmen stehen die Bereiche am unteren Rand als Reiter <b>Sessions</b>, <b>Zahlen</b> und <b>Diagramme</b> zur Verfügung. In der Vollansicht sind die Inhalte breiter angeordnet. Zwischen beiden Darstellungen können Sie in der Web App umschalten.</p>
+    <h3>Warum manche Details fehlen</h3>
+    <p>Die Web App kann GPS Strecke, Tempo, Zeit und Herzfrequenz auch ohne Visu auswerten. Hochauflösende Bewegungsdaten für Slides, Jumps oder Loops müssen dagegen während der Aufnahme mit dem passenden Modus erfasst worden sein. Fehlen diese Daten, zeigt die Web App die entsprechende Detailansicht nicht oder kennzeichnet sie als nicht verfügbar.</p>
+    <p>Beim Surfen werden Rittzeit, Paddelzeit und Sitzzeit getrennt ausgewiesen. Beim Wingen stehen Jump Kennzahlen und bei aktivierter Lernphase zusätzliche Bewegungswerte zur Armbewegung zur Verfügung. Eine Downwind Detailanalyse wird nicht aus einer normalen GPS Strecke automatisch erzeugt.</p>
+    <h2 id="a11">11 Datenfelder für eigene Seiten</h2>
+    <p>Die Auswahl für eigene Uhrenseiten richtet sich nach der gewählten Sportart. Damit können Sie die wichtigsten Werte direkt während der Session im Blick behalten.</p>
+    <table>
+      <tr><th>Sportart</th><th>Beispiele für Datenfelder</th></tr>
+      <tr><td><b>Windsurfing</b></td><td>Tempo, Vmax, Durchschnittstempo, Herzfrequenz, Strecke, Zeit, Gleiten, Halsen, Wenden, Wellenritte, Slides, Jumps und Loops.</td></tr>
+      <tr><td><b>Wing foiling</b></td><td>Tempo, Vmax, Herzfrequenz, Strecke, Zeit, Fahrzustände, Manöver und Jump Kennzahlen.</td></tr>
+      <tr><td><b>Surfing</b></td><td>Tempo, Vmax, Herzfrequenz, Strecke, Rittzeit, Paddelzeit, Sitzzeit sowie Wellenwerte.</td></tr>
+    </table>
+    <p>Wählen Sie ein Datenfeld in der Belegung der eigenen Seite aus. Wenn ein Wert für die Sportart nicht verfügbar ist oder in der Session noch nicht berechnet werden kann, zeigt die Uhr zwei Striche statt einer scheinbaren Null.</p>
+    <h2 id="a12">12 Unterstützte Uhren</h2>
+    <p>SurfsApp läuft auf Garmin-Uhren mit Connect IQ. Die Bedienung hängt nur davon ab, ob die Uhr fünf Tasten hat oder eine Touch-Uhr mit zwei Tasten ist. Beides ist in Abschnitt 2 beschrieben.</p>
+    <h3>Uhren mit Tasten</h3>
+    <p>Bedienung über die Tasten, der Touchscreen wird nicht ausgewertet.</p>
+    <ul class="cols">
+      <li>fēnix 5 Plus, 5S Plus, 5X Plus</li>
+      <li>fēnix 6 Pro, 6S Pro, 6X Pro</li>
+      <li>fēnix 7, 7S, 7X</li>
+      <li>fēnix 7 Pro, 7S Pro, 7X Pro (auch Solar ohne WLAN)</li>
+      <li>fēnix 8 (43 mm, 47 mm, 51 mm), 8 Pro, 8 Solar</li>
+      <li>fēnix 9, 9 Pro, 9 Pro Solar</li>
+      <li>fēnix E</li>
+      <li>epix (Gen 2), epix Pro (Gen 2) 42, 47, 51 mm</li>
+      <li>Forerunner 165, 165 Music</li>
+      <li>Forerunner 255, 255S, 255 Music, 255S Music</li>
+      <li>Forerunner 265, 265S</li>
+      <li>Forerunner 570 (42 mm, 47 mm)</li>
+      <li>Forerunner 955, 965, 970</li>
+      <li>Instinct 3 AMOLED (45 mm, 50 mm)</li>
+    </ul>
+    <h3>Touchscreen watches with two buttons</h3>
+    <p>Bedienung über Wischen und die zwei Tasten.</p>
+    <ul class="cols">
+      <li>Venu 3, Venu 3S</li>
+      <li>Venu 4 (41 mm, 45 mm)</li>
+      <li>vívoactive 4, 4S</li>
+      <li>vívoactive 5</li>
+      <li>vívoactive 6</li>
+    </ul>
+    <p>Die Darstellung passt sich der Bildschirmgröße der Uhr an. Die Bilder in dieser Anleitung zeigen eine runde Uhr mit 260 × 260 Bildpunkten.</p>
+    <p class="foot">SurfsApp ist kostenlos. <a href="../?lang=en">Zur SurfsApp Startseite</a></p>
+    <script>
+      fetch("https://garmin-abruf.andigreen.workers.dev/api/manual/view", {
+        method:"POST",
+        headers:{"content-type":"application/json"},
+        body:JSON.stringify({page:"anleitung",build:document.querySelector('meta[name="surfsapp-build"]')?.content || "0.25.24"}),
+        keepalive:true
+      }).catch(error=>console.warn("SurfsApp Seitenaufruf konnte nicht erfasst werden.",error));
+    </script>
+    </body>
+</html>
